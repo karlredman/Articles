@@ -2,3 +2,7 @@
 	path = themes/amnix
 	url = https://github.com/vimux/amnix
 	branch = master
+[submodule "site"]
+	path = site
+	url = git@github.com:karlredman/Articles.git
+	branch = gh-pages
