@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Markdown on Articles</title>
+    <link>https://karlredman.github.io/Articles/tags/markdown/</link>
+    <description>Recent content in Markdown on Articles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Jun 2019 23:13:35 -0500</lastBuildDate>
+    
+	<atom:link href="https://karlredman.github.io/Articles/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Be a Python Jinja Master: Automated Front Matter Editing</title>
+      <link>https://karlredman.github.io/Articles/dev.to/be-a-python-jinja-master-automated-front-matter-editing/</link>
+      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/be-a-python-jinja-master-automated-front-matter-editing/</guid>
+      <description>I&amp;rsquo;m pleased to announce the initial release of EditFrontMatter: A python module for editing markdown front matter using Jinja2 Templates.
+ See: EditFrontMatter Project Homepage Several examples are included in the documentation  Basic usage Advanced mulit-pass processor Recursive directory walker that uses multi-threading to edit files   The Pitch: Imagine that you could retain all of your various article and documentation content in markdown. And then cater that content to whichever static site generator1, and theme thereof, without manually editing each and every file.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flowchart on Articles</title>
+    <link>https://karlredman.github.io/Articles/tags/flowchart/</link>
+    <description>Recent content in Flowchart on Articles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Apr 2019 13:12:51 -0500</lastBuildDate>
+    
+	<atom:link href="https://karlredman.github.io/Articles/tags/flowchart/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Keycloak v5 &#43; Gatekeeper v5: Flowcharts - Easily Create and Restrict an Isolated (IODC) Client Service by Group-Role</title>
+      <link>https://karlredman.github.io/Articles/dev.to/keycloakv5_oidc_client_flowcharts/</link>
+      <pubDate>Sun, 28 Apr 2019 13:12:51 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/keycloakv5_oidc_client_flowcharts/</guid>
+      <description>This is another artifact from an upcoming series of articles that I&amp;rsquo;m writing for creating a home/laptop development laboratory ecosystem. I&amp;rsquo;m sharing these artifacts now because the series that I&amp;rsquo;m writing won&amp;rsquo;t be released for at least a month (It&amp;rsquo;s a huge undertaking -for me).
+These flow charts demonstrate the simplest form (IMHO) of creating Keycloak client services behind an authentication/authorization proxy (Keycloak Gatekeeper). I imagine that if you are reading this article you are already frustrated with just creating a simple client in Keycloak and/or trying to figure out how to restrict authorization so that only specific users of a group are allowed to log in via Keycloak.</description>
+    </item>
+    
+  </channel>
+</rss>

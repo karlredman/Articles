@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Navigation on Articles</title>
+    <link>https://karlredman.github.io/Articles/tags/navigation/</link>
+    <description>Recent content in Navigation on Articles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Mar 2019 07:44:19 -0500</lastBuildDate>
+    
+	<atom:link href="https://karlredman.github.io/Articles/tags/navigation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Navigate your vscode like it&#39;s 1999 (the vim way)</title>
+      <link>https://karlredman.github.io/Articles/dev.to/vscode1999/</link>
+      <pubDate>Fri, 15 Mar 2019 07:44:19 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/vscode1999/</guid>
+      <description>If you are a vim person it can be frustraiting to work in vscode without vim keystrokes. The fantastic plugin vscodevim only goes so far. If you, like me, are used to M-h,M-j,M-k,M-l (where M == &amp;lsquo;Alt key&amp;rsquo;) and vim-like tab movements things get freaking nuts. Note that these keys in default vim are the same as pressing escape [I HATE ever having to hit the esc key -ever].</description>
+    </item>
+    
+  </channel>
+</rss>

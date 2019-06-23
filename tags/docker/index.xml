@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Articles</title>
+    <link>https://karlredman.github.io/Articles/tags/docker/</link>
+    <description>Recent content in Docker on Articles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Mar 2019 07:35:35 -0500</lastBuildDate>
+    
+	<atom:link href="https://karlredman.github.io/Articles/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Resolve docker hostnames from host with DNS Proxy Server</title>
+      <link>https://karlredman.github.io/Articles/dev.to/docker_hostnames_from_host/</link>
+      <pubDate>Sun, 03 Mar 2019 07:35:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/docker_hostnames_from_host/</guid>
+      <description>This article is a continuation of my previous HowTo: Dnsmasq + NetworkManager + Private Network Setup. With just a few configuration changes we will add the capability to interact with docker containers by their respective hostnames. Even though the dns-proxy-server project affords us this new functionality I recommend that dns-proxy-server only be used for development purposes.
+While it&amp;rsquo;s awesome to have the ability to reference individual containers by hostname during development efforts the concept doesn&amp;rsquo;t scale well.</description>
+    </item>
+    
+  </channel>
+</rss>

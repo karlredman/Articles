@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>8.1 on Articles</title>
+    <link>https://karlredman.github.io/Articles/tags/8.1/</link>
+    <description>Recent content in 8.1 on Articles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Mar 2019 07:41:28 -0500</lastBuildDate>
+    
+	<atom:link href="https://karlredman.github.io/Articles/tags/8.1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Compile and install vim 8.1 from source (debian / MX Linux) with pyenv</title>
+      <link>https://karlredman.github.io/Articles/dev.to/vim81/</link>
+      <pubDate>Fri, 15 Mar 2019 07:41:28 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/vim81/</guid>
+      <description>This article is intended for advanced users -but to aid those who want to run cutting edge vim things.
+ Vim 8.1 provides :terminal. This is BIG NEWS and has opened some pretty cool plugins such as markdown preview plugin for (neo)vim. Additionally, if you want deoplete.nvim to work properly you&amp;rsquo;ll need to compile vim against python3 anyway. The most single/main user way I&amp;rsquo;ve found to make these plugins work is to compile Vim from source.</description>
+    </item>
+    
+  </channel>
+</rss>
