@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Articles</title>
+    <link>https://karlredman.github.io/Articles/</link>
+    <description>Recent content on Articles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Jun 2019 23:13:35 -0500</lastBuildDate>
+    
+	<atom:link href="https://karlredman.github.io/Articles/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Be a Python Jinja Master: Automated Front Matter Editing</title>
+      <link>https://karlredman.github.io/Articles/dev.to/be-a-python-jinja-master-automated-front-matter-editing/</link>
+      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/be-a-python-jinja-master-automated-front-matter-editing/</guid>
+      <description>I&amp;rsquo;m pleased to announce the initial release of EditFrontMatter: A python module for editing markdown front matter using Jinja2 Templates.
+ See: EditFrontMatter Project Homepage Several examples are included in the documentation  Basic usage Advanced mulit-pass processor Recursive directory walker that uses multi-threading to edit files   The Pitch: Imagine that you could retain all of your various article and documentation content in markdown. And then cater that content to whichever static site generator1, and theme thereof, without manually editing each and every file.</description>
+    </item>
+    
+    <item>
+      <title>Keycloak v5 &#43; Gatekeeper v5: Flowcharts - Easily Create and Restrict an Isolated (IODC) Client Service by Group-Role</title>
+      <link>https://karlredman.github.io/Articles/dev.to/keycloakv5_oidc_client_flowcharts/</link>
+      <pubDate>Sun, 28 Apr 2019 13:12:51 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/keycloakv5_oidc_client_flowcharts/</guid>
+      <description>This is another artifact from an upcoming series of articles that I&amp;rsquo;m writing for creating a home/laptop development laboratory ecosystem. I&amp;rsquo;m sharing these artifacts now because the series that I&amp;rsquo;m writing won&amp;rsquo;t be released for at least a month (It&amp;rsquo;s a huge undertaking -for me).
+These flow charts demonstrate the simplest form (IMHO) of creating Keycloak client services behind an authentication/authorization proxy (Keycloak Gatekeeper). I imagine that if you are reading this article you are already frustrated with just creating a simple client in Keycloak and/or trying to figure out how to restrict authorization so that only specific users of a group are allowed to log in via Keycloak.</description>
+    </item>
+    
+    <item>
+      <title>Private Network &#43; Traefik &#43; Keycloak &#43; Gatekeeper Overview (diagram)</title>
+      <link>https://karlredman.github.io/Articles/dev.to/traefik&#43;keycloak&#43;gatekeeper_diagram_overview/</link>
+      <pubDate>Sun, 28 Apr 2019 12:37:00 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/traefik&#43;keycloak&#43;gatekeeper_diagram_overview/</guid>
+      <description>A high level network overview of Traefik, Keycloak, and Gatekeeper working together
+This is yet another artifact [although ugly] from a project I&amp;rsquo;m working on. This diagram depicts a basic lab infrastructure with Traefik, Keyclaok, and Keycloak Gatekeeper working together behind a local DNS (dnsmasq). Details for how all of this actually fits together are forthcomming. For now, hopefully, it will be helpful for those who are wondering what the layout looks like when configuring these various components to work together.</description>
+    </item>
+    
+    <item>
+      <title>The Keycloak (v.5.0.0) UI mind map you didn&#39;t ask for</title>
+      <link>https://karlredman.github.io/Articles/dev.to/keycloakv5_ui_mindmap/</link>
+      <pubDate>Wed, 24 Apr 2019 13:27:21 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/keycloakv5_ui_mindmap/</guid>
+      <description>I&amp;rsquo;m working on a future set of articles for creating a home/laptop lab and needed a reference diagram. I figured that I might as well share. The diagram is meant to be a mid-level view to show where everything is located in the UI.
+ Keycloak version: v5.0.0 Image Format: PNG / SVG Required fields: denoted by * suffex Original PlantUML source + Image files here View/Edit the PlantUML source file + Image with VSCode PlantUML v2.</description>
+    </item>
+    
+    <item>
+      <title>Navigate your vscode like it&#39;s 1999 (the vim way)</title>
+      <link>https://karlredman.github.io/Articles/dev.to/vscode1999/</link>
+      <pubDate>Fri, 15 Mar 2019 07:44:19 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/vscode1999/</guid>
+      <description>If you are a vim person it can be frustraiting to work in vscode without vim keystrokes. The fantastic plugin vscodevim only goes so far. If you, like me, are used to M-h,M-j,M-k,M-l (where M == &amp;lsquo;Alt key&amp;rsquo;) and vim-like tab movements things get freaking nuts. Note that these keys in default vim are the same as pressing escape [I HATE ever having to hit the esc key -ever].</description>
+    </item>
+    
+    <item>
+      <title>Compile and install vim 8.1 from source (debian / MX Linux) with pyenv</title>
+      <link>https://karlredman.github.io/Articles/dev.to/vim81/</link>
+      <pubDate>Fri, 15 Mar 2019 07:41:28 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/vim81/</guid>
+      <description>This article is intended for advanced users -but to aid those who want to run cutting edge vim things.
+ Vim 8.1 provides :terminal. This is BIG NEWS and has opened some pretty cool plugins such as markdown preview plugin for (neo)vim. Additionally, if you want deoplete.nvim to work properly you&amp;rsquo;ll need to compile vim against python3 anyway. The most single/main user way I&amp;rsquo;ve found to make these plugins work is to compile Vim from source.</description>
+    </item>
+    
+    <item>
+      <title>Resolve docker hostnames from host with DNS Proxy Server</title>
+      <link>https://karlredman.github.io/Articles/dev.to/docker_hostnames_from_host/</link>
+      <pubDate>Sun, 03 Mar 2019 07:35:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/docker_hostnames_from_host/</guid>
+      <description>This article is a continuation of my previous HowTo: Dnsmasq + NetworkManager + Private Network Setup. With just a few configuration changes we will add the capability to interact with docker containers by their respective hostnames. Even though the dns-proxy-server project affords us this new functionality I recommend that dns-proxy-server only be used for development purposes.
+While it&amp;rsquo;s awesome to have the ability to reference individual containers by hostname during development efforts the concept doesn&amp;rsquo;t scale well.</description>
+    </item>
+    
+    <item>
+      <title>TL;DR Version: Dnsmasq &#43; NetworkManager &#43; Private Network Setup</title>
+      <link>https://karlredman.github.io/Articles/dev.to/tldr-dnsmasq-nm/</link>
+      <pubDate>Fri, 01 Mar 2019 07:40:00 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/tldr-dnsmasq-nm/</guid>
+      <description>Tested systems:  MX Linux v18.1 Ubuntu v18.10 Debian v9.8  Disclaimer: I strongly urge that you initially test this procedure with a virtual machine.
+Configure NetworkManager Add private network ip to network manager  determine the connection to use (i.e. eth0, wlan0, etc.)  nmcli connection show  add a 10 network address to our Network Manager connection  nmcli con mod &amp;#39;Wired connection 1&amp;#39; ipv4.address 10.127.127.1/24 nmcli con mod &amp;#39;Wired connection 1&amp;#39; connection.</description>
+    </item>
+    
+    <item>
+      <title>Dnsmasq &#43; NetworkManager &#43; Private Network Setup</title>
+      <link>https://karlredman.github.io/Articles/dev.to/dnsmasq-nm/</link>
+      <pubDate>Fri, 01 Mar 2019 07:30:30 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/dnsmasq-nm/</guid>
+      <description>This is a howto/method for minimal configuration which provides a local private network that will be available to the local host for both online and offline (internet/DHCP) connectivity. The goal is to provide a scalable and network switchable development environment for virtual machines and bare metal application systems. This method intends to provide the developer the ability to roam (via laptop, et al) and maintain a consistent network development environment.</description>
+    </item>
+    
+    <item>
+      <title>How To Be A Computer Programmer</title>
+      <link>https://karlredman.github.io/Articles/medium/howto_beaprogrammer/</link>
+      <pubDate>Wed, 06 Dec 2017 07:57:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/medium/howto_beaprogrammer/</guid>
+      <description>(A Realistic Assessment): Every so often someone asks me or for advice on how to be a computer programmer. This question has always caused me a bit of anxiety because it brings up all sorts of other thoughts like, &amp;lsquo;the semantic and social differences in the definitions between a coder, a programmer and an engineer&amp;rsquo;, or &amp;lsquo;what is the context of the word &amp;ldquo;how&amp;rdquo; in this question?&amp;rsquo;. It&amp;rsquo;s a simple question with an extremely complex and subjective set of answers.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,4 +1,0 @@
-[submodule "themes/amnix"]
-	path = themes/amnix
-	url = https://github.com/vimux/amnix
-	branch = master

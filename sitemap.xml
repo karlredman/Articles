@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/dev.to/be-a-python-jinja-master-automated-front-matter-editing/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/dev.to/keycloakv5_oidc_client_flowcharts/</loc>
+    <lastmod>2019-06-23T13:12:51-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/dev.to/traefik&#43;keycloak&#43;gatekeeper_diagram_overview/</loc>
+    <lastmod>2019-06-23T12:37:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/dev.to/keycloakv5_ui_mindmap/</loc>
+    <lastmod>2019-06-23T13:27:21-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/dev.to/vscode1999/</loc>
+    <lastmod>2019-06-23T07:44:19-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/dev.to/vim81/</loc>
+    <lastmod>2019-06-23T07:41:28-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/dev.to/docker_hostnames_from_host/</loc>
+    <lastmod>2019-03-03T07:35:35-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/dev.to/tldr-dnsmasq-nm/</loc>
+    <lastmod>2019-06-23T07:40:00-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/dev.to/dnsmasq-nm/</loc>
+    <lastmod>2019-06-11T07:30:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/medium/howto_beaprogrammer/</loc>
+    <lastmod>2017-12-06T07:58:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/8.1/</loc>
+    <lastmod>2019-06-23T07:41:28-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/admin/</loc>
+    <lastmod>2019-06-23T13:12:51-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/administration/</loc>
+    <lastmod>2019-06-23T13:12:51-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/advice/</loc>
+    <lastmod>2017-12-06T07:58:09-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/article/</loc>
+    <lastmod>2017-12-06T07:58:09-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/auth/</loc>
+    <lastmod>2019-06-23T13:12:51-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/authentication/</loc>
+    <lastmod>2019-06-23T13:27:21-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/</loc>
+    <lastmod>2019-06-23T13:12:51-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/compile/</loc>
+    <lastmod>2019-06-23T07:41:28-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/dev.to/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/development/</loc>
+    <lastmod>2019-03-03T07:35:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/development/</loc>
+    <lastmod>2019-06-23T07:40:00-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/diagram/</loc>
+    <lastmod>2019-06-23T12:37:00-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/dnsmasq/</loc>
+    <lastmod>2019-06-23T07:40:00-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/docker/</loc>
+    <lastmod>2019-03-03T07:35:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/docker/</loc>
+    <lastmod>2019-03-03T07:35:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/ecosystem/</loc>
+    <lastmod>2019-03-03T07:35:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/ecosystem/</loc>
+    <lastmod>2019-03-03T07:35:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/flowchart/</loc>
+    <lastmod>2019-06-23T13:12:51-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/front-matter/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/gatekeeper/</loc>
+    <lastmod>2019-06-23T13:12:51-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/howto/</loc>
+    <lastmod>2019-06-23T07:41:28-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/howto/</loc>
+    <lastmod>2019-06-23T07:41:28-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/jinja2/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/keycloak/</loc>
+    <lastmod>2019-06-23T13:12:51-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/lifestyle/</loc>
+    <lastmod>2017-12-06T07:58:09-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/linux/</loc>
+    <lastmod>2019-06-23T07:41:28-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/markdown/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/medium/</loc>
+    <lastmod>2017-12-06T07:58:09-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/mental-health/</loc>
+    <lastmod>2017-12-06T07:58:09-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/navigation/</loc>
+    <lastmod>2019-06-23T07:44:19-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/network/</loc>
+    <lastmod>2019-03-03T07:35:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/network/</loc>
+    <lastmod>2019-06-23T12:37:00-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/network-manager/</loc>
+    <lastmod>2019-06-23T07:40:00-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/programming/</loc>
+    <lastmod>2017-12-06T07:58:09-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/programming/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/python3/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/shortcuts/</loc>
+    <lastmod>2019-06-23T07:44:19-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/shortcuts/</loc>
+    <lastmod>2019-06-23T07:44:19-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/</loc>
+    <lastmod>2019-06-23T07:41:28-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/traefik/</loc>
+    <lastmod>2019-06-23T12:37:00-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/utility/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/vim/</loc>
+    <lastmod>2019-06-23T07:44:19-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/vscode/</loc>
+    <lastmod>2019-06-23T07:44:19-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/vscode/</loc>
+    <lastmod>2019-06-23T07:44:19-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/web/</loc>
+    <lastmod>2019-06-23T13:12:51-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

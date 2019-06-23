@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Articles</title>
+    <link>https://karlredman.github.io/Articles/categories/</link>
+    <description>Recent content in Categories on Articles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Apr 2019 13:12:51 -0500</lastBuildDate>
+    
+	<atom:link href="https://karlredman.github.io/Articles/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Admin</title>
+      <link>https://karlredman.github.io/Articles/categories/admin/</link>
+      <pubDate>Sun, 28 Apr 2019 13:12:51 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/admin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Advice</title>
+      <link>https://karlredman.github.io/Articles/categories/advice/</link>
+      <pubDate>Wed, 06 Dec 2017 07:57:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/advice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Article</title>
+      <link>https://karlredman.github.io/Articles/categories/article/</link>
+      <pubDate>Wed, 06 Dec 2017 07:57:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/article/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Auth</title>
+      <link>https://karlredman.github.io/Articles/categories/auth/</link>
+      <pubDate>Sun, 28 Apr 2019 13:12:51 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/auth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>https://karlredman.github.io/Articles/categories/development/</link>
+      <pubDate>Fri, 01 Mar 2019 07:40:00 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://karlredman.github.io/Articles/categories/docker/</link>
+      <pubDate>Sun, 03 Mar 2019 07:35:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ecosystem</title>
+      <link>https://karlredman.github.io/Articles/categories/ecosystem/</link>
+      <pubDate>Sun, 03 Mar 2019 07:35:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/ecosystem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Howto</title>
+      <link>https://karlredman.github.io/Articles/categories/howto/</link>
+      <pubDate>Fri, 15 Mar 2019 07:41:28 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/howto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://karlredman.github.io/Articles/categories/linux/</link>
+      <pubDate>Fri, 15 Mar 2019 07:41:28 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://karlredman.github.io/Articles/categories/network/</link>
+      <pubDate>Sun, 28 Apr 2019 12:37:00 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://karlredman.github.io/Articles/categories/programming/</link>
+      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shortcuts</title>
+      <link>https://karlredman.github.io/Articles/categories/shortcuts/</link>
+      <pubDate>Fri, 15 Mar 2019 07:44:19 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/shortcuts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Utility</title>
+      <link>https://karlredman.github.io/Articles/categories/utility/</link>
+      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/utility/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vscode</title>
+      <link>https://karlredman.github.io/Articles/categories/vscode/</link>
+      <pubDate>Fri, 15 Mar 2019 07:44:19 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/vscode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>https://karlredman.github.io/Articles/categories/web/</link>
+      <pubDate>Sun, 28 Apr 2019 13:12:51 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/web/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

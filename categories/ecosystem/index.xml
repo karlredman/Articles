@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ecosystem on Articles</title>
+    <link>https://karlredman.github.io/Articles/categories/ecosystem/</link>
+    <description>Recent content in Ecosystem on Articles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Mar 2019 07:35:35 -0500</lastBuildDate>
+    
+	<atom:link href="https://karlredman.github.io/Articles/categories/ecosystem/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Resolve docker hostnames from host with DNS Proxy Server</title>
+      <link>https://karlredman.github.io/Articles/dev.to/docker_hostnames_from_host/</link>
+      <pubDate>Sun, 03 Mar 2019 07:35:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/docker_hostnames_from_host/</guid>
+      <description>This article is a continuation of my previous HowTo: Dnsmasq + NetworkManager + Private Network Setup. With just a few configuration changes we will add the capability to interact with docker containers by their respective hostnames. Even though the dns-proxy-server project affords us this new functionality I recommend that dns-proxy-server only be used for development purposes.
+While it&amp;rsquo;s awesome to have the ability to reference individual containers by hostname during development efforts the concept doesn&amp;rsquo;t scale well.</description>
+    </item>
+    
+    <item>
+      <title>TL;DR Version: Dnsmasq &#43; NetworkManager &#43; Private Network Setup</title>
+      <link>https://karlredman.github.io/Articles/dev.to/tldr-dnsmasq-nm/</link>
+      <pubDate>Fri, 01 Mar 2019 07:40:00 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/tldr-dnsmasq-nm/</guid>
+      <description>Tested systems:  MX Linux v18.1 Ubuntu v18.10 Debian v9.8  Disclaimer: I strongly urge that you initially test this procedure with a virtual machine.
+Configure NetworkManager Add private network ip to network manager  determine the connection to use (i.e. eth0, wlan0, etc.)  nmcli connection show  add a 10 network address to our Network Manager connection  nmcli con mod &amp;#39;Wired connection 1&amp;#39; ipv4.address 10.127.127.1/24 nmcli con mod &amp;#39;Wired connection 1&amp;#39; connection.</description>
+    </item>
+    
+    <item>
+      <title>Dnsmasq &#43; NetworkManager &#43; Private Network Setup</title>
+      <link>https://karlredman.github.io/Articles/dev.to/dnsmasq-nm/</link>
+      <pubDate>Fri, 01 Mar 2019 07:30:30 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/dnsmasq-nm/</guid>
+      <description>This is a howto/method for minimal configuration which provides a local private network that will be available to the local host for both online and offline (internet/DHCP) connectivity. The goal is to provide a scalable and network switchable development environment for virtual machines and bare metal application systems. This method intends to provide the developer the ability to roam (via laptop, et al) and maintain a consistent network development environment.</description>
+    </item>
+    
+  </channel>
+</rss>
