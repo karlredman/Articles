@@ -1,0 +1,205 @@
+@startuml
+Title Flowchart Legend
+legend left
+  | Symbol     | Meaning                          |
+  | [button]   | UI button                        |
+  | [checkbox] | UI checkbox                      |
+  | [field]    | UI non editable field            |
+  | [link]     | UI link                          |
+  | [sidebar]  | UI sidebar menu                  |
+  | [submenue] | UI section submenue              |
+  | <"text">   | example entry                    |
+  | {"text"}   | process flow state               |
+  | Copy:      | user to copy text field          |
+  | Enter:     | enter text                       |
+  | Select:    | select from list / toggle slider |
+  | -->        | selection                        |
+
+  Note: UI sections are represented by a
+  "package" rectangle (i.e. "Add Client").
+endlegend
+@enduml
+
+
+@startuml
+title: Keycloak V5.0.0 Admin UI:\n Add (IODC) Isolated Client for use with Keycloak Gatekeeper\n (Simple Audience Configuration)
+' Reference: [Server Administration Guide](https://www.keycloak.org/docs/latest/server_admin/index.html#oidc-clients)
+
+
+(*) --> "Select: Clients [sidebar]" as SelectClients_1
+
+partition "Clients" {
+  --> "Select: Create [button]" as clients
+}
+
+partition "Add Client" {
+  --> "Enter: Client ID <whoami>"
+  --> "Select: Client Protocol --> openid-connect"
+  --> "Enter: Root URL <https://whoami.example.com>"
+  --> "Select: Save [button]" as addClient
+}
+
+partition "<whoami> Settings" {
+  --> "Select: Enabled --> ON"
+  --> "Select: Access Type --> confidential"
+  --> "Select: Save [button]" as whoamiSettings
+}
+
+--> "Select: Mappers [submenue]"
+partition "Create Protocol Mapper" {
+  --> "Select: Create [button]" as CreateProtocolSettings
+  --> "Enter:  Name <whoami_protocol_mapper_audience>"
+  --> "Select: Mapper Type --> Audience"
+  --> "Select: Include Client Audience --> <whoami>"
+  --> "Select: Add to ID token --> ON"
+  --> "Select: Add to access token --> ON"
+  --> "Select: Save [button]" as CreateProtocolMapper
+}
+
+--> "Select: Clients [sidebar]"
+--> "<whoami> --> Credentials"
+
+partition "Credentials" {
+  --> "Copy: Secret [field]"
+  note right
+	Use copied text to populate 'client-secret'
+	in keycloak-gatekeeper.conf
+  end note
+}
+
+--> (*)
+@enduml
+
+
+
+@startuml
+title Keycloak v5 Admin UI + Gatekeeper v5 (Flowchart):\n Restrict an Isolated Client Service by Group Role (IODC).
+' Reference: [Keycloak: Securing Applications and Services Guide - (2.4) Keycloak Gatekeeper](https://www.keycloak.org/docs/latest/securing_apps/index.html#_keycloak_generic_adapter)
+
+
+(*) --> "Select: Clients [sidebar] --> <whoami>"
+partition "Clients: <whoami> Settings" {
+  --> "Select: Authorization Enabled --> ON"
+  --> "Select: Save [button]" as ClientsSettingsSave
+}
+
+-right-> "Select: <whoami> Roles"
+partition "Clients: <whoami> Roles" {
+  --> "Select: Add Role [button]"
+  partition "<Add Role>" {
+	--> "Enter: Role Name <whoami_role>"
+	--> "Select: Save [button]" as whoamiRolesSave
+  }
+}
+
+-left-> "Select: <whoami> Mappers"
+partition "Clients: <whoami> Mappers" {
+  --> "Select: Create [button]"
+  partition "Create Protocol Mapper" {
+	--> "Enter: Name <whoami_protocol_mapper_client_role>"
+	--> "Select: Mapper Type --> User Client Role"
+	--> "Select: Client ID --> <whoami>"
+	--> "Enter: Token Claim Name --> roles"
+	--> "Select: Save [button]" as CreateProtocolMapperSave
+  }
+}
+
+-right-> "Select: <whoami> Scope"
+partition "Clients: <whoami> Scope Mappings" {
+  --> "Select: Full Scope Allowed --> OFF"
+  --> "Select: Client Roles --> <whoami>"
+  --> "{Client Roles <whoami> --> Effective Roles \nContains <whoami_role>}"
+}
+
+-left-> "Select: <whoami> Authorization"
+partition "Clients: <whoami> Authorization" {
+  --> "Select: Policies [submenu]"
+  --> "Select: Create Policy --> Role"
+  partition "Add Role Policy" {
+    --> "Enter: Name <whoami_role_policy>"
+    --> "(optional) Select: Realm Roles --> uma_authorization"
+    --> "Select: Clients: <whoami>"
+    --> "Select: Client Roles <whoami_role>"
+    --> "(optional) Select: <whoami_role> Required [checkbox]"
+    --> "Seclect: Save [button]" as AddRolePolicySave
+  }
+
+  -right-> "Select: Permissions [submenu]"
+  --> "Select: Default Permission [link]"
+  partition "Default Permission" {
+    --> "Select: Apply Policy --> <whoami_role_policy>"
+    --> "Seclect: Save [button]" as DefaultPermissionsSave
+  }
+}
+
+' Create Group: <whoami_group>
+
+-left-> "Select: Groups [sidebar]"
+partition "User Groups" {
+  --> "Select: New [button]"
+
+  partition "Create Group" {
+    --> "Enter: Name <whoami_group>" as groupname
+    --> "Select Save [button]" as CreateGroupSave
+  }
+
+  -right-> "Select: Role Mappings [submenu]"
+  partition "<whoami_group>" {
+    --> "Select: Client Roles --> whoami"
+    --> "Select: Available Roles --> <whoami_role>"
+	--> "Select: Add selected [button]"
+    --> "{Assigned Roles contains <whoami_role>}"
+    --> "{Effective Roles contains <whoami_role>}"
+  }
+
+}
+
+
+' Create Users: <auth_user>
+
+-right-> "Select: Users [sidebar]"
+partition "Users" {
+
+  --> "Select: Add user"
+  partition "Add User" {
+    --> "Enter: Username: <auth_user>"
+    --> "Select: Save [button]"
+  }
+
+  -left-> "Select: Groups [submenu]"
+  partition "Users: <auth_user> --> Groups" {
+    --> "Select: Available Groups --> <whoami_group>"
+	--> "Select: Join [button]"
+	note right
+	  Only users in <whoami_group> will have
+	  permission to log into <whoami> service
+	end note
+  }
+
+  -right-> "Select: Credentials [submenu]"
+  partition "Users: <auth_user> --> Credentials" {
+    --> "Enter: New Password --> <somepassword>"
+    --> "Enter: Password Confirmation --> <somepassword>"
+    --> "Select: Temporary --> OFF"
+    --> "Select: Reset Password [button]"
+  }
+}
+
+--> (*)
+note bottom
+Keycloak Gatekeepr requires a role restriction in it's configuration file:
+
+```
+scopes:
+resources:
+  - uri: /*
+  methods:
+    - GET
+  roles:
+    - whoami:whoami_role
+```
+
+end note
+
+@enduml
+

@@ -1,0 +1,7 @@
+<header class="header">
+	<div class="header__inner inner">
+    <a href="{{ .Site.Params.home_url }}">{{ .Site.Params.home_title }}</a>
+		<a class="logo" href="{{ "" | relURL }}">{{ .Site.Title }}</a>
+		{{- partial "header_menu.html" . }}
+	</div>
+</header>
