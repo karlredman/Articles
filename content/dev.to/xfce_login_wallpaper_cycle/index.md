@@ -107,7 +107,7 @@ Examples will assume a multi-user system with encrypted home directoreis.
       sudo lightdm-gtk-greeter-settings
       ```
 
-      [![ghtdm-gtk-greeter-settings.png]()]()
+      [![ghtdm-gtk-greeter-settings.png](https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/xfce_login_wallpaper_cycle/lightdm-gtk-greeter-settings.png)](https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/xfce_login_wallpaper_cycle/lightdm-gtk-greeter-settings.png)
 
     * Select `Background->Image`
 
@@ -142,4 +142,4 @@ Examples will assume a multi-user system with encrypted home directoreis.
 2. select `Login Screen Support` checkbox
 3. specify the image directory (i.e. /opt/LoginWallpaper-XFCE-Variety/Variety)
 
-[![variety.png]()]()
+[![variety.png](https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/xfce_login_wallpaper_cycle/variety.png)](https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/xfce_login_wallpaper_cycle/variety.png)
