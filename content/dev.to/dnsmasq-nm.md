@@ -1,10 +1,10 @@
 ---
 title: "Dnsmasq + NetworkManager + Private Network Setup"
-public_article: [true]
+public_article: true
 description: "Dnsmasq + NetworkManager + Private Network Setup"
 categories: [network, ecosystem]
 tags: [dnsmasq,network-manager,network,ecosystem]
-canonical_url: https://github.com/karlredman/My-Articles/wiki/
+canonical_url: https://github.com/karlredman/Articles/blob/master/content/dev.to/dnsmasq-nm.md
 published_url: https://dev.to/karlredman/dnsmasq--networkmanager--private-network-setup-258l
 
 author: "Karl N. Redman"
@@ -32,7 +32,7 @@ weight: 5
 
 This is a howto/method for minimal configuration which provides a local private network that will be available to the local host for both online and offline (internet/DHCP) connectivity. The goal is to provide a scalable and network switchable development environment for virtual machines and bare metal application systems. This method intends to provide the developer the ability to roam (via laptop, et al) and maintain a consistent network development environment. Note that this configuration will require that you become accustomed to using `NetworkManager`.
 
-* A TL;DR version of this article can be found [here](https://github.com/karlredman/My-Articles/wiki/devto_tldr-dnsmasq-nm).
+* A TL;DR version of this article can be found [here](https://github.com/karlredman/Articles/blob/master/content/dev.to/tldr-dnsmasq-nm.md).
 
 ## Features of this howto:
 

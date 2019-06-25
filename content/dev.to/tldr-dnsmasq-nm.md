@@ -1,6 +1,6 @@
 ---
 title: "TL;DR Version: Dnsmasq + NetworkManager + Private Network Setup"
-public_article: [true]
+public_article: true
 description: ""
 categories: [ecosystem,development,network]
 tags: [network,dnsmasq,network-manager,ecosystem]
@@ -28,6 +28,10 @@ hasMath: false
 draft: false
 weight: 5
 ---
+
+# TL;DR Version: Dnsmasq + NetworkManager + Private Network Setup"
+
+* original article: [on dev.to](https://dev.to/karlredman/dnsmasq--networkmanager--private-network-setup-258l)
 
 ## Tested systems:
 

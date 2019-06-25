@@ -5,7 +5,7 @@ public_article: true
 description: "Flowcharts for easily creating Keycloak clients and restricting authorization to user groups."
 categories: [admin,web,auth]
 tags: [keycloak,administration,flowchart,gatekeeper]
-canonical_url: null
+canonical_url: https://github.com/karlredman/Articles/blob/master/content/dev.to/keycloakV5_oidc_client_flowcharts/index.md
 published_url: https://dev.to/karlredman/keycloak-v5-gatekeeper-v5-flowcharts-easily-create-and-restrict-an-isolated-iodc-client-service-by-group-role-53h4
 is_public: true
 
@@ -48,7 +48,7 @@ These flow charts demonstrate the simplest form (IMHO) of creating Keycloak clie
 
 * Keycloak v5
 * Keycloak Gatekeeper v5
-* Original PlantUML source + Image Files: [here](https://github.com/karlredman/My-Articles/tree/master/Artifacts/keycloak-flowcharts/simple-isolated-iodc-proxied-group)
+* Original PlantUML source + Image Files: [here](https://github.com/karlredman/Articles/tree/master/content/dev.to/keycloakV5_oidc_client_flowcharts)
 * Original source edited with:
   * vim [iamcco/markdown-preview.nvim: markdown preview plugin for (neo)vim](https://github.com/iamcco/markdown-preview.nvim)
   * VSCode [PlantUML - Visual Studio extension](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml)
@@ -67,10 +67,10 @@ These flow charts demonstrate the simplest form (IMHO) of creating Keycloak clie
 
   * [Securing Applications and Services Guide](https://www.keycloak.org/docs/latest/securing_apps/index.html#_keycloak_generic_adapter)
 
-![Flowchart-Legend.png](https://raw.githubusercontent.com/karlredman/My-Articles/master/Artifacts/keycloak-flowcharts/simple-isolated-iodc-proxied-group/Flowchart-Legend.png)
+[![Flowchart-Legend.png](https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/keycloakV5_oidc_client_flowcharts/Flowchart-Legend.png)](https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/keycloakV5_oidc_client_flowcharts/Flowchart-Legend.png)
 
-![keycloak-create-client-proxy.png](https://raw.githubusercontent.com/karlredman/My-Articles/master/Artifacts/keycloak-flowcharts/simple-isolated-iodc-proxied-group/keycloak-create-client-proxy.png)
+[![keycloak-create-client-proxy.png](https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/keycloakV5_oidc_client_flowcharts/keycloak-create-client-proxy.png)](https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/keycloakV5_oidc_client_flowcharts/keycloak-create-client-proxy.png)
 
-![keycloak-gatekeeper-group-auth.png](https://raw.githubusercontent.com/karlredman/My-Articles/master/Artifacts/keycloak-flowcharts/simple-isolated-iodc-proxied-group/keycloak-gatekeeper-group-auth.png)
+[![keycloak-gatekeeper-group-auth.png](https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/keycloakV5_oidc_client_flowcharts/keycloak-gatekeeper-group-auth.png)](https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/keycloakV5_oidc_client_flowcharts/keycloak-gatekeeper-group-auth.png)
 
 

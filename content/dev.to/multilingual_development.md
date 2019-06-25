@@ -1,11 +1,11 @@
 ---
 title: "Multilingual Development: an english perspective"
 published: false
-public_article: [true]
+public_article: true
 description: "Multilingual Development: an english perspective"
 categories: [opinion,journal]
 tags: [development,multilingual,teamwork,management]
-canonical_url: https://github.com/karlredman/My-Articles/wiki/
+canonical_url: https://github.com/karlredman/Articles/blob/master/content/dev.to/multilingual_development.md
 published_url: https://dev.to/karlredman/multilingual-development-english-perspective-g0i
 
 author: "Karl N. Redman"

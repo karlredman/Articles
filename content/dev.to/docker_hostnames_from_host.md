@@ -4,7 +4,7 @@ public_article: [true]
 description: "Resolve docker hostnames from host with DNS Proxy Server"
 categories: [network,docker,ecosystem]
 tags: [network,docker,ecosystem,development]
-canonical_url: https://github.com/karlredman/My-Articles/wiki/
+canonical_url: https://github.com/karlredman/Articles/blob/master/content/dev.to/docker_hostnames_from_host.md
 published_url: https://dev.to/karlredman/resolve-docker-hostnames-from-host-with-dns-proxy-server-1d08
 
 author: "Karl N. Redman"
