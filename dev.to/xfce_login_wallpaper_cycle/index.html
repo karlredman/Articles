@@ -79,8 +79,7 @@
 
 <p>Examples will assume a multi-user system with encrypted home directoreis.</p>
 
-<ol>
-<li><p>clone the example project to an appropriat directory:</p>
+<h3 id="clone-the-example-project-to-an-appropriat-directory">clone the example project to an appropriat directory:</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># a global directory space</span>
 cd /opt
 #
@@ -88,16 +87,17 @@ cd /opt
 sudo git clone git@github.com:karlredman/LoginWallpaper-XFCE-Variety.git
 #
 <span style="color:#75715e"># set permissions on the project directory</span>
-sudo chown -R root:users LoginWallpaper-XFCE-Variety</code></pre></div></li>
-
-<li><p>add images to the image directory <code>Variety</code></p>
+sudo chown -R root:users LoginWallpaper-XFCE-Variety</code></pre></div>
+<h3 id="add-images-to-the-image-directory-variety">add images to the image directory <code>Variety</code></h3>
 
 <ul>
 <li>Add whatever <code>jpg</code> images you deem worthy / safe to be on a login screen. For this example the images you add will go into <code>/opt/LoginWallpaper-XFCE-Variety/Variety/</code>.</li>
 <li>Do verify that your images belong to <code>users</code> group -change as necessary</li>
-</ul></li>
+</ul>
 
-<li><p>run the project script to seed the <code>publish</code> directory (i.e. <code>/opt/LoginWallpaper-XFCE-Variety/Greeter/background.jpg</code>)</p>
+<h3 id="run-the-project-script-to-seed-the-publish-directory">run the project script to seed the <code>publish</code> directory</h3>
+
+<p>(i.e. <code>/opt/LoginWallpaper-XFCE-Variety/Greeter/background.jpg</code>)</p>
 
 <ul>
 <li>seed the file</li>
@@ -106,9 +106,8 @@ sudo chown -R root:users LoginWallpaper-XFCE-Variety</code></pre></div></li>
 <ul>
 <li>verify the file exists -troubleshoot&hellip;</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ls /opt/LoginWallpaper-XFCE-Variety/background.jpb</code></pre></div></li>
-
-<li><p>Configure LightDM Greeter via the GUI interface</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ls /opt/LoginWallpaper-XFCE-Variety/background.jpb</code></pre></div>
+<h3 id="configure-lightdm-greeter-via-the-gui-interface">Configure LightDM Greeter via the GUI interface</h3>
 
 <ul>
 <li>start the greeter config app using one of these methods:
@@ -136,11 +135,13 @@ sudo lightdm-gtk-greeter-settings
 </ul></li>
 
 <li><p>Save the setting and exit the app</p></li>
-</ul></li>
+</ul>
 
-<li><p>test and debug</p></li>
+<h3 id="test-and-debug">test and debug</h3>
 
-<li><p>add cron job</p>
+<p>If you are having issues try to run the command manually.</p>
+
+<h3 id="add-cron-job">add cron job</h3>
 
 <ul>
 <li>open cron in your default editor:</li>
@@ -150,9 +151,7 @@ sudo lightdm-gtk-greeter-settings
 <li>add the job (example)</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-crontab" data-lang="crontab"># change to wallpaper every 10 min
-*/10 * * * * cp $(/opt/LoginWallpaper-XFCE-Variety/mbin/print_random_file.pl /opt/LoginWallpaper-XFCE-Variety/Variety) /opt/LoginWallpaper-XFCE-Variety/Greeter/background.jpg</code></pre></div></li>
-</ol>
-
+*/10 * * * * cp $(/opt/LoginWallpaper-XFCE-Variety/mbin/print_random_file.pl /opt/LoginWallpaper-XFCE-Variety/Variety) /opt/LoginWallpaper-XFCE-Variety/Greeter/background.jpg</code></pre></div>
 <h2 id="using-variety-as-the-image-source">Using <code>Variety</code> as the image source:</h2>
 
 <p><a href="https://peterlevi.com/variety/">Variety</a> is a wallpaper background manager that is available for several linux distributions and is compatible with several desktop managers. One of the options <code>variety</code> offers is the ability to manage your login greeter image.</p>
