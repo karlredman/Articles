@@ -15,6 +15,9 @@ creatoremail: "karl.redman@gmail.com"
 lastmodifierdisplayname: "Karl N. Redman"
 lastmodifieremail: "karl.redman@gmail.com"
 
+lastmod: "2019-06-23T12:37:00-05:00"
+date: "2019-04-28T12:37:00-05:00"
+
 slug: null
 
 hide: false
