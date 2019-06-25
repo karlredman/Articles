@@ -3,7 +3,7 @@ title: "Compile and install vim 8.1 from source (debian / MX Linux) with pyenv"
 public_article: true
 description: "Compile and install vim 8.1 from source (debian / MX Linux) with pyenv"
 categories: [admin,linux,howto]
-tags: [vim,8.1,howto,compile]
+tags: [vim,debian,howto,compile]
 canonical_url: https://github.com/karlredman/Articles/blob/master/content/dev.to/vim81.md
 published_url: https://dev.to/karlredman/compile-and-install-vim-v81-from-source-with-pyenv-5cjc
 
