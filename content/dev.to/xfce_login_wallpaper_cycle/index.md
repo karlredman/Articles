@@ -106,6 +106,7 @@ ls /opt/LoginWallpaper-XFCE-Variety/background.jpb
   * via the GUI menu for `LightDM GTK Greeter settings`
     * name may vary based on linux desktop distribution
   * via command line
+
   ```sh
   sudo lightdm-gtk-greeter-settings
   ```
