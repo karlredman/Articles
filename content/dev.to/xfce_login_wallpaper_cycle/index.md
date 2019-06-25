@@ -12,11 +12,12 @@ is_public: true
 author: "Karl N. Redman"
 creatordisplayname: "Karl N. Redman"
 creatoremail: "karl.redman@gmail.com"
-date: 2019-06-24T23:57:02-05:00
 
 lastmodifierdisplayname: "Karl N. Redman"
 lastmodifieremail: "karl.redman@gmail.com"
+
 lastmod: 2019-06-24T23:57:02-05:00
+date: 2019-06-24T23:57:02-05:00
 
 slug: null
 
@@ -47,9 +48,9 @@ For fans of the lightweight and highly configurable linux desktop environment [X
 
 The basic premis of this procedure will be:
 
-  1. populate some directory with images you want to use for login backgrounds.
-  2. setup a cron job to run a script to copy a random image from the source directory into a `publish` directory
-  3. XFCE will use that image as the login screen background image.
+1. populate some directory with images you want to use for login backgrounds.
+2. setup a cron job to run a script to copy a random image from the source directory into a `publish` directory
+3. XFCE will use that image as the login screen background image.
 
 ## TL;DR:
 
@@ -65,74 +66,78 @@ An example project for configuring randomized login screens for XFC can be found
 
 Examples will assume a multi-user system with encrypted home directoreis.
 
-1. clone the example project to an appropriat directory:
+### clone the example project to an appropriat directory:
 
-    ```sh
-    # a global directory space
-    cd /opt
-    #
-    # clone the project
-    sudo git clone git@github.com:karlredman/LoginWallpaper-XFCE-Variety.git
-    #
-    # set permissions on the project directory
-    sudo chown -R root:users LoginWallpaper-XFCE-Variety
-    ```
+```sh
+# a global directory space
+cd /opt
+#
+# clone the project
+sudo git clone git@github.com:karlredman/LoginWallpaper-XFCE-Variety.git
+#
+# set permissions on the project directory
+sudo chown -R root:users LoginWallpaper-XFCE-Variety
+```
 
-2. add images to the image directory `Variety`
+### add images to the image directory `Variety`
 
-    * Add whatever `jpg` images you deem worthy / safe to be on a login screen. For this example the images you add will go into `/opt/LoginWallpaper-XFCE-Variety/Variety/`.
-    * Do verify that your images belong to `users` group -change as necessary
+* Add whatever `jpg` images you deem worthy / safe to be on a login screen. For this example the images you add will go into `/opt/LoginWallpaper-XFCE-Variety/Variety/`.
+* Do verify that your images belong to `users` group -change as necessary
 
-3. run the project script to seed the `publish` directory (i.e. `/opt/LoginWallpaper-XFCE-Variety/Greeter/background.jpg`)
+### run the project script to seed the `publish` directory
 
-    * seed the file
+(i.e. `/opt/LoginWallpaper-XFCE-Variety/Greeter/background.jpg`)
 
-    ```sh
-    cp $(/opt/LoginWallpaper-XFCE-Variety/mbin/print_random_file.pl /opt/LoginWallpaper-XFCE-Variety/Variety) /opt/LoginWallpaper-XFCE-Variety/Greeter/background.jpg
-    ```
+* seed the file
 
-    * verify the file exists -troubleshoot...
+```sh
+cp $(/opt/LoginWallpaper-XFCE-Variety/mbin/print_random_file.pl /opt/LoginWallpaper-XFCE-Variety/Variety) /opt/LoginWallpaper-XFCE-Variety/Greeter/background.jpg
+```
 
-    ```sh
-    ls /opt/LoginWallpaper-XFCE-Variety/background.jpb
-    ```
+* verify the file exists -troubleshoot...
 
-4. Configure LightDM Greeter via the GUI interface
+```sh
+ls /opt/LoginWallpaper-XFCE-Variety/background.jpb
+```
 
-    * start the greeter config app using one of these methods:
-      * via the GUI menu for `LightDM GTK Greeter settings`
-        * name may vary based on linux desktop distribution
-      * via command line
-      ```sh
-      sudo lightdm-gtk-greeter-settings
-      ```
+### Configure LightDM Greeter via the GUI interface
 
-      [![ghtdm-gtk-greeter-settings.png](https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/xfce_login_wallpaper_cycle/lightdm-gtk-greeter-settings.png)](https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/xfce_login_wallpaper_cycle/lightdm-gtk-greeter-settings.png)
+* start the greeter config app using one of these methods:
+  * via the GUI menu for `LightDM GTK Greeter settings`
+    * name may vary based on linux desktop distribution
+  * via command line
+  ```sh
+  sudo lightdm-gtk-greeter-settings
+  ```
 
-    * Select `Background->Image`
+  [![ghtdm-gtk-greeter-settings.png](https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/xfce_login_wallpaper_cycle/lightdm-gtk-greeter-settings.png)](https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/xfce_login_wallpaper_cycle/lightdm-gtk-greeter-settings.png)
 
-    * Set `Image` to `<path>/background.jpg`
-      * i.e. `/opt/LoginWallpaper-XFCE-Variety/Greeter/background.jpg`
-      * the name `background.jpg` is required
+* Select `Background->Image`
 
-    * Save the setting and exit the app
+* Set `Image` to `<path>/background.jpg`
+  * i.e. `/opt/LoginWallpaper-XFCE-Variety/Greeter/background.jpg`
+  * the name `background.jpg` is required
 
-5. test and debug
+* Save the setting and exit the app
 
-6. add cron job
+### test and debug
 
-    * open cron in your default editor:
+If you are having issues try to run the command manually.
 
-    ```sh
-    cron -e
-    ```
+### add cron job
 
-    * add the job (example)
+* open cron in your default editor:
 
-    ```crontab
-    # change to wallpaper every 10 min
-    */10 * * * * cp $(/opt/LoginWallpaper-XFCE-Variety/mbin/print_random_file.pl /opt/LoginWallpaper-XFCE-Variety/Variety) /opt/LoginWallpaper-XFCE-Variety/Greeter/background.jpg
-    ```
+```sh
+cron -e
+```
+
+* add the job (example)
+
+```crontab
+# change to wallpaper every 10 min
+*/10 * * * * cp $(/opt/LoginWallpaper-XFCE-Variety/mbin/print_random_file.pl /opt/LoginWallpaper-XFCE-Variety/Variety) /opt/LoginWallpaper-XFCE-Variety/Greeter/background.jpg
+```
 
 ## Using `Variety` as the image source:
 
