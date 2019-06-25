@@ -6,10 +6,20 @@
     <description>Recent content in Diagram on Articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Apr 2019 13:27:21 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 28 Apr 2019 12:37:00 -0500</lastBuildDate>
     
 	<atom:link href="https://karlredman.github.io/Articles/tags/diagram/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Private Network &#43; Traefik &#43; Keycloak &#43; Gatekeeper Overview (diagram)</title>
+      <link>https://karlredman.github.io/Articles/dev.to/traefik&#43;keycloak&#43;gatekeeper_diagram_overview/</link>
+      <pubDate>Sun, 28 Apr 2019 12:37:00 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/traefik&#43;keycloak&#43;gatekeeper_diagram_overview/</guid>
+      <description>A high level network overview of Traefik, Keycloak, and Gatekeeper working together
+This is yet another artifact [although ugly] from a project I&amp;rsquo;m working on. This diagram depicts a basic lab infrastructure with Traefik, Keyclaok, and Keycloak Gatekeeper working together behind a local DNS (dnsmasq). Details for how all of this actually fits together are forthcomming. For now, hopefully, it will be helpful for those who are wondering what the layout looks like when configuring these various components to work together.</description>
+    </item>
     
     <item>
       <title>The Keycloak (v.5.0.0) UI mind map you didn&#39;t ask for</title>
@@ -19,16 +29,6 @@
       <guid>https://karlredman.github.io/Articles/dev.to/keycloakv5_ui_mindmap/</guid>
       <description>I&amp;rsquo;m working on a future set of articles for creating a home/laptop lab and needed a reference diagram. I figured that I might as well share. The diagram is meant to be a mid-level view to show where everything is located in the UI.
  Keycloak version: v5.0.0 Required fields: denoted by * suffex Original PlantUML source + Image files here</description>
-    </item>
-    
-    <item>
-      <title>Private Network &#43; Traefik &#43; Keycloak &#43; Gatekeeper Overview (diagram)</title>
-      <link>https://karlredman.github.io/Articles/dev.to/traefik&#43;keycloak&#43;gatekeeper_diagram_overview/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/dev.to/traefik&#43;keycloak&#43;gatekeeper_diagram_overview/</guid>
-      <description>A high level network overview of Traefik, Keycloak, and Gatekeeper working together
-This is yet another artifact [although ugly] from a project I&amp;rsquo;m working on. This diagram depicts a basic lab infrastructure with Traefik, Keyclaok, and Keycloak Gatekeeper working together behind a local DNS (dnsmasq). Details for how all of this actually fits together are forthcomming. For now, hopefully, it will be helpful for those who are wondering what the layout looks like when configuring these various components to work together.</description>
     </item>
     
   </channel>
