@@ -38,7 +38,7 @@ This is yet another artifact [although ugly] from a project I&amp;rsquo;m workin
       
       <guid>https://karlredman.github.io/Articles/dev.to/keycloakv5_ui_mindmap/</guid>
       <description>I&amp;rsquo;m working on a future set of articles for creating a home/laptop lab and needed a reference diagram. I figured that I might as well share. The diagram is meant to be a mid-level view to show where everything is located in the UI.
- Keycloak version: v5.0.0 Image Format: PNG / SVG Required fields: denoted by * suffex Original PlantUML source + Image files here View/Edit the PlantUML source file + Image with VSCode PlantUML v2.</description>
+ Keycloak version: v5.0.0 Required fields: denoted by * suffex Original PlantUML source + Image files here</description>
     </item>
     
   </channel>

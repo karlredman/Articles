@@ -19,7 +19,12 @@
   
   <url>
     <loc>https://karlredman.github.io/Articles/dev.to/keycloakv5_ui_mindmap/</loc>
-    <lastmod>2019-06-23T13:27:21-05:00</lastmod>
+    <lastmod>2019-06-24T23:06:41-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/dev.to/multilingual_development/</loc>
+    <lastmod>2019-04-10T07:37:38-05:00</lastmod>
   </url>
   
   <url>
@@ -50,12 +55,6 @@
   <url>
     <loc>https://karlredman.github.io/Articles/medium/howto_beaprogrammer/</loc>
     <lastmod>2017-12-06T07:58:09-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://karlredman.github.io/Articles/tags/8.1/</loc>
-    <lastmod>2019-06-23T07:41:28-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -96,7 +95,7 @@
   
   <url>
     <loc>https://karlredman.github.io/Articles/tags/authentication/</loc>
-    <lastmod>2019-06-23T13:27:21-05:00</lastmod>
+    <lastmod>2019-06-24T23:06:41-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -113,6 +112,12 @@
   </url>
   
   <url>
+    <loc>https://karlredman.github.io/Articles/tags/debian/</loc>
+    <lastmod>2019-06-23T07:41:28-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://karlredman.github.io/Articles/dev.to/</loc>
     <lastmod>2019-06-10T23:13:35-05:00</lastmod>
     <priority>0</priority>
@@ -120,7 +125,7 @@
   
   <url>
     <loc>https://karlredman.github.io/Articles/tags/development/</loc>
-    <lastmod>2019-03-03T07:35:35-05:00</lastmod>
+    <lastmod>2019-04-10T07:37:38-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -203,6 +208,12 @@
   </url>
   
   <url>
+    <loc>https://karlredman.github.io/Articles/categories/journal/</loc>
+    <lastmod>2019-04-10T07:37:38-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://karlredman.github.io/Articles/tags/keycloak/</loc>
     <lastmod>2019-06-23T13:12:51-05:00</lastmod>
     <priority>0</priority>
@@ -221,6 +232,12 @@
   </url>
   
   <url>
+    <loc>https://karlredman.github.io/Articles/tags/management/</loc>
+    <lastmod>2019-04-10T07:37:38-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://karlredman.github.io/Articles/tags/markdown/</loc>
     <lastmod>2019-06-10T23:13:35-05:00</lastmod>
     <priority>0</priority>
@@ -235,6 +252,12 @@
   <url>
     <loc>https://karlredman.github.io/Articles/tags/mental-health/</loc>
     <lastmod>2017-12-06T07:58:09-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/multilingual/</loc>
+    <lastmod>2019-04-10T07:37:38-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -259,6 +282,12 @@
   <url>
     <loc>https://karlredman.github.io/Articles/tags/network-manager/</loc>
     <lastmod>2019-06-23T07:40:00-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/opinion/</loc>
+    <lastmod>2019-04-10T07:37:38-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -294,7 +323,13 @@
   
   <url>
     <loc>https://karlredman.github.io/Articles/tags/</loc>
-    <lastmod>2019-06-23T07:41:28-05:00</lastmod>
+    <lastmod>2019-06-23T13:12:51-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/teamwork/</loc>
+    <lastmod>2019-04-10T07:37:38-05:00</lastmod>
     <priority>0</priority>
   </url>
   

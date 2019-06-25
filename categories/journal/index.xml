@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Journal on Articles</title>
+    <link>https://karlredman.github.io/Articles/categories/journal/</link>
+    <description>Recent content in Journal on Articles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Apr 2019 07:37:38 -0500</lastBuildDate>
+    
+	<atom:link href="https://karlredman.github.io/Articles/categories/journal/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Multilingual Development: an english perspective</title>
+      <link>https://karlredman.github.io/Articles/dev.to/multilingual_development/</link>
+      <pubDate>Wed, 10 Apr 2019 07:37:38 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/multilingual_development/</guid>
+      <description>Throughout my career I&amp;rsquo;ve been afforded the opportunity to work with many people of various dialects of English. On many occasions the persons I&amp;rsquo;ve worked with do not speak &amp;ldquo;American&amp;rdquo; English as a first language. In this article I highlight some things which may help with persons who are trying to communicate across English dialect barriers. However, this article is not about communication through translation -but this perspective may be useful nonetheless.</description>
+    </item>
+    
+  </channel>
+</rss>

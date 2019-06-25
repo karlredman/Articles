@@ -17,8 +17,8 @@
       <pubDate>Fri, 01 Mar 2019 07:40:00 -0500</pubDate>
       
       <guid>https://karlredman.github.io/Articles/dev.to/tldr-dnsmasq-nm/</guid>
-      <description>Tested systems:  MX Linux v18.1 Ubuntu v18.10 Debian v9.8  Disclaimer: I strongly urge that you initially test this procedure with a virtual machine.
-Configure NetworkManager Add private network ip to network manager  determine the connection to use (i.e. eth0, wlan0, etc.)  nmcli connection show  add a 10 network address to our Network Manager connection  nmcli con mod &amp;#39;Wired connection 1&amp;#39; ipv4.address 10.127.127.1/24 nmcli con mod &amp;#39;Wired connection 1&amp;#39; connection.</description>
+      <description>TL;DR Version: Dnsmasq + NetworkManager + Private Network Setup&amp;rdquo;  original article: on dev.to  Tested systems:  MX Linux v18.1 Ubuntu v18.10 Debian v9.8  Disclaimer: I strongly urge that you initially test this procedure with a virtual machine.
+Configure NetworkManager Add private network ip to network manager  determine the connection to use (i.e. eth0, wlan0, etc.)  nmcli connection show  add a 10 network address to our Network Manager connection  nmcli con mod &amp;#39;Wired connection 1&amp;#39; ipv4.</description>
     </item>
     
     <item>

@@ -6,19 +6,10 @@
     <description>Recent content in Tags on Articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 15 Mar 2019 07:41:28 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 28 Apr 2019 13:12:51 -0500</lastBuildDate>
     
 	<atom:link href="https://karlredman.github.io/Articles/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>8.1</title>
-      <link>https://karlredman.github.io/Articles/tags/8.1/</link>
-      <pubDate>Fri, 15 Mar 2019 07:41:28 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/8.1/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Administration</title>
@@ -48,9 +39,18 @@
     </item>
     
     <item>
+      <title>Debian</title>
+      <link>https://karlredman.github.io/Articles/tags/debian/</link>
+      <pubDate>Fri, 15 Mar 2019 07:41:28 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/debian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Development</title>
       <link>https://karlredman.github.io/Articles/tags/development/</link>
-      <pubDate>Sun, 03 Mar 2019 07:35:35 -0500</pubDate>
+      <pubDate>Wed, 10 Apr 2019 07:37:38 -0500</pubDate>
       
       <guid>https://karlredman.github.io/Articles/tags/development/</guid>
       <description></description>
@@ -156,6 +156,15 @@
     </item>
     
     <item>
+      <title>Management</title>
+      <link>https://karlredman.github.io/Articles/tags/management/</link>
+      <pubDate>Wed, 10 Apr 2019 07:37:38 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Markdown</title>
       <link>https://karlredman.github.io/Articles/tags/markdown/</link>
       <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
@@ -170,6 +179,15 @@
       <pubDate>Wed, 06 Dec 2017 07:57:35 -0500</pubDate>
       
       <guid>https://karlredman.github.io/Articles/tags/mental-health/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multilingual</title>
+      <link>https://karlredman.github.io/Articles/tags/multilingual/</link>
+      <pubDate>Wed, 10 Apr 2019 07:37:38 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/multilingual/</guid>
       <description></description>
     </item>
     
@@ -224,6 +242,15 @@
       <pubDate>Fri, 15 Mar 2019 07:44:19 -0500</pubDate>
       
       <guid>https://karlredman.github.io/Articles/tags/shortcuts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Teamwork</title>
+      <link>https://karlredman.github.io/Articles/tags/teamwork/</link>
+      <pubDate>Wed, 10 Apr 2019 07:37:38 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/teamwork/</guid>
       <description></description>
     </item>
     

@@ -48,7 +48,16 @@ This is yet another artifact [although ugly] from a project I&amp;rsquo;m workin
       
       <guid>https://karlredman.github.io/Articles/dev.to/keycloakv5_ui_mindmap/</guid>
       <description>I&amp;rsquo;m working on a future set of articles for creating a home/laptop lab and needed a reference diagram. I figured that I might as well share. The diagram is meant to be a mid-level view to show where everything is located in the UI.
- Keycloak version: v5.0.0 Image Format: PNG / SVG Required fields: denoted by * suffex Original PlantUML source + Image files here View/Edit the PlantUML source file + Image with VSCode PlantUML v2.</description>
+ Keycloak version: v5.0.0 Required fields: denoted by * suffex Original PlantUML source + Image files here</description>
+    </item>
+    
+    <item>
+      <title>Multilingual Development: an english perspective</title>
+      <link>https://karlredman.github.io/Articles/dev.to/multilingual_development/</link>
+      <pubDate>Wed, 10 Apr 2019 07:37:38 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/multilingual_development/</guid>
+      <description>Throughout my career I&amp;rsquo;ve been afforded the opportunity to work with many people of various dialects of English. On many occasions the persons I&amp;rsquo;ve worked with do not speak &amp;ldquo;American&amp;rdquo; English as a first language. In this article I highlight some things which may help with persons who are trying to communicate across English dialect barriers. However, this article is not about communication through translation -but this perspective may be useful nonetheless.</description>
     </item>
     
     <item>
@@ -86,8 +95,8 @@ While it&amp;rsquo;s awesome to have the ability to reference individual contain
       <pubDate>Fri, 01 Mar 2019 07:40:00 -0500</pubDate>
       
       <guid>https://karlredman.github.io/Articles/dev.to/tldr-dnsmasq-nm/</guid>
-      <description>Tested systems:  MX Linux v18.1 Ubuntu v18.10 Debian v9.8  Disclaimer: I strongly urge that you initially test this procedure with a virtual machine.
-Configure NetworkManager Add private network ip to network manager  determine the connection to use (i.e. eth0, wlan0, etc.)  nmcli connection show  add a 10 network address to our Network Manager connection  nmcli con mod &amp;#39;Wired connection 1&amp;#39; ipv4.address 10.127.127.1/24 nmcli con mod &amp;#39;Wired connection 1&amp;#39; connection.</description>
+      <description>TL;DR Version: Dnsmasq + NetworkManager + Private Network Setup&amp;rdquo;  original article: on dev.to  Tested systems:  MX Linux v18.1 Ubuntu v18.10 Debian v9.8  Disclaimer: I strongly urge that you initially test this procedure with a virtual machine.
+Configure NetworkManager Add private network ip to network manager  determine the connection to use (i.e. eth0, wlan0, etc.)  nmcli connection show  add a 10 network address to our Network Manager connection  nmcli con mod &amp;#39;Wired connection 1&amp;#39; ipv4.</description>
     </item>
     
     <item>

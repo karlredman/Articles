@@ -84,6 +84,15 @@
     </item>
     
     <item>
+      <title>Journal</title>
+      <link>https://karlredman.github.io/Articles/categories/journal/</link>
+      <pubDate>Wed, 10 Apr 2019 07:37:38 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/journal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Linux</title>
       <link>https://karlredman.github.io/Articles/categories/linux/</link>
       <pubDate>Fri, 15 Mar 2019 07:41:28 -0500</pubDate>
@@ -98,6 +107,15 @@
       <pubDate>Sun, 28 Apr 2019 12:37:00 -0500</pubDate>
       
       <guid>https://karlredman.github.io/Articles/categories/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Opinion</title>
+      <link>https://karlredman.github.io/Articles/categories/opinion/</link>
+      <pubDate>Wed, 10 Apr 2019 07:37:38 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/opinion/</guid>
       <description></description>
     </item>
     
