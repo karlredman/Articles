@@ -2,7 +2,7 @@
 title: "Dnsmasq + NetworkManager + Private Network Setup"
 public_article: true
 description: "Dnsmasq + NetworkManager + Private Network Setup"
-categories: [network, ecosystem]
+categories: [dev.to,network, ecosystem]
 tags: [dnsmasq,network-manager,network,ecosystem]
 canonical_url: https://github.com/karlredman/Articles/blob/master/content/dev.to/dnsmasq-nm.md
 published_url: https://dev.to/karlredman/dnsmasq--networkmanager--private-network-setup-258l

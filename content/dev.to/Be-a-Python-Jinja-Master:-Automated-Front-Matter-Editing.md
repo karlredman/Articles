@@ -2,7 +2,7 @@
 title: "Be a Python Jinja Master: Automated Front Matter Editing"
 published: true
 description: "EditFrontMatter: A python module for editing markdown front matter using Jinja2 Templates."
-categories: [programming, utility]
+categories: [dev.to,programming, utility]
 tags: [python3,jinja2,markdown,front-matter]
 canonical_url: https://github.com/karlredman/My-Articles/wiki/
 published_url: https://dev.to/karlredman/be-a-python-jinja-master-automated-front-matter-editing-1b8a

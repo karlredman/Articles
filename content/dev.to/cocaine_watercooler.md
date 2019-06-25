@@ -1,7 +1,7 @@
 ---
 title: "Cocaine at the Water cooler -How we got here as Developers"
 description: "EditFrontMatter: A python module for editing markdown front matter using Jinja2 Templates."
-categories: [personal, journal]
+categories: [dev.to,personal, journal]
 tags: [culture,development,origins,hardcore]
 canonical_url: https://github.com/karlredman/My-Articles/wiki/
 published_url: https://dev.to/karlredman/cocaine-at-the-water-cooler--how-we-got-here-as-developers-1f6

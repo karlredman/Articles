@@ -3,7 +3,7 @@ title: "Randomize your XFCE / LightDM Login Screen Wallpaper"
 published: true
 public_article: true
 description: "HowTo: randomize LightDM / XFCE v4.x login screen wallpaper images."
-categories: [linux,admin,ricing]
+categories: [dev.to,linux,admin,ricing]
 tags: [lightdm,xfce,wallpaper,greeter]
 canonical_url: https://github.com/karlredman/Articles/blob/master/content/dev.to/xfce_login_wallpaper_cycle/index.md
 published_url: https://dev.to/karlredman/randomize-your-xfce-lightdm-login-screen-wallpaper-1ape

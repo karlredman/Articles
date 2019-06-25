@@ -3,7 +3,7 @@ title: "The Keycloak (v.5.0.0) UI mind map you didn't ask for"
 published: true
 public_article: true
 description: "A mind map of the Keycloak settings UI."
-categories: [admin,web,auth]
+categories: [dev.to,admin,web,auth]
 tags: [keycloak,diagram,authentication,administration]
 canonical_url: https://github.com/karlredman/Articles/blob/master/content/dev.to/keycloakV5_ui_mindmap/index.md
 published_url: https://dev.to/karlredman/the-keycloak-v-5-0-0-ui-mind-map-you-didn-t-ask-for-15a7

@@ -3,7 +3,7 @@ title: "How To Be A Computer Programmer"
 published: false
 public_article: true
 description: "This article describes some of rougher parts of software development."
-categories: [advice, article, programming]
+categories: [medium.com,advice, article, programming]
 tags: [mental-health, programming, lifestyle]
 canonical_url: null
 is_public: true

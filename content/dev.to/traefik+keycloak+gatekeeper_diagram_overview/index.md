@@ -3,7 +3,7 @@ title: "Private Network + Traefik + Keycloak + Gatekeeper Overview (diagram)"
 published: false
 public_article: [true]
 description: "A high level network overview of Traefik, Keycloak, and Gatekeeper working together"
-categories: [admin,network,web]
+categories: [dev.to,admin,network,web]
 tags: [keycloak,traefik,gatekeeper,diagram]
 canonical_url: https://github.com/karlredman/My-Articles/wiki/
 published_url: https://dev.to/karlredman/private-network-traefik-keycloak-gatekeeper-overview-diagram-1nmn

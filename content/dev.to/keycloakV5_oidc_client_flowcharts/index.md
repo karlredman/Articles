@@ -3,7 +3,7 @@ title: "Keycloak v5 + Gatekeeper v5: Flowcharts - Easily Create and Restrict an 
 published: true
 public_article: true
 description: "Flowcharts for easily creating Keycloak clients and restricting authorization to user groups."
-categories: [admin,web,auth]
+categories: [dev.to,admin,web,auth]
 tags: [keycloak,administration,flowchart,gatekeeper]
 canonical_url: https://github.com/karlredman/Articles/blob/master/content/dev.to/keycloakV5_oidc_client_flowcharts/index.md
 published_url: https://dev.to/karlredman/keycloak-v5-gatekeeper-v5-flowcharts-easily-create-and-restrict-an-isolated-iodc-client-service-by-group-role-53h4

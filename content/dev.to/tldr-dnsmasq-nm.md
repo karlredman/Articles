@@ -2,7 +2,7 @@
 title: "TL;DR Version: Dnsmasq + NetworkManager + Private Network Setup"
 public_article: true
 description: ""
-categories: [ecosystem,development,network]
+categories: [dev.to,ecosystem,development,network]
 tags: [network,dnsmasq,network-manager,ecosystem]
 canonical_url: https://github.com/karlredman/My-Articles/wiki/
 

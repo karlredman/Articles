@@ -3,7 +3,7 @@ title: "Multilingual Development: an english perspective"
 published: true
 public_article: true
 description: "Multilingual Development: an english perspective"
-categories: [opinion,journal]
+categories: [dev.to,opinion,journal]
 tags: [development,multilingual,teamwork,management]
 canonical_url: https://github.com/karlredman/Articles/blob/master/content/dev.to/multilingual_development.md
 published_url: https://dev.to/karlredman/multilingual-development-english-perspective-g0i
