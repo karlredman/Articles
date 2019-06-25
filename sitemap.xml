@@ -118,6 +118,12 @@
   </url>
   
   <url>
+    <loc>https://karlredman.github.io/Articles/categories/dev.to/</loc>
+    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://karlredman.github.io/Articles/dev.to/</loc>
     <lastmod>2019-06-24T23:57:02-05:00</lastmod>
     <priority>0</priority>
@@ -251,6 +257,12 @@
   
   <url>
     <loc>https://karlredman.github.io/Articles/medium/</loc>
+    <lastmod>2017-12-06T07:58:09-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/medium.com/</loc>
     <lastmod>2017-12-06T07:58:09-05:00</lastmod>
     <priority>0</priority>
   </url>

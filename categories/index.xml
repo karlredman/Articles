@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>Dev.to</title>
+      <link>https://karlredman.github.io/Articles/categories/dev.to/</link>
+      <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/dev.to/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Docker</title>
       <link>https://karlredman.github.io/Articles/categories/docker/</link>
       <pubDate>Sun, 03 Mar 2019 07:35:35 -0500</pubDate>
@@ -89,6 +98,15 @@
       <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
       
       <guid>https://karlredman.github.io/Articles/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Medium.com</title>
+      <link>https://karlredman.github.io/Articles/categories/medium.com/</link>
+      <pubDate>Wed, 06 Dec 2017 07:57:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/medium.com/</guid>
       <description></description>
     </item>
     
