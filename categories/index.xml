@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Apr 2019 13:12:51 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 24 Jun 2019 23:57:02 -0500</lastBuildDate>
     
 	<atom:link href="https://karlredman.github.io/Articles/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Admin</title>
       <link>https://karlredman.github.io/Articles/categories/admin/</link>
-      <pubDate>Sun, 28 Apr 2019 13:12:51 -0500</pubDate>
+      <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
       
       <guid>https://karlredman.github.io/Articles/categories/admin/</guid>
       <description></description>
@@ -44,15 +44,6 @@
       <pubDate>Sun, 28 Apr 2019 13:12:51 -0500</pubDate>
       
       <guid>https://karlredman.github.io/Articles/categories/auth/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Development</title>
-      <link>https://karlredman.github.io/Articles/categories/development/</link>
-      <pubDate>Fri, 01 Mar 2019 07:40:00 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/categories/development/</guid>
       <description></description>
     </item>
     
@@ -95,7 +86,7 @@
     <item>
       <title>Linux</title>
       <link>https://karlredman.github.io/Articles/categories/linux/</link>
-      <pubDate>Fri, 15 Mar 2019 07:41:28 -0500</pubDate>
+      <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
       
       <guid>https://karlredman.github.io/Articles/categories/linux/</guid>
       <description></description>
@@ -125,6 +116,15 @@
       <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
       
       <guid>https://karlredman.github.io/Articles/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ricing</title>
+      <link>https://karlredman.github.io/Articles/categories/ricing/</link>
+      <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/ricing/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lightdm on Articles</title>
+    <link>https://karlredman.github.io/Articles/tags/lightdm/</link>
+    <description>Recent content in Lightdm on Articles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Jun 2019 23:57:02 -0500</lastBuildDate>
+    
+	<atom:link href="https://karlredman.github.io/Articles/tags/lightdm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Randomize your XFCE / LightDM Login Screen Wallpaper</title>
+      <link>https://karlredman.github.io/Articles/dev.to/xfce_login_wallpaper_cycle/</link>
+      <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/xfce_login_wallpaper_cycle/</guid>
+      <description>HowTo: randomize LightDM / XFCE v4.x login screen wallpaper images.
+For fans of the lightweight and highly configurable linux desktop environment XFCE, with it&amp;rsquo;s default Greeter managed by LightDM, it&amp;rsquo;s a frustrating fact of reality that there is no built in way to randomize the login screen image. This simple perl script and directory layout will provide that service using a cron job. The process will copy a random image file from a directory that contains a pool of images into a &amp;lsquo;publish&amp;rsquo; directory; as background.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://karlredman.github.io/Articles/dev.to/xfce_login_wallpaper_cycle/</loc>
+    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://karlredman.github.io/Articles/dev.to/be-a-python-jinja-master-automated-front-matter-editing/</loc>
     <lastmod>2019-06-10T23:13:35-05:00</lastmod>
   </url>
@@ -43,11 +48,6 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/dev.to/tldr-dnsmasq-nm/</loc>
-    <lastmod>2019-06-23T07:40:00-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://karlredman.github.io/Articles/dev.to/dnsmasq-nm/</loc>
     <lastmod>2019-06-11T07:30:30-05:00</lastmod>
   </url>
@@ -59,7 +59,7 @@
   
   <url>
     <loc>https://karlredman.github.io/Articles/categories/admin/</loc>
-    <lastmod>2019-06-23T13:12:51-05:00</lastmod>
+    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -83,7 +83,7 @@
   
   <url>
     <loc>https://karlredman.github.io/Articles/</loc>
-    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -101,7 +101,7 @@
   
   <url>
     <loc>https://karlredman.github.io/Articles/categories/</loc>
-    <lastmod>2019-06-23T13:12:51-05:00</lastmod>
+    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -119,19 +119,13 @@
   
   <url>
     <loc>https://karlredman.github.io/Articles/dev.to/</loc>
-    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://karlredman.github.io/Articles/tags/development/</loc>
     <lastmod>2019-04-10T07:37:38-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://karlredman.github.io/Articles/categories/development/</loc>
-    <lastmod>2019-06-23T07:40:00-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -143,7 +137,7 @@
   
   <url>
     <loc>https://karlredman.github.io/Articles/tags/dnsmasq/</loc>
-    <lastmod>2019-06-23T07:40:00-05:00</lastmod>
+    <lastmod>2019-06-11T07:30:30-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -190,6 +184,12 @@
   </url>
   
   <url>
+    <loc>https://karlredman.github.io/Articles/tags/greeter/</loc>
+    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://karlredman.github.io/Articles/tags/howto/</loc>
     <lastmod>2019-06-23T07:41:28-05:00</lastmod>
     <priority>0</priority>
@@ -226,8 +226,14 @@
   </url>
   
   <url>
+    <loc>https://karlredman.github.io/Articles/tags/lightdm/</loc>
+    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://karlredman.github.io/Articles/categories/linux/</loc>
-    <lastmod>2019-06-23T07:41:28-05:00</lastmod>
+    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -281,7 +287,7 @@
   
   <url>
     <loc>https://karlredman.github.io/Articles/tags/network-manager/</loc>
-    <lastmod>2019-06-23T07:40:00-05:00</lastmod>
+    <lastmod>2019-06-11T07:30:30-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -306,6 +312,12 @@
   <url>
     <loc>https://karlredman.github.io/Articles/tags/python3/</loc>
     <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/ricing/</loc>
+    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -364,8 +376,20 @@
   </url>
   
   <url>
+    <loc>https://karlredman.github.io/Articles/tags/wallpaper/</loc>
+    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://karlredman.github.io/Articles/categories/web/</loc>
     <lastmod>2019-06-23T13:12:51-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/xfce/</loc>
+    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
     <priority>0</priority>
   </url>
   

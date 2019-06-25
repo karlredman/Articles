@@ -6,10 +6,20 @@
     <description>Recent content in Dev.tos on Articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Jun 2019 23:13:35 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 24 Jun 2019 23:57:02 -0500</lastBuildDate>
     
 	<atom:link href="https://karlredman.github.io/Articles/dev.to/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Randomize your XFCE / LightDM Login Screen Wallpaper</title>
+      <link>https://karlredman.github.io/Articles/dev.to/xfce_login_wallpaper_cycle/</link>
+      <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/xfce_login_wallpaper_cycle/</guid>
+      <description>HowTo: randomize LightDM / XFCE v4.x login screen wallpaper images.
+For fans of the lightweight and highly configurable linux desktop environment XFCE, with it&amp;rsquo;s default Greeter managed by LightDM, it&amp;rsquo;s a frustrating fact of reality that there is no built in way to randomize the login screen image. This simple perl script and directory layout will provide that service using a cron job. The process will copy a random image file from a directory that contains a pool of images into a &amp;lsquo;publish&amp;rsquo; directory; as background.</description>
+    </item>
     
     <item>
       <title>Be a Python Jinja Master: Automated Front Matter Editing</title>
@@ -87,16 +97,6 @@ This is yet another artifact [although ugly] from a project I&amp;rsquo;m workin
       <guid>https://karlredman.github.io/Articles/dev.to/docker_hostnames_from_host/</guid>
       <description>This article is a continuation of my previous HowTo: Dnsmasq + NetworkManager + Private Network Setup. With just a few configuration changes we will add the capability to interact with docker containers by their respective hostnames. Even though the dns-proxy-server project affords us this new functionality I recommend that dns-proxy-server only be used for development purposes.
 While it&amp;rsquo;s awesome to have the ability to reference individual containers by hostname during development efforts the concept doesn&amp;rsquo;t scale well.</description>
-    </item>
-    
-    <item>
-      <title>TL;DR Version: Dnsmasq &#43; NetworkManager &#43; Private Network Setup</title>
-      <link>https://karlredman.github.io/Articles/dev.to/tldr-dnsmasq-nm/</link>
-      <pubDate>Fri, 01 Mar 2019 07:40:00 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/dev.to/tldr-dnsmasq-nm/</guid>
-      <description>TL;DR Version: Dnsmasq + NetworkManager + Private Network Setup&amp;rdquo;  original article: on dev.to  Tested systems:  MX Linux v18.1 Ubuntu v18.10 Debian v9.8  Disclaimer: I strongly urge that you initially test this procedure with a virtual machine.
-Configure NetworkManager Add private network ip to network manager  determine the connection to use (i.e. eth0, wlan0, etc.)  nmcli connection show  add a 10 network address to our Network Manager connection  nmcli con mod &amp;#39;Wired connection 1&amp;#39; ipv4.</description>
     </item>
     
     <item>

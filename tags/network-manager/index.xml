@@ -6,20 +6,10 @@
     <description>Recent content in Network Manager on Articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Mar 2019 07:40:00 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 01 Mar 2019 07:30:30 -0500</lastBuildDate>
     
 	<atom:link href="https://karlredman.github.io/Articles/tags/network-manager/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>TL;DR Version: Dnsmasq &#43; NetworkManager &#43; Private Network Setup</title>
-      <link>https://karlredman.github.io/Articles/dev.to/tldr-dnsmasq-nm/</link>
-      <pubDate>Fri, 01 Mar 2019 07:40:00 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/dev.to/tldr-dnsmasq-nm/</guid>
-      <description>TL;DR Version: Dnsmasq + NetworkManager + Private Network Setup&amp;rdquo;  original article: on dev.to  Tested systems:  MX Linux v18.1 Ubuntu v18.10 Debian v9.8  Disclaimer: I strongly urge that you initially test this procedure with a virtual machine.
-Configure NetworkManager Add private network ip to network manager  determine the connection to use (i.e. eth0, wlan0, etc.)  nmcli connection show  add a 10 network address to our Network Manager connection  nmcli con mod &amp;#39;Wired connection 1&amp;#39; ipv4.</description>
-    </item>
     
     <item>
       <title>Dnsmasq &#43; NetworkManager &#43; Private Network Setup</title>
