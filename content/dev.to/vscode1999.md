@@ -10,11 +10,12 @@ published_url:
 author: "Karl N. Redman"
 creatordisplayname: "Karl N. Redman"
 creatoremail: "karl.redman@gmail.com"
-date: "2019-03-15T07:44:19-05:00"
 
 lastmodifierdisplayname: "Karl N. Redman"
 lastmodifieremail: "karl.redman@gmail.com"
-lastmod: "2019-06-23T07:44:19-05:00"
+
+lastmod: 2019-06-25T02:58:38-05:00
+date: "2019-03-15T07:44:19-05:00"
 
 slug: null
 
