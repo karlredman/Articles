@@ -24,7 +24,7 @@ These flow charts demonstrate the simplest form (IMHO) of creating Keycloak clie
     <item>
       <title>Private Network &#43; Traefik &#43; Keycloak &#43; Gatekeeper Overview (diagram)</title>
       <link>https://karlredman.github.io/Articles/dev.to/traefik&#43;keycloak&#43;gatekeeper_diagram_overview/</link>
-      <pubDate>Sun, 28 Apr 2019 12:37:00 -0500</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://karlredman.github.io/Articles/dev.to/traefik&#43;keycloak&#43;gatekeeper_diagram_overview/</guid>
       <description>A high level network overview of Traefik, Keycloak, and Gatekeeper working together
