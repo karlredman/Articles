@@ -46,7 +46,7 @@ For fans of the lightweight and highly configurable linux desktop environment [X
 
 ## Overview:
 
-The basic premis of this procedure will be:
+The basic premise of this procedure will be:
 
 1. populate some directory with images you want to use for login backgrounds.
 2. setup a cron job to run a script to copy a random image from the source directory into a `publish` directory
@@ -64,9 +64,9 @@ An example project for configuring randomized login screens for XFC can be found
 
 ## Generic setup
 
-Examples will assume a multi-user system with encrypted home directoreis.
+Examples will assume a multi-user system with encrypted home directories.
 
-### clone the example project to an appropriat directory:
+### clone the example project to an appropriate directory:
 
 ```sh
 # a global directory space
