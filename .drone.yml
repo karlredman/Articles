@@ -44,7 +44,7 @@ steps:
     - MSG=`git log --pretty=oneline --abrev-commit -1`
     - cd site
     - git add -A
-    - git commit -am "drone build: $${MSG}"
+    - git commit -am "drone build from master: ${MSG}"
     - git push gh-pages
 
 
