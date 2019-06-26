@@ -19,6 +19,15 @@ chmod 600 /root/.ssh/known_hosts
 ssh-keyscan -H $SSH_HOST > /etc/ssh/ssh_known_hosts 2> /dev/null
 
 if [ $# -gt 0 ]; then
-    # get submodules
+    # get submodules checkout
     git submodule update --init --recursive
+else:
+    # git commit gh-pages
+    git config --global user.email "$${USER_EMAIL}"
+    git config --global user.name "$${USER_NAME}"
+    MSG=$(git log --pretty=oneline --abrev-commit -1)
+    cd site
+    git add -A
+    git commit -am "drone build from master: ${MSG}"
+    git push origin HEAD:gh-pages
 fi
