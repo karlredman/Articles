@@ -1,0 +1,66 @@
+kind: pipeline
+name: default
+
+steps:
+- name: submodules
+  image: docker:git
+  environment:
+    SSH_KEY:
+      from_secret: ssh_key
+    SSH_HOST:
+      from_secret: ssh_host
+  commands:
+    # setup ssh for non https git pull
+    - ./building/drone-ssh-helper.sh
+    - rm -rf site/*
+
+- name: build
+  image: plugins/hugo
+  settings:
+    hugo_version: 0.55.5
+    buildDrafts: false
+    buildFuture: false
+    buildExpired: false
+    url: https://karlredman.github.io
+    output: site
+    config: config.toml
+    # minify: <not implemented>
+    validate: true
+    #hugo --gc --baseURL="https://karlredman.github.io/Articles" --config="config.toml" -d site
+
+# - name: deploy
+#   image: appleboy/drone-scp
+#   settings:
+#     host:
+#       from_secret: deployment_host
+#     target: /opt/deployment/heorot
+#     source: public/*
+#     username:
+#       from_secret: ssh_username
+#     # password:
+#       #   from_secret: ssh_password
+#     key:
+#       from_secret: ssh_key
+#     port:
+#       from_secret: ssh_port
+#     rm: true
+#   when:
+#     branch:
+#     - master
+#     event:
+#       exclude:
+#       - pull_request
+
+# - name: orchestrate
+#   image: docker
+#   commands:
+#   - docker container restart heorot-lighttpd
+#   volumes:
+#   - name: docker
+#     path: /var/run/docker.sock
+
+# volumes:
+# - name: docker
+#   host:
+#     path: /var/run/docker.sock
+

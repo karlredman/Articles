@@ -1,6 +1,6 @@
 [submodule "themes/amnix"]
 	path = themes/amnix
-	url = https://github.com/vimux/amnix
+	url = ssh://git@direct.parasynthetic.dev:2222/My_Github_Forks/Amnix-Hugo_Theme.git
 	branch = master
 [submodule "site"]
 	path = site
