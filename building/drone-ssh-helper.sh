@@ -1,12 +1,12 @@
 #!/usr/bin/env sh
 
-# reference:  [[SOLVED] Can i use plugins/git to clone another repo? - General Discussion - Drone](https://discourse.drone.io/t/solved-can-i-use-plugins-git-to-clone-another-repo/1553/6?u=karlredman)
-# reference: [Secret in Drone 1.0.0-rc.1 · Issue #130 · appleboy/drone-ssh](https://github.com/appleboy/drone-ssh/issues/130)
+
 
 # Configures ssh key based on information from secrets
 
 # only execute the script when github token exists.
-[ -z "$SSH_KEY" ] && echo "missing ssh key" && exit 3
+[ -z "$SSH_KEY" ] && echo "Secret Error: missing ssh key" && exit 3
+[ -z "$SSH_HOST" ] && echo "Secret Error: missing ssh host" && exit 3
 
 # write the ssh key.
 mkdir /root/.ssh
@@ -18,10 +18,10 @@ touch /root/.ssh/known_hosts
 chmod 600 /root/.ssh/known_hosts
 ssh-keyscan -H $SSH_HOST > /etc/ssh/ssh_known_hosts 2> /dev/null
 
-if [ $# -gt 0 ]; then
+if [ "$1" = "submodule" ]; then
     # get submodules checkout
     git submodule update --init --recursive
-else
+elif [ "$1" = "commit" ]; then
     # git commit gh-pages
     git config --global user.email "$${USER_EMAIL}"
     git config --global user.name "$${USER_NAME}"
@@ -30,4 +30,7 @@ else
     git add -A
     git commit -am "drone build from master: ${MSG}"
     git push origin HEAD:gh-pages
+else
+    echo "drone-helper.sh Error: function not specified"
+    exit 3
 fi

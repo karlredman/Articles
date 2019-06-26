@@ -11,7 +11,7 @@ steps:
       from_secret: ssh_host
   commands:
     # setup ssh for non https git pull
-    - ./building/drone-ssh-helper.sh snafu
+    - ./building/drone-ssh-helper.sh submodules
     - rm -rf site/*
 
 - name: build
@@ -29,8 +29,6 @@ steps:
     #hugo --gc --baseURL="https://karlredman.github.io/Articles" --config="config.toml" -d site
   commands:
     - hugo --gc --baseURL="https://karlredman.github.io/Articles" --config="config.toml" -d site
-    - ls -al
-    - ls -al site
 
 - name: deploy
   image: docker:git
@@ -39,10 +37,12 @@ steps:
       from_secret: ssh_key
     SSH_HOST:
       from_secret: ssh_host
-    USER_EMAIL: "karl.redman@gmail.com"
-    USER_NAME: "Karl N. Redman"
+    USER_EMAIL:
+      from_secret: user_email
+    USER_NAME:
+      from_secret: user_name
   commands:
-    - ./building/drone-ssh-helper.sh
+    - ./building/drone-ssh-helper.sh commit
 
 
 
