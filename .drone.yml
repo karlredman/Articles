@@ -22,12 +22,13 @@ steps:
     buildFuture: false
     buildExpired: false
     url: https://karlredman.github.io
-    output: site
+    output: ./site/
     config: config.toml
     # minify: <not implemented>
     validate: true
     #hugo --gc --baseURL="https://karlredman.github.io/Articles" --config="config.toml" -d site
   commands:
+    - ls -al
     - ls -al site
 
 # - name: deploy
