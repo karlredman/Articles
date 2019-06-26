@@ -51,7 +51,7 @@ steps:
     - git add -A
     - git commit -am "drone build test"
     # - git commit -am "drone build from master: ${MSG}"
-    - git push gh-pages
+    - git push origin HEAD:gh-pages
 
 
 
