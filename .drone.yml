@@ -9,8 +9,6 @@ steps:
       from_secret: ssh_key
     SSH_HOST:
       from_secret: ssh_host
-    SSH_HOST2:
-      from_secret: ssh_host2
   commands:
     # setup ssh for non https git pull
     - ./building/drone-ssh-helper.sh
@@ -29,6 +27,8 @@ steps:
     # minify: <not implemented>
     validate: true
     #hugo --gc --baseURL="https://karlredman.github.io/Articles" --config="config.toml" -d site
+  commands:
+    - ls -al site
 
 # - name: deploy
 #   image: appleboy/drone-scp
