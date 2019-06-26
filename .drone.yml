@@ -41,10 +41,10 @@ steps:
       from_secret: ssh_host
   commands:
     - ./building/drone-ssh-helper.sh
+    - MSG=`git log --pretty=oneline --abrev-commit -1`
     - cd site
-    - git status
-    - git -A
-    - git commit -am "drone build"
+    - git add -A
+    - git commit -am "drone build: $${MSG}"
     - git push gh-pages
 
 
