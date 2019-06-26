@@ -39,13 +39,17 @@ steps:
       from_secret: ssh_key
     SSH_HOST:
       from_secret: ssh_host
+    USER_EMAIL: "karl.redman@gmail.com"
+    USER_NAME: "Karl N. Redman"
   commands:
+    - git config --global user.email "$${USER_EMAIL}"
+    - git config --global user.name "$${USER_NAME}"
     - ./building/drone-ssh-helper.sh
-    # - MSG=$(git log --pretty=oneline --abrev-commit -1)
+    - MSG=$$(git log --pretty=oneline --abrev-commit -1)
     - cd site
     - git add -A
-    - git commit -am "drone build test"
-    # - git commit -am "drone build from master: ${MSG}"
+    # - git commit -am "drone build test"
+    - git commit -am "drone build from master: $${MSG}"
     - git push gh-pages
 
 
