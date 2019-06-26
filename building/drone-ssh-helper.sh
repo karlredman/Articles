@@ -25,7 +25,7 @@ elif [ "$1" = "commit" ]; then
     # git commit gh-pages
     git config --global user.email "$${USER_EMAIL}"
     git config --global user.name "$${USER_NAME}"
-    MSG=$(git log --pretty=oneline --abrev-commit -1)
+    MSG=$(git log --pretty=oneline --abbrev-commit -1)
     cd site
     git add -A
     git commit -am "drone build from master: ${MSG}"
