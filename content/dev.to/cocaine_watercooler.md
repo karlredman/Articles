@@ -5,6 +5,7 @@ categories: [dev.to,personal, journal]
 tags: [culture,development,origins,hardcore]
 canonical_url: https://github.com/karlredman/My-Articles/wiki/
 published_url: https://dev.to/karlredman/cocaine-at-the-water-cooler--how-we-got-here-as-developers-1f6
+published: false
 
 author: "Karl N. Redman"
 creatordisplayname: "Karl N. Redman"
@@ -18,7 +19,6 @@ lastmod: "2019-03-15T23:13:35-05:00"
 type: "page"
 #theme: "league"
 
-draft: true
 weight: 5
 ---
 

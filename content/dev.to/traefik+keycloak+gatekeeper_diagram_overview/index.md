@@ -28,7 +28,6 @@ type: "page"
 #theme: "league"
 hasMath: false
 
-draft: false
 weight: 5
 ---
 

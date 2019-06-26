@@ -6,6 +6,7 @@ categories: [dev.to,network, ecosystem]
 tags: [dnsmasq,network-manager,network,ecosystem]
 canonical_url: https://github.com/karlredman/Articles/blob/master/content/dev.to/dnsmasq-nm.md
 published_url: https://dev.to/karlredman/dnsmasq--networkmanager--private-network-setup-258l
+published: true
 
 author: "Karl N. Redman"
 creatordisplayname: "Karl N. Redman"
@@ -26,7 +27,6 @@ type: "page"
 #theme: "league"
 hasMath: false
 
-draft: false
 weight: 5
 ---
 

@@ -19,7 +19,6 @@ lastmod: "2019-06-10T23:13:35-05:00"
 type: "page"
 #theme: "league"
 
-draft: false
 weight: 5
 ---
 

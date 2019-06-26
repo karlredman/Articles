@@ -6,6 +6,7 @@ categories: [dev.to,admin,linux,howto]
 tags: [vim,debian,howto,compile]
 canonical_url: https://github.com/karlredman/Articles/blob/master/content/dev.to/vim81.md
 published_url: https://dev.to/karlredman/compile-and-install-vim-v81-from-source-with-pyenv-5cjc
+published: true
 
 author: "Karl N. Redman"
 creatordisplayname: "Karl N. Redman"
@@ -26,7 +27,6 @@ type: "page"
 #theme: "league"
 hasMath: false
 
-draft: false
 weight: 5
 ---
 

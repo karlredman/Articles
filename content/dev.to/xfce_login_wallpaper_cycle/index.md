@@ -36,7 +36,6 @@ revealOptions:
   - history: true
   - center: true
 
-draft: false
 weight: 5
 ---
 

@@ -6,6 +6,7 @@ categories: [admin,shortcuts,vscode]
 tags: [vscode,navigation,vim,shortcuts]
 canonical_url: https://github.com/karlredman/My-Articles/wiki/
 published_url:
+published: true
 
 author: "Karl N. Redman"
 creatordisplayname: "Karl N. Redman"
@@ -27,7 +28,6 @@ type: "page"
 #theme: "league"
 hasMath: false
 
-draft: false
 weight: 5
 ---
 
