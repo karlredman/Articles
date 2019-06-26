@@ -2,3 +2,6 @@
 	path = site
 	url = git@github.com:karlredman/Articles.git
 	branch = gh-pages
+[submodule "Amnix"]
+	path = Amnix
+	url = git@github.com:karlredman/Amnix.git
