@@ -43,6 +43,9 @@ steps:
     - ./building/drone-ssh-helper.sh
     - cd site
     - git status
+    - git -A
+    - git commit -am "drone build"
+    - git push gh-pages
 
 
 
