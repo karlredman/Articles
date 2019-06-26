@@ -11,8 +11,10 @@ steps:
       from_secret: ssh_host
   commands:
     # setup ssh for non https git pull
-    - ./drone-ssh-helper.sh
-    - rm -rf site/*
+    # - ./drone-ssh-helper.sh
+    # - rm -rf site/*
+    - ls -al
+    - ls -al ./building
 
 - name: build
   image: plugins/hugo
