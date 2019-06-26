@@ -36,7 +36,7 @@ elif [ "$1" = "commit" ]; then
     MSG=$(git log --pretty=oneline --abbrev-commit -1)
     cd site
     git add -A
-    git commit -am "drone build from master: ${MSG}"
+    git commit -am "drone build from master: (${MSG})"
     git push origin HEAD:gh-pages
 else
     echo "drone-helper.sh Error: function not specified"
