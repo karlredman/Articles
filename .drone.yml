@@ -12,7 +12,11 @@ steps:
   commands:
     # setup ssh for non https git pull
     - ./building/drone-ssh-helper.sh submodule
+    - cd site
+    - git pull
+    - cd ..
     - rm -rf site/*
+
 
 - name: build
   image: plugins/hugo
@@ -28,6 +32,7 @@ steps:
     validate: true
     #hugo --gc --baseURL="https://karlredman.github.io/Articles" --config="config.toml" -d site
   commands:
+    # it seems that our build specs break the plugin
     - hugo --gc --baseURL="https://karlredman.github.io/Articles" --config="config.toml" -d site
 
 - name: deploy
