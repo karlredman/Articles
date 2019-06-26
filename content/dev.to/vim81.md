@@ -30,7 +30,7 @@ hasMath: false
 weight: 5
 ---
 
-* This article is intended for advanced users -but to aid those who want to run cutting edge vim things.
+* The purpose of this article is to aid those who want to run cutting edge vim things.
 
 * Vim 8.1 provides `:terminal`. This is **BIG NEWS** and has opened some pretty cool plugins such as [markdown preview plugin for (neo)vim](https://github.com/iamcco/markdown-preview.nvim). Additionally, if you want [deoplete.nvim](https://github.com/Shougo/deoplete.nvim) to work properly you'll need to compile vim against python3 anyway. The most single/main user way I've found to make these plugins work is to compile Vim from source. This is a method that I feel is least obtrusive to a single systerm.
 

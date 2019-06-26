@@ -12,12 +12,6 @@ steps:
   commands:
     # setup ssh for non https git pull
     - ./building/drone-ssh-helper.sh submodule
-    - cd site
-    - git checkout gh-pages
-    - git pull origin gh-pages
-    - cd ..
-    - rm -rf site/*
-
 
 - name: build
   image: plugins/hugo
@@ -31,9 +25,8 @@ steps:
     config: config.toml
     # minify: <not implemented>
     validate: true
-    #hugo --gc --baseURL="https://karlredman.github.io/Articles" --config="config.toml" -d site
   commands:
-    # it seems that our build specs break the plugin
+    # hmmm, it seems that our build specs break the plugin
     - hugo --gc --baseURL="https://karlredman.github.io/Articles" --config="config.toml" -d site
 
 - name: deploy
@@ -49,46 +42,3 @@ steps:
       from_secret: user_name
   commands:
     - ./building/drone-ssh-helper.sh commit
-
-
-
-
-
-
-
-# - name: deploy
-#   image: appleboy/drone-scp
-#   settings:
-#     host:
-#       from_secret: deployment_host
-#     target: /opt/deployment/heorot
-#     source: public/*
-#     username:
-#       from_secret: ssh_username
-#     # password:
-#       #   from_secret: ssh_password
-#     key:
-#       from_secret: ssh_key
-#     port:
-#       from_secret: ssh_port
-#     rm: true
-#   when:
-#     branch:
-#     - master
-#     event:
-#       exclude:
-#       - pull_request
-
-# - name: orchestrate
-#   image: docker
-#   commands:
-#   - docker container restart heorot-lighttpd
-#   volumes:
-#   - name: docker
-#     path: /var/run/docker.sock
-
-# volumes:
-# - name: docker
-#   host:
-#     path: /var/run/docker.sock
-

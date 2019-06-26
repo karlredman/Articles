@@ -21,10 +21,18 @@ ssh-keyscan -H $SSH_HOST > /etc/ssh/ssh_known_hosts 2> /dev/null
 if [ "$1" = "submodule" ]; then
     # get submodules checkout
     git submodule update --init --recursive
+    cd site
+    git checkout gh-pages
+    # paranoia
+    git pull origin gh-pages
+    cd ..
+    # clean files for build
+    rm -rf site/*
 elif [ "$1" = "commit" ]; then
     # git commit gh-pages
-    git config --global user.email "$${USER_EMAIL}"
-    git config --global user.name "$${USER_NAME}"
+    git config --global user.email "${USER_EMAIL}"
+    git config --global user.name "${USER_NAME}"
+    # get commit specs from master
     MSG=$(git log --pretty=oneline --abbrev-commit -1)
     cd site
     git add -A
