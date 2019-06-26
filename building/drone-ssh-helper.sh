@@ -21,7 +21,7 @@ ssh-keyscan -H $SSH_HOST > /etc/ssh/ssh_known_hosts 2> /dev/null
 if [ $# -gt 0 ]; then
     # get submodules checkout
     git submodule update --init --recursive
-else:
+else
     # git commit gh-pages
     git config --global user.email "$${USER_EMAIL}"
     git config --global user.name "$${USER_NAME}"
