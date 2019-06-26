@@ -13,7 +13,7 @@ steps:
     # setup ssh for non https git pull
     - ./building/drone-ssh-helper.sh submodule
     - cd site
-    - git pull
+    - git pull origin gh-pages
     - cd ..
     - rm -rf site/*
 
