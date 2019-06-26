@@ -1,6 +1,6 @@
 ---
 title: "How To Be A Computer Programmer"
-published: false
+published: true
 public_article: true
 description: "This article describes some of rougher parts of software development."
 categories: [medium.com,advice, article, programming]
@@ -35,7 +35,6 @@ revealOptions:
   - history: true
   - center: true
 
-draft: false
 weight: 5
 ---
 
