@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dev.tos on Articles</title>
+    <title>Articles</title>
     <link>https://karlredman.github.io/Articles/dev.to/</link>
-    <description>Recent content in Dev.tos on Articles</description>
+    <description>Recent content on Articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 24 Jun 2019 23:57:02 -0500</lastBuildDate>

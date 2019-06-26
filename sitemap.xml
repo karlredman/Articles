@@ -58,6 +58,25 @@
   </url>
   
   <url>
+    <loc>https://karlredman.github.io/Articles/</loc>
+    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/dev.to/</loc>
+    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/diary/2019-06-26/</loc>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/medium/</loc>
+    <lastmod>2017-12-06T07:58:09-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://karlredman.github.io/Articles/categories/admin/</loc>
     <lastmod>2019-06-24T23:57:02-05:00</lastmod>
     <priority>0</priority>
@@ -78,12 +97,6 @@
   <url>
     <loc>https://karlredman.github.io/Articles/categories/article/</loc>
     <lastmod>2017-12-06T07:58:09-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://karlredman.github.io/Articles/</loc>
-    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -124,12 +137,6 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/dev.to/</loc>
-    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://karlredman.github.io/Articles/tags/development/</loc>
     <lastmod>2019-04-10T07:37:38-05:00</lastmod>
     <priority>0</priority>
@@ -138,6 +145,11 @@
   <url>
     <loc>https://karlredman.github.io/Articles/tags/diagram/</loc>
     <lastmod>2019-06-23T12:37:00-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/diary/</loc>
     <priority>0</priority>
   </url>
   
@@ -252,12 +264,6 @@
   <url>
     <loc>https://karlredman.github.io/Articles/tags/markdown/</loc>
     <lastmod>2019-06-10T23:13:35-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://karlredman.github.io/Articles/medium/</loc>
-    <lastmod>2017-12-06T07:58:09-05:00</lastmod>
     <priority>0</priority>
   </url>
   
