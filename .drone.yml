@@ -9,6 +9,8 @@ steps:
       from_secret: ssh_key
     SSH_HOST:
       from_secret: ssh_host
+    SSH_HOST2:
+      from_secret: ssh_host2
   commands:
     # setup ssh for non https git pull
     - ./building/drone-ssh-helper.sh
