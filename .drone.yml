@@ -11,7 +11,7 @@ steps:
       from_secret: ssh_host
   commands:
     # setup ssh for non https git pull
-    - building/drone-ssh-helper.sh
+    - ./drone-ssh-helper.sh
     - rm -rf site/*
 
 - name: build
