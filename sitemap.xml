@@ -160,25 +160,25 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/tags/docker/</loc>
-    <lastmod>2019-03-03T07:35:35-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://karlredman.github.io/Articles/categories/docker/</loc>
     <lastmod>2019-03-03T07:35:35-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/tags/ecosystem/</loc>
+    <loc>https://karlredman.github.io/Articles/tags/docker/</loc>
     <lastmod>2019-03-03T07:35:35-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://karlredman.github.io/Articles/categories/ecosystem/</loc>
+    <lastmod>2019-03-03T07:35:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/ecosystem/</loc>
     <lastmod>2019-03-03T07:35:35-05:00</lastmod>
     <priority>0</priority>
   </url>
@@ -208,13 +208,13 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/tags/howto/</loc>
+    <loc>https://karlredman.github.io/Articles/categories/howto/</loc>
     <lastmod>2019-06-23T07:41:28-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/categories/howto/</loc>
+    <loc>https://karlredman.github.io/Articles/tags/howto/</loc>
     <lastmod>2019-06-23T07:41:28-05:00</lastmod>
     <priority>0</priority>
   </url>
@@ -292,14 +292,14 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/tags/network/</loc>
-    <lastmod>2019-03-03T07:35:35-05:00</lastmod>
+    <loc>https://karlredman.github.io/Articles/categories/network/</loc>
+    <lastmod>2019-06-23T12:37:00-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/categories/network/</loc>
-    <lastmod>2019-06-23T12:37:00-05:00</lastmod>
+    <loc>https://karlredman.github.io/Articles/tags/network/</loc>
+    <lastmod>2019-03-03T07:35:35-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -316,14 +316,14 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/tags/programming/</loc>
-    <lastmod>2017-12-06T07:58:09-05:00</lastmod>
+    <loc>https://karlredman.github.io/Articles/categories/programming/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/categories/programming/</loc>
-    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+    <loc>https://karlredman.github.io/Articles/tags/programming/</loc>
+    <lastmod>2017-12-06T07:58:09-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -340,13 +340,13 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/tags/shortcuts/</loc>
+    <loc>https://karlredman.github.io/Articles/categories/shortcuts/</loc>
     <lastmod>2019-06-25T02:58:38-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/categories/shortcuts/</loc>
+    <loc>https://karlredman.github.io/Articles/tags/shortcuts/</loc>
     <lastmod>2019-06-25T02:58:38-05:00</lastmod>
     <priority>0</priority>
   </url>
@@ -382,13 +382,13 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/tags/vscode/</loc>
+    <loc>https://karlredman.github.io/Articles/categories/vscode/</loc>
     <lastmod>2019-06-25T02:58:38-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/categories/vscode/</loc>
+    <loc>https://karlredman.github.io/Articles/tags/vscode/</loc>
     <lastmod>2019-06-25T02:58:38-05:00</lastmod>
     <priority>0</priority>
   </url>
