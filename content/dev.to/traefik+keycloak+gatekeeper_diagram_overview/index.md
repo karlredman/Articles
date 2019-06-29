@@ -1,5 +1,6 @@
 ---
 title: "Private Network + Traefik + Keycloak + Gatekeeper Overview (diagram)"
+pagefeatured: false
 published: true
 public_article: [true]
 description: "A high level network overview of Traefik, Keycloak, and Gatekeeper working together"
