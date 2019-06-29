@@ -12,8 +12,8 @@ footnotereturnlinkcontents = "↩"
 metaDataFormat = "yaml"
 
 
-
 [Params]
+  owner = "Karl N. Redman"
   pagefeatured = false
   home_title = "Karl N. Redman: "
   home_url = "https://karlredman.github.io"

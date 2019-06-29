@@ -1,7 +1,11 @@
 <header class="header">
 	<div class="header__inner inner">
     <a href="{{ .Site.Params.home_url }}"><img alt="[Home]" src="{{ "images/home.png" | relURL }}" width="10"> {{ .Site.Params.home_title }}</a>
-		<a class="logo" alt="Articles" href="{{ "" | relURL }}">{{ .Site.Title }}</a>
+    {{ if .IsHome }}
+      <a class="logo" alt="Articles" href="{{ "" | relURL }}">{{ .Site.Title }}</a>
+    {{else}}
+      <a class="logo" alt="Articles" href="{{ "" | relURL }}">{{ .Site.Title }} ⇦</a>
+    {{end}}
 		{{- partial "header_menu.html" . }}
 	</div>
 </header>

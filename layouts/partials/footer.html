@@ -1,0 +1,7 @@
+<footer class="footer">
+	<div class="footer__inner inner">
+		<div class="footer__copyright">© {{ now.Format "2006" }} {{ .Site.Params.owner }}. <span class="footer__copyright-credits">{{ T "footer_credits" | safeHTML }}</span></div>
+		{{- partial "footer_social.html" . }}
+	</div>
+</footer>
+
