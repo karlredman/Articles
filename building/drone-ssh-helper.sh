@@ -7,6 +7,9 @@
 # only execute the script when github token exists.
 [ -z "$SSH_KEY" ] && echo "Secret Error: missing ssh key" && exit 3
 [ -z "$SSH_HOST" ] && echo "Secret Error: missing ssh host" && exit 3
+#
+[ -z "$USER_EMAIL" ] && echo "Secret Error: missing user email" && exit 3
+[ -z "$USER_NAME" ] && echo "Secret Error: missing user name" && exit 3
 
 # write the ssh key.
 mkdir /root/.ssh
