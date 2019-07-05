@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://karlredman.github.io/Articles/dev.to/https/karlredman.github.com/articles/</loc>
+    <lastmod>2019-07-05T04:22:10-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://karlredman.github.io/Articles/dev.to/xfce_login_wallpaper_cycle/</loc>
     <lastmod>2019-06-24T23:57:02-05:00</lastmod>
   </url>
@@ -59,12 +64,12 @@
   
   <url>
     <loc>https://karlredman.github.io/Articles/</loc>
-    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
+    <lastmod>2019-07-05T04:22:10-05:00</lastmod>
   </url>
   
   <url>
     <loc>https://karlredman.github.io/Articles/dev.to/</loc>
-    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
+    <lastmod>2019-07-05T04:22:10-05:00</lastmod>
   </url>
   
   <url>
@@ -91,6 +96,12 @@
   <url>
     <loc>https://karlredman.github.io/Articles/categories/advice/</loc>
     <lastmod>2017-12-06T07:58:09-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/art/</loc>
+    <lastmod>2019-07-05T04:22:10-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -280,6 +291,12 @@
   </url>
   
   <url>
+    <loc>https://karlredman.github.io/Articles/tags/mentalhealth/</loc>
+    <lastmod>2019-07-05T04:22:10-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://karlredman.github.io/Articles/tags/multilingual/</loc>
     <lastmod>2019-04-10T07:37:38-05:00</lastmod>
     <priority>0</priority>
@@ -316,8 +333,14 @@
   </url>
   
   <url>
+    <loc>https://karlredman.github.io/Articles/categories/poetry/</loc>
+    <lastmod>2019-07-05T04:22:10-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://karlredman.github.io/Articles/tags/programming/</loc>
-    <lastmod>2017-12-06T07:58:09-05:00</lastmod>
+    <lastmod>2019-07-05T04:22:10-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -348,6 +371,18 @@
   <url>
     <loc>https://karlredman.github.io/Articles/categories/shortcuts/</loc>
     <lastmod>2019-06-25T02:58:38-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/social/</loc>
+    <lastmod>2019-07-05T04:22:10-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/social-commentary/</loc>
+    <lastmod>2019-07-05T04:22:10-05:00</lastmod>
     <priority>0</priority>
   </url>
   
