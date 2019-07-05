@@ -5,8 +5,8 @@ public_article: true
 description: "A description of creativity in (software) engineering."
 categories: [poetry, social commentary]
 tags: [art,programming,social,mentalhealth]
-canonical_url: https://karlredman.github.io/Articles/industrial-blah
-published_url: https://dev.to/karlredman/
+canonical_url: https://karlredman.github.io/Articles/dev.to/https/karlredman.github.com/articles/
+published_url:
 is_public: true
 
 author: "Karl N. Redman"
