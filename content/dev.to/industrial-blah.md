@@ -6,7 +6,7 @@ description: "A description of creativity in (software) engineering."
 categories: [poetry, social commentary]
 tags: [art,programming,social,mentalhealth]
 canonical_url: https://karlredman.github.io/Articles/dev.to/https/karlredman.github.com/articles/
-published_url:
+published_url: https://dev.to/karlredman/a-programmer-s-poem-industrial-blah-87e
 is_public: true
 
 author: "Karl N. Redman"
