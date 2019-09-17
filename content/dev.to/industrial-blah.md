@@ -1,6 +1,6 @@
 ---
 title: "A Programmer's Poem: industrial.blah"
-published: true
+published: false
 public_article: true
 description: "A description of creativity in (software) engineering."
 categories: [poetry, social commentary]
