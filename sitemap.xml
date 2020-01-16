@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://karlredman.github.io/Articles/joplin/</loc>
+    <loc>https://karlredman.github.io/Articles/joplin/drone-tutorial/</loc>
     <lastmod>2020-01-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -80,6 +80,11 @@
   
   <url>
     <loc>https://karlredman.github.io/Articles/tags/jinja2/</loc>
+    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/joplin/</loc>
     <lastmod>2020-01-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -275,12 +280,12 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/tags/howto/</loc>
+    <loc>https://karlredman.github.io/Articles/categories/howto/</loc>
     <lastmod>2019-06-23T07:41:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/categories/howto/</loc>
+    <loc>https://karlredman.github.io/Articles/tags/howto/</loc>
     <lastmod>2019-06-23T07:41:28-05:00</lastmod>
   </url>
   
@@ -295,12 +300,12 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/categories/ecosystem/</loc>
+    <loc>https://karlredman.github.io/Articles/tags/ecosystem/</loc>
     <lastmod>2019-06-11T07:30:30-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/tags/ecosystem/</loc>
+    <loc>https://karlredman.github.io/Articles/categories/ecosystem/</loc>
     <lastmod>2019-06-11T07:30:30-05:00</lastmod>
   </url>
   

@@ -13,11 +13,12 @@
     
     <item>
       <title>Parasynthetic.dev drone/ci (v1.6.2) Setup:</title>
-      <link>https://karlredman.github.io/Articles/joplin/</link>
+      <link>https://karlredman.github.io/Articles/joplin/drone-tutorial/</link>
       <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://karlredman.github.io/Articles/joplin/</guid>
-      <description>Parasynthetic.dev drone/ci (v1.6.2) Setup: Original document creation date: 10/01/2020
+      <guid>https://karlredman.github.io/Articles/joplin/drone-tutorial/</guid>
+      <description>Parasynthetic.dev drone/ci (v1.6.2) Setup: QQQQQQ
+Original document creation date: 10/01/2020
 Parasynthetic.dev is an eccosystem of development tools that includes the following services:
  Traefik (v1.7.11): Network Proxy server (and Let&amp;rsquo;s Encrypt ACME v2 client)  As of this writing Traefik v2+ is not entirely production ready IMHO.  Gitea (v1.10.2): Private git repository  bare metal installation uses Mysql on bare metal  Drone CI (v1.6.2): Private build system instance  Docker based installation uses Sqlite as database  Portus (v2.</description>
     </item>

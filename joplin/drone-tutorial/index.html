@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#5b5b67">
+	<title>Parasynthetic.dev drone/ci (v1.6.2) Setup: | Articles</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+		<meta property="og:title" content="Parasynthetic.dev drone/ci (v1.6.2) Setup:" />
+<meta property="og:description" content="Parasynthetic.dev drone/ci (v1.6.2) Setup: QQQQQQ
+Original document creation date: 10/01/2020
+Parasynthetic.dev is an eccosystem of development tools that includes the following services:
+ Traefik (v1.7.11): Network Proxy server (and Let&rsquo;s Encrypt ACME v2 client)  As of this writing Traefik v2&#43; is not entirely production ready IMHO.  Gitea (v1.10.2): Private git repository  bare metal installation uses Mysql on bare metal  Drone CI (v1.6.2): Private build system instance  Docker based installation uses Sqlite as database  Portus (v2." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://karlredman.github.io/Articles/joplin/drone-tutorial/" />
+<meta property="article:published_time" content="2020-01-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-10T00:00:00+00:00" />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Parasynthetic.dev drone/ci (v1.6.2) Setup:"/>
+<meta name="twitter:description" content="Parasynthetic.dev drone/ci (v1.6.2) Setup: QQQQQQ
+Original document creation date: 10/01/2020
+Parasynthetic.dev is an eccosystem of development tools that includes the following services:
+ Traefik (v1.7.11): Network Proxy server (and Let&rsquo;s Encrypt ACME v2 client)  As of this writing Traefik v2&#43; is not entirely production ready IMHO.  Gitea (v1.10.2): Private git repository  bare metal installation uses Mysql on bare metal  Drone CI (v1.6.2): Private build system instance  Docker based installation uses Sqlite as database  Portus (v2."/>
+
+	<link rel="stylesheet" href="/Articles/css/main.css">
+	<link rel="stylesheet" href="/Articles/css/custom.css">
+	
+	<link rel="icon" href="/Articles/icons/16.png" sizes="16x16" type="image/png">
+	<link rel="icon" href="/Articles/icons/32.png" sizes="32x32" type="image/png">
+	<link rel="icon" href="/Articles/icons/48.png" sizes="48x48" type="image/png"><link rel="manifest" href="/Articles/manifest.json">
+		
+</head>
+<body>
+	<header class="header">
+	<div class="header__inner inner">
+    <a href="https://karlredman.github.io"><img alt="[Home]" src="/Articles/images/home.png" width="10"> Karl N. Redman: </a>
+    
+      <a class="logo" alt="Articles" href="/Articles">Articles ⇦</a>
+    
+	</div>
+</header>
+
+	<div class="wrapper wrapper--flex">
+	
+	<section class="single">
+		<article class="post block">
+			<header class="post__header">
+				<h1 class="post__title">Parasynthetic.dev drone/ci (v1.6.2) Setup:</h1>
+				
+<div class="post__meta meta">
+<time class="meta__datetime" datetime="2020-01-10T00:00:00" >January 10, 2020</time>
+</div>
+
+			</header>
+			<div class="post__content">
+
+<h1 id="parasynthetic-dev-drone-ci-v1-6-2-setup">Parasynthetic.dev drone/ci (v1.6.2) Setup:</h1>
+
+<p>QQQQQQ</p>
+
+<p>Original document creation date: 10/01/2020</p>
+
+<p>Parasynthetic.dev is an eccosystem of development tools that includes the following services:</p>
+
+<ul>
+<li><a href="https://docs.traefik.io/v1.7/">Traefik</a> (v1.7.11): Network Proxy server (and <a href="https://letsencrypt.org/docs/client-options/">Let&rsquo;s Encrypt</a> ACME v2 client)
+
+<ul>
+<li>As of this writing Traefik v2+ is not entirely production ready IMHO.</li>
+</ul></li>
+<li><a href="https://docs.gitea.io/en-us/">Gitea</a> (v1.10.2): Private git repository
+
+<ul>
+<li>bare metal installation</li>
+<li>uses Mysql on bare metal</li>
+</ul></li>
+<li><a href="https://drone.io/">Drone CI</a> (v1.6.2): Private build system instance
+
+<ul>
+<li>Docker based installation</li>
+<li>uses Sqlite as database</li>
+</ul></li>
+<li><a href="http://port.us.org/">Portus</a> (v2.5.0): Private Docker image repository
+
+<ul>
+<li>Docker based installation</li>
+<li>uses docker based (isolated) MariaDB database</li>
+</ul></li>
+</ul>
+
+<p>Configuring drone is fairly straightforward once performed a few times. However, the project is under constant development and, hence, the documentation is hard to follow and often outdated. More often than not answers to critical configuration settings have to be researched across many forums -including reading current and past bug reports. Therefore, initial setup of a drone build system can be somewhat frustrating. Something to be mindful is that the licensing for Drone has changed a few times and may become restrictive to commercial entities relative to the use of Drone as a build system (see: <a href="https://discourse.drone.io/t/licensing-and-subscription-faq/3839">Licensing and Subscription FAQ</a>).</p>
+
+<h2 id="special-notes">Special Notes:</h2>
+
+<ul>
+<li>This document covers Drone Enterprise (with built in limitations mentioned in the FAQ) as defined by the license. Drone community edition is, essentially, useless out of the box for sustaining any kind of build system. See <a href="https://drone.io/enterprise/features/">Drone Enterprise Features</a> for a comparison between the two versions.</li>
+<li>This document only covers the default <a href="https://docs.drone.io/installation/runners/docker/">Docker Runner</a> pipelines. <a href="https://docs.drone.io/installation/runners/">Other runners</a> are available and may be documented elsewhere or at a future date.</li>
+<li>This document assumes the use of fully qualified domain names (FQDN) whereby sub domains (i.e. service.example.com) are used and not subpaths (i.e. www.example.com/service).</li>
+</ul>
+
+<h3 id="network-structure-with-names-used-in-the-examples-within-this-document">Network structure (with names used in the examples within this document):</h3>
+
+<ul>
+<li><code>localmachine</code> is the hostname of the localhost server that will be running Gitea and Drone services</li>
+<li>My network is configured like this:
+
+<ul>
+<li>See <a href=":/8fe88ff3505241baa4c0c975aa36b1cb">Setup network and DNS with Docker VM&rsquo;s and web</a> for more information</li>
+<li>private nework (10.x.x.x) bound to an ethernet port</li>
+<li>DNSMasq is running on the <code>localmachine</code> host and services the following networks:</li>
+<li>DMZ 192.x.x.x from the router</li>
+<li>the private network</li>
+<li>the docker virtual network (named <code>localmachine.dockernet</code>)</li>
+<li><a href="https://docs.traefik.io/v1.7/">Træfik</a></li>
+<li>your DNS server has been configured to accept the <a href="https://docker.example.com">https://docker.example.com</a> URI</li>
+<li>I use a free account at <a href="https://www.cloudflare.com/">Cloudflare</a> so I had to add my new URI to the DNS configuration page.</li>
+</ul></li>
+</ul>
+
+<h2 id="main-drone-configuration-knowledge-resources">Main Drone configuration knowledge resources:</h2>
+
+<ul>
+<li><a href="https://circleci.com/docs/2.0/getting-started/#section=getting-started">Getting Started Introduction - CircleCI</a>
+
+<ul>
+<li>a general overview for using drone</li>
+</ul></li>
+<li><a href="https://circleci.com/docs/">CircleCI (Drone Enterprise/Cloud) Documentation - CircleCI</a></li>
+<li><a href="https://github.com/drone/drone-cli">Github:drone/drone-cli: Drone CLI</a></li>
+<li><a href="https://discourse.drone.io/">Drone Discourse Channel</a></li>
+<li><a href="https://woodpecker.laszlo.cloud/">Woodpecker Project</a>
+
+<ul>
+<li>an OSS project fork of Drone v0.8</li>
+</ul></li>
+</ul>
+
+<h2 id="setting-up-drone-for-gitea">Setting up Drone for Gitea</h2>
+
+<p>The documentation is decient for most of this part of the configuration. This section is meant to be suplimental to the documention references below. I skip several sections of the original documentation so that we can move straight to implementing a <code>docker-compose</code> method of instantiation. Once the drone service is actually running and you have logged in please move on to <a href="#testing-the-drone-installation">Testing the Drone Installation</a>.</p>
+
+<ul>
+<li>References:
+
+<ul>
+<li><a href="https://docs.drone.io/installation/providers/gitea/">Gitea with Drone installation</a></li>
+<li>Drone documentation for installing</li>
+<li>copy of original page: <a href=":/26a009d24cb94284bb0184f13284687a">Gitea | Drone <em>cpy</em></a>
+
+<ul>
+<li>copied from: <a href="https://docs.drone.io/installation/providers/gitea/">Gitea | Drone</a></li>
+</ul></li>
+<li><a href="https://docs.tea-ci.org/usage/variables/">Drone Variables Definitions</a></li>
+<li><a href="https://discourse.drone.io/t/how-to-pull-private-images-with-1-0/3155">How to pull private images with 1.0 - faq </a></li>
+<li>generalized and sparse information for pulling docker images from a private registry (i.e. via Portus)</li>
+<li>supplementary information: <a href="https://www.projectatomic.io/blog/2016/03/docker-credentials-store/">Docker Credential Storage</a></li>
+</ul></li>
+</ul>
+
+<h3 id="step-1-preperation">Step 1 - Preperation</h3>
+
+<ul>
+<li><p>Create OAuth application credentials in Gitea</p>
+
+<ol>
+<li>Login to Gitea as user with appropriat permissions to creat application credentials</li>
+<li>Navigate to <code>settings-&gt;Applications: Manage OAuth Applications</code></li>
+<li>Create Application (use appropriat values):</li>
+<li>Application Name: <code>gitea-drone</code></li>
+<li>Redirect URI: <code>https://drone.example.com/login</code>
+
+<ul>
+<li>Note: the callback URL <strong>must match</strong> the above format where <code>login</code> is a subpath of the URI</li>
+</ul></li>
+</ol></li>
+
+<li><p>Create a shared secret for <code>Runners</code></p></li>
+</ul>
+
+<p>This is the secret that will be used to authenticate between the Drone Agent and the docker instances that will actually perform the work of building projects.</p>
+
+<pre><code>$ openssl rand -hex 16 # copy the output similar to the example below
+bea26a2221fd8090ea38720fc445eca6
+</code></pre>
+
+<ul>
+<li>Make sure the user has has webhooks/git-hooks privledges in Gitea
+
+<ul>
+<li>as administrator: <code>system settings -&gt; users -&gt; [select the user] -&gt; May Create Git Hooks:enabled</code></li>
+</ul></li>
+</ul>
+
+<h3 id="step-2-download">Step 2 - Download</h3>
+
+<p>Skip this for now. We&rsquo;re going to setup <code>docker-compose</code> instead.</p>
+
+<p>If you must use this:</p>
+
+<p><strong>Note:</strong> The difference in version numbers below is <strong>not</strong> a typo. As of 10/01/2020 these were the stable versions that are supposed to work together.</p>
+
+<pre><code>docker pull drone/drone:1.6.4
+docker pull drone/agent:1.6.2
+
+</code></pre>
+
+<h3 id="step-3-configuration">Step 3 - Configuration</h3>
+
+<p>Familiarize yourself with these configuration settings. Well use them for our <code>docker-compose.yml</code> file later</p>
+
+<h3 id="step-4-start-the-server">Step 4 - Start the Server:</h3>
+
+<p>Skip this step in favor of the next major section for setting up docker compose.</p>
+
+<h3 id="step-5-install-runners">Step 5 - Install Runners</h3>
+
+<p>Skip this step for now. For basic configurations we don&rsquo;t need to bother with this. The Drone Agent will manage the pull from dockerhub as needed.</p>
+
+<h2 id="configure-docker-compose">Configure Docker Compose</h2>
+
+<p>My settings are as follows. At this stage It&rsquo;s probably just best to study the configuration and begin experimenting with starting the containers via <code>docker-compose up</code>. Please refer to the documentation references cited earlier in this document for more information.</p>
+
+<p><code>.env</code> file:</p>
+
+<pre><code>RESTART=always
+SERVER_IMAGE_TAG=1.6.4
+AGENT_IMAGE_TAG=1.6.2
+SERVICE_NAME=drone
+SERVICE_DOMAIN=example.com
+DOCKER_NETWORK=localmachine.dockernet
+SERVICE_DATA_DIR=/var/lib/drone/gitea
+
+### multi-machine
+
+#### server settings
+DRONE_SERVER_PROTO=https
+DRONE_TLS_AUTOCERT=false
+# set true if git server runs in private mode (i.e. github enterprise private mode)
+# ref: [Enabling private mode - GitHub Help](https://help.github.com/en/enterprise/2.14/admin/installation/enabling-private-mode)
+DRONE_GIT_ALWAYS_AUTH=true
+DRONE_RUNNER_CAPACITY=2
+DRONE_RUNNER_NAME=scyld
+
+##### service settings
+DRONE_AGENTS_ENABLED=true
+############ CHANGE THIS!
+DRONE_RPC_SECRET=bea26a2221fd8090ea38720fc445eca6
+
+#### registration settings
+# admin user
+# ref: [DRONE_USER_CREATE](https://docs.drone.io/reference/server/drone-user-create/)
+DRONE_USER_CREATE=username:karlredman,admin:true
+#
+# user / organization white list
+# ref: [User Registration](https://docs.drone.io/administration/user/registration/)
+DRONE_USER_FILTER=karlredman
+
+#### github settings - CHANGE THESE!
+DRONE_GITEA_CLIENT_ID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+DRONE_GITEA_CLIENT_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX=
+DRONE_GITEA_SERVER=https://gitea.example.com
+</code></pre>
+
+<p><code>docker-compose.yml</code> file:</p>
+
+<pre><code>version: '3.7'
+
+services:
+  drone-server:
+    image: drone/drone:${SERVER_IMAGE_TAG}
+    volumes:
+      - ${SERVICE_DATA_DIR}:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: ${RESTART}
+    labels:
+      - &quot;traefik.enable=true&quot;
+      - &quot;traefik.port=80&quot;
+      - &quot;traefik.frontend.rule=Host:${SERVICE_NAME}.${SERVICE_DOMAIN}&quot;
+    environment:
+      # Server settings
+      - DRONE_SERVER_PROTO=${DRONE_SERVER_PROTO}
+      - DRONE_TLS_AUTOCERT=${DRONE_TLS_AUTOCERT}
+      - DRONE_GIT_ALWAYS_AUTH=${DRONE_GIT_ALWAYS_AUTH}
+      # Service settings
+      - DRONE_SERVER_HOST=${SERVICE_NAME}.${SERVICE_DOMAIN}
+      - DRONE_AGENTS_ENABLED=${DRONE_AGENTS_ENABLED}
+      - DRONE_RPC_SECRET=${DRONE_RPC_SECRET}
+      # Registration settings
+      - DRONE_USER_CREATE=${DRONE_USER_CREATE}
+      - DRONE_USER_FILTER=${DRONE_USER_FILTER}
+      # Gitea Settings
+      - DRONE_GITEA_CLIENT_ID=${DRONE_GITEA_CLIENT_ID}
+      - DRONE_GITEA_CLIENT_SECRET=${DRONE_GITEA_CLIENT_SECRET}
+      - DRONE_GITEA_SERVER=${DRONE_GITEA_SERVER}
+    networks:
+      - traefik.bridge
+
+  drone-agent:
+    image: drone/agent:${AGENT_IMAGE_TAG}
+    restart: ${RESTART}
+    depends_on:
+      - drone-server
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DRONE_RUNNER_NAME=${DRONE_RUNNER_NAME}
+      - DRONE_RUNNER_CAPACITY=${DRONE_RUNNER_CAPACITY}
+      - DRONE_RPC_SERVER=${DRONE_SERVER_PROTO}://${SERVICE_NAME}.${SERVICE_DOMAIN}
+      - DRONE_RPC_SECRET=${DRONE_RPC_SECRET}
+    networks:
+      - traefik.bridge
+
+networks:
+  traefik.bridge:
+    external:
+      name: &quot;${DOCKER_NETWORK}&quot;
+</code></pre>
+
+<h3 id="what-to-expect-when-accessing-your-https-drone-example-com-uri">What to expect when accessing your <code>https://drone.example.com</code> URI:</h3>
+
+<h4 id="configuration-summary-post-install">Configuration Summary (Post Install)</h4>
+
+<p>So far we&rsquo;ve setup Drone and started the service with the following in mind:</p>
+
+<ul>
+<li>Gitea has been configured to allow access from the Drone servive by way of an OAuth Application Client ID and Secret.
+
+<ul>
+<li>Variables:
+
+<ul>
+<li><code>DRONE_GITEA_CLIENT_ID=${DRONE_GITEA_CLIENT_ID}</code></li>
+<li><code>DRONE_GITEA_CLIENT_SECRET=${DRONE_GITEA_CLIENT_SECRET}</code></li>
+</ul></li>
+</ul></li>
+<li>We have configured our Drone <code>docker-compose.yml</code> so that <code>Traefik</code> is aware of the service.
+
+<ul>
+<li>Variables:
+
+<ul>
+<li><code>traefik.enable=true</code></li>
+<li>allow Traefik to manage the web connection</li>
+<li><code>traefik.port=80</code></li>
+<li>this is the internal (docker network) port used by Drone</li>
+<li>this could be made more secure with a localized certificate authority and forcing drone to communcate using SSL/TLS protocols.</li>
+<li>Traefik manages the communication as a proxy server so the Drone port 80 is never exposed outside the docker virtual network.</li>
+<li>see <a href="https://docs.docker.com/config/containers/container-networking/">Container networking | Docker Documentation</a> for more information.</li>
+<li><code>traefik.frontend.rule=Host:${SERVICE_NAME}.${SERVICE_DOMAIN}</code></li>
+<li>this tells Traefik what the FQDN looks like so it can route to/from the Drone service and the interwebs.</li>
+</ul></li>
+</ul></li>
+
+<li><p>We have specified that network routing between the Traefik proxy server and the Drone container occurs over an virtual network (managed by docker).</p>
+
+<pre><code>networks:
+traefik.bridge:
+external:
+  name: &quot;${DOCKER_NETWORK}&quot;
+</code></pre></li>
+</ul>
+
+<h4 id="logging-into-drone">Logging into Drone</h4>
+
+<ol>
+<li>Point your browser toward your drone server: <a href="https://drone.example.com">https://drone.example.com</a></li>
+<li>Traefik will route your DNS request to Drone, which, in turn, will redirect to a Gitea login page for authentication.</li>
+<li>Login as the Gitea user for which the OAuth Application credentions were obtained earlier.</li>
+<li>Once logged you should be redirected to the <code>drone.example.com</code> landing page.
+
+<ul>
+<li>If all is well the drone page will be populating a list of your repositories</li>
+<li>Wait for a while until your repos have been read -otherwise drone may throw an error</li>
+</ul></li>
+<li>Attempt to activate a repository: this will indicate that you are enabling a webhook for that repository
+
+<ul>
+<li>Again, if you attempt to activate a repository too soon on a new login you may receive an error.</li>
+<li>You can verify that a webhook was made by vising the Gitea settings for the repository you are attempting to activate:</li>
+<li>As the normal user in Gitea: <code>[choose your repository] -&gt; settings -&gt; webhooks</code></li>
+</ul></li>
+</ol>
+
+<h2 id="testing-the-drone-installation">Testing the Drone Installation</h2>
+
+<ul>
+<li>For testing purposes it&rsquo;s easiest to just use <a href="https://github.com/drone/hello-world">drone/hello-world: simple repository with CI enabled</a>.
+
+<ul>
+<li>Use Gitea&rsquo;s migrate feature to create a local copy of the <code>hello-world</code> repo from github.</li>
+</ul></li>
+</ul>
+
+<p><img src="../../_resources/790e6a6ce3784cc097fa38b3a7d693b9.png" alt="" /></p>
+
+<ul>
+<li>navigate to your drone service (<code>https://drone.example.com</code>) and refresh/sync the repoitory list if needed.
+
+<ul>
+<li>activate the hello-world repository</li>
+</ul></li>
+</ul>
+
+<p><img src="../../_resources/c784e3ca1abe4e35a8176c3b18914e7e.png" alt="" /></p>
+
+<ul>
+<li>verify that the webhook was created for the repository in Gitea
+
+<ul>
+<li><code>settings -&gt; webhooks</code></li>
+</ul></li>
+</ul>
+
+<p><img src="../../_resources/9725a941389f476792cf04d55c71cd75.png" alt="" /></p>
+
+<ul>
+<li>Add a file named <code>.trigerfile</code> to the repository root and save.</li>
+</ul>
+
+<p><img src="../../_resources/787f9753cd7c4c37bf709d46fbfe715c.png" alt="" /></p>
+
+<ul>
+<li><p>Check the drone activity page</p>
+
+<ul>
+<li>This build will timeout because of the <code>node: build</code> section at the bottom of <code>.drone.yml</code></li>
+
+<li><p>Note, as of this writing there is an incompatibility with the current <code>.drone.yml</code> file.</p>
+
+<pre><code># causes hello-world build to fail
+node:
+build
+</code></pre></li>
+</ul></li>
+</ul>
+
+<p><img src="../../_resources/0c9edf0123c44c5f995a84923b960eb5.png" alt="" />
+<img src="../../_resources/133b1641e7b7490bad1b059b9b5452df.png" alt="" /></p>
+
+<ul>
+<li>Remove the last two lines (shown below) of the <code>.drone.yml</code> file and save again
+
+<ul>
+<li>This will start a new build that will succeed</li>
+</ul></li>
+</ul>
+
+<p><img src="../../_resources/53aefc38d6e14ef89284ecd9ae8a159b.png" alt="" /></p>
+
+<h2 id="pulling-a-docker-image-from-a-private-docker-registry">Pulling a Docker Image from a Private Docker Registry</h2>
+
+<p>Drone requires a specific configuration in order to authenticate against a password protected docker registry. Pulling from a private docker registry does not require any other configuration beyond the methods outlined in this section. Various documentation seems to indicate that the build be designated as <code>Trusted</code>, for instance, but this is not the case. Similarly, <code>Allow Pull Requests</code> is not required to be enabled in the secrets section either.</p>
+
+<h3 id="json-method">JSON method</h3>
+
+<p>This method uses a secret, specifically named <code>dockerconfigjson</code> with content in the pattern of the docker authentication file, <code>$HOME/.docker/config.json</code> after a normal login.</p>
+
+<ul>
+<li><p>The docker authentication JSON file <code>auth</code> field is a hash</p>
+
+<pre><code>echo -n 'username:password' | base64
+</code></pre></li>
+
+<li><p>The JSON contents look like this:</p>
+
+<pre><code>{
+	&quot;auths&quot;: {
+		&quot;https://index.docker.io/v1/&quot;: {
+			&quot;auth&quot;: &quot;YW11cmRhY2E6c3VwZXJzZWNyZXRwYXNzd29yZA==&quot;
+		}
+	}
+}
+
+</code></pre></li>
+
+<li><p>A correct JSON blob from a docker login would look like this:</p>
+
+<pre><code># login to private docker registry from the command line
+docker login -u karlredman https://docker.parasynthetic.dev
+
+# contents of `$HOME/.docker/config.json` after login
+cat `$HOME/.docker/config.json`
+{
+&quot;auths&quot;: {
+      &quot;docker.parasynthetic.dev&quot;: {
+              &quot;auth&quot;: &quot;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx&quot;
+      }
+},
+&quot;HttpHeaders&quot;: {
+      &quot;User-Agent&quot;: &quot;Docker-Client/18.09.1 (linux)&quot;
+}
+}
+</code></pre></li>
+
+<li><p>A script for the JSON content might look like this</p>
+
+<pre><code>cat &lt;&lt;EOF &gt;&gt; dockerconfigjson
+{
+	&quot;auths&quot;: {
+		&quot;https://index.docker.io/v1/&quot;: {
+			&quot;auth&quot;: &quot;$(base64 --input=credfile)&quot;
+		}
+	}
+}
+EOF
+</code></pre></li>
+</ul>
+
+<h4 id="setting-the-dockerconfigjson-drone-secret">setting the <code>dockerconfigjson</code> drone secret</h4>
+
+<h5 id="prepare-the-drone-yml-file">Prepare the <code>.drone.yml</code> file</h5>
+
+<ul>
+<li><p>Add the appropriate declaration near the end of the file after the build section.</p>
+
+<pre><code>.
+.
+.
+image_pull_secrets:
+- dockerconfigjson
+</code></pre></li>
+</ul>
+
+<h5 id="using-the-drone-ui">Using the drone UI:</h5>
+
+<p>Select <code>settings</code> for the desired repository and create a secret.</p>
+
+<ul>
+<li>name: dockerconfigjson</li>
+<li>secret: <contents of the JSON data outlined earlier></li>
+</ul>
+
+<h5 id="using-drone-command-line-tool-to-set-the-secret">Using <code>drone</code> -command line tool- to set the secret.</h5>
+
+<pre><code>source /home/karl/Scratch/drone_vars &amp;&amp; sudo -E bash -c 'drone secret add --repository Parasynthetic/drone_portus_test --name dockerconfigjson --data @/home/karl/.docker/config.json'
+#
+# alternate form (without sudo)
+source /home/karl/Scratch/drone_vars &amp;&amp; drone secret add --repository Parasynthetic/drone_portus_test --name dockerconfigjson --data @/home/karl/.docker/config.json
+</code></pre>
+
+<ul>
+<li><p>where <code>/home/karl/Scratch/drone_vars</code> contains the drone service credentials</p>
+
+<pre><code>export DRONE_SERVER=https://drone.parasynthetic.dev
+export DRONE_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+# drone info # use this command to test your credentials from command line
+# another example:
+# source /home/karl/Scratch/drone_vars &amp;&amp; sudo -E bash -c 'drone info'
+</code></pre></li>
+</ul>
+
+<h4 id="drone-cli-builds">Drone CLI Builds</h4>
+
+<ul>
+<li><p>Note that using a <em>secrets file</em> with <code>drone exec</code> does not work for drone &lt;= v1.6.2 when using <code>image_pull_secrets</code>. You must set the secret and then run <code>drone exec</code> seperately</p>
+
+<ul>
+<li><code>drone exec</code> can&rsquo;t pull images from a private repository.</li>
+<li>Note: we use <code>sudo -E bash -c</code> so that the <code>drone</code> command can access the docker socket</li>
+<li>Reminder: docker exec must be run from a machine that has access to the images</li>
+<li>The work around is to <strong>manually pull</strong> the images before running <code>drone exec</code></li>
+
+<li><p>see: <a href="https://discourse.drone.io/t/howto-drone-exec-private-docker-registry-drone-1-1/4633">Howto drone exec private docker registry (drone 1.1)</a></p>
+
+<pre><code># this won't work - `--secret-file` is only for variables used with `from_secre:t`
+source /home/karl/Scratch/drone_vars &amp;&amp; sudo -E bash -c 'drone exec --secret-file=/home/karl/Scratch/secretsfile'
+</code></pre></li>
+</ul></li>
+</ul>
+
+<h3 id="the-drone-yml-file-would-look-like-this">The <code>.drone.yml</code> file would look like this:</h3>
+
+<pre><code>kind: pipeline
+name: default
+
+steps:
+
+- name: test
+  image: docker.parasynthetic.dev/karlredman/flask-base:latest
+  pull: if-not-exists
+  # pull: always
+  # pull: if-not-exists
+  # pull: never
+  commands:
+    - ./test.sh 3.5.3
+    - ./test.sh 3.6.8
+    - ./test.sh 3.7.2
+
+image_pull_secrets:
+- dockerconfigjson
+</code></pre>
+
+<h2 id="user-name-and-password-method">User Name and Password Method</h2>
+
+<p>I have never gotten this method to work. There is some documentation about this but the methods are either outdated or I&rsquo;m doing something wrong.</p>
+
+<ul>
+<li>see: <a href="https://circleci.com/docs/2.0/private-images/">Using Private Images - CircleCI</a></li>
+</ul>
+</div>
+			
+			<footer class="post__footer">
+				
+
+
+<div class="post__tags tags">
+	<a class="post__tag transition" href="/Articles/tags/python3">python3</a><a class="post__tag transition" href="/Articles/tags/jinja2">jinja2</a><a class="post__tag transition" href="/Articles/tags/markdown">markdown</a><a class="post__tag transition" href="/Articles/tags/front-matter">front-matter</a>
+</div>
+
+
+				
+<div class="post__share share">
+	<a class="share__link" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkarlredman.github.io%2fArticles%2fjoplin%2fdrone-tutorial%2f" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Facebook', 'width=800,height=600,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--facebook transition" aria-label="Facebook" role="img" width="28" height="28" viewBox="0 0 512 512"><path d="M330 512V322h64l9-74h-73v-47c0-22 6-36 37-36h39V99c-7-1-30-3-57-3-57 0-95 34-95 98v54h-64v74h64v190z"/></svg>
+	</a>
+	<a class="share__link" title="Share on Twitter" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fjoplin%2fdrone-tutorial%2f&amp;text=Parasynthetic.dev%20drone%2fci%20%28v1.6.2%29%20Setup%3a" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Twitter', 'width=800,height=450,resizable=yes,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--twitter transition" aria-label="Twitter" role="img" width="28" height="28" viewBox="0 0 512 512"><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+	</a>
+	<a class="share__link" title="Share on Reddit" href="https://www.reddit.com/submit?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fjoplin%2fdrone-tutorial%2f&amp;title=Parasynthetic.dev%20drone%2fci%20%28v1.6.2%29%20Setup%3a" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Reddit', 'width=832,height=624,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--reddit transition" aria-label="Reddit" role="img" width="28" height="28" viewBox="0 0 512 512"><path fill-rule="evenodd" d="M375 146a32 32 0 1 0-29-46l-65-13c-5-1-9 2-10 6l-22 97c-45 1-85 15-113 36a42 42 0 1 0-45 69l-1 12c0 65 74 117 166 117s166-52 166-117l-1-11a42 42 0 1 0-44-69c-28-21-67-35-111-37l19-86 58 13a32 32 0 0 0 32 29zM190 353c2-1 4 0 5 1 15 11 38 18 61 18s46-6 61-18a7 7 0 0 1 8 10c-18 14-44 21-69 21-25-1-51-7-69-21a6 6 0 0 1 3-11zm23-44a31 31 0 1 1-44-44 31 31 0 0 1 44 44zm130 0a31 31 0 1 0-44-44 31 31 0 0 0 44 44z"/></svg>
+
+	</a>
+	<a class="share__link" title="Share on Telegram" href="https://t.me/share/url?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fjoplin%2fdrone-tutorial%2f&amp;title=Parasynthetic.dev%20drone%2fci%20%28v1.6.2%29%20Setup%3a" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Telegram', 'width=800,height=600,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--telegram transition" aria-label="Telegram" role="img" width="28" height="28" viewBox="0 0 512 512"><path d="M199 404c-11 0-10-4-13-14l-32-105 245-144"/><path d="M199 404c7 0 11-4 16-8l45-43-56-34"/><path d="M204 319l135 99c14 9 26 4 30-14l55-258c5-22-9-32-24-25L79 245c-21 8-21 21-4 26l83 26 190-121c9-5 17-3 11 4"/></svg>
+	</a>
+	<a class="share__link transition" title="Share on LinkedIn" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fjoplin%2fdrone-tutorial%2f&title=Parasynthetic.dev%20drone%2fci%20%28v1.6.2%29%20Setup%3a" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on LinkedIn', 'width=640,height=480,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--linkedin transition" aria-label="LinkedIn" role="img" width="28" height="28" viewBox="0 0 512 512"><circle cx="142" cy="138" r="37"/><path stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+	</a>
+	<a class="share__link transition" title="Share on VK" href="https://vk.com/share.php?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fjoplin%2fdrone-tutorial%2f" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on VK', 'width=640,height=480,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--vk transition" aria-label="VK" role="img" width="28" height="28" viewBox="0 0 512 512"><path d="M274 363c5-1 14-3 14-15 0 0-1-30 13-34s32 29 51 42c14 9 25 8 25 8l51-1s26-2 14-23c-1-2-9-15-39-42-31-30-26-25 11-76 23-31 33-50 30-57-4-7-20-6-20-6h-57c-6 0-9 1-12 6 0 0-9 25-21 45-25 43-35 45-40 42-9-5-7-24-7-37 0-45 7-61-13-65-13-2-59-4-73 3-7 4-11 11-8 12 3 0 12 1 17 7 8 13 9 75-2 81-15 11-53-62-62-86-2-6-5-7-12-9H79c-6 0-15 1-11 13 27 56 83 193 184 192z"/></svg>
+	</a>
+	<a class="share__link transition" title="Save on Pocket" href="https://getpocket.com/edit?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fjoplin%2fdrone-tutorial%2f&amp;title=Parasynthetic.dev%20drone%2fci%20%28v1.6.2%29%20Setup%3a" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Save on Pocket', 'width=480,height=320,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--pocket transition" aria-label="Pocket" role="img" width="28" height="28" viewBox="0 0 512 512"><path d="M388.8 88.9H123.2A47.4 47.4 0 0 0 76 136.5v131.9c0 2.4.2 4.8.5 7.2a101.8 101.8 0 0 0-.5 10.6c0 75.6 80.6 137 180 137s180-61.4 180-137c0-3.6-.2-7.1-.5-10.6.3-2.4.5-4.8.5-7.2v-132A47.4 47.4 0 0 0 388.8 89zm-22.4 132.6l-93 93c-4.7 4.6-11 7-17.1 7a23.8 23.8 0 0 1-17.7-7l-93-93a24 24 0 0 1 33.8-33.8l76.6 76.5 76.6-76.5a24 24 0 0 1 33.8 33.8z"/></svg>
+	</a>
+</div>
+			</footer>
+			
+		</article>
+		
+<section class="post__related related block">
+	<h3 class="related__title">Related</h3>
+	<ul class="related__list">
+		
+		<li class="related__item"><a class="related__link" href="/Articles/dev.to/be-a-python-jinja-master-automated-front-matter-editing/">Be a Python Jinja Master: Automated Front Matter Editing</a></li>
+		
+	</ul>
+</section>
+		
+	</section>
+	
+<section class="sidebar
+		 sidecards">
+	
+	
+<div class="sidecard">
+	<div class="widget widget-categories block">
+		<h3 class="widget__title">Categories</h3>
+		<div class="widget__content">
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/admin">Admin</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/advice">Advice</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/article">Article</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/auth">Auth</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/dev.to">Dev.to</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/docker">Docker</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/ecosystem">Ecosystem</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/howto">Howto</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/journal">Journal</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/linux">Linux</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/medium.com">Medium.com</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/network">Network</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/opinion">Opinion</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/programming">Programming</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/ricing">Ricing</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/shortcuts">Shortcuts</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/utility">Utility</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/vscode">Vscode</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/web">Web</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+	
+<div class="sidecard">
+	<div class="widget widget-tags block">
+		<h3 class="widget__title">Tags</h3>
+		<div class="widget-tags__content widget__content">
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/administration" title="Administration">Administration (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/authentication" title="Authentication">Authentication (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/compile" title="Compile">Compile (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/debian" title="Debian">Debian (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/development" title="Development">Development (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/diagram" title="Diagram">Diagram (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/dnsmasq" title="Dnsmasq">Dnsmasq (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/docker" title="Docker">Docker (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/ecosystem" title="Ecosystem">Ecosystem (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/flowchart" title="Flowchart">Flowchart (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/front-matter" title="Front matter">Front matter (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/gatekeeper" title="Gatekeeper">Gatekeeper (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/greeter" title="Greeter">Greeter (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/howto" title="Howto">Howto (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/jinja2" title="Jinja2">Jinja2 (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/keycloak" title="Keycloak">Keycloak (3)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/lifestyle" title="Lifestyle">Lifestyle (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/lightdm" title="Lightdm">Lightdm (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/management" title="Management">Management (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/markdown" title="Markdown">Markdown (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/mental-health" title="Mental health">Mental health (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/multilingual" title="Multilingual">Multilingual (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/navigation" title="Navigation">Navigation (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/network" title="Network">Network (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/network-manager" title="Network manager">Network manager (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/programming" title="Programming">Programming (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/python3" title="Python3">Python3 (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/shortcuts" title="Shortcuts">Shortcuts (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/teamwork" title="Teamwork">Teamwork (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/traefik" title="Traefik">Traefik (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/vim" title="Vim">Vim (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/vscode" title="Vscode">Vscode (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/wallpaper" title="Wallpaper">Wallpaper (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/xfce" title="Xfce">Xfce (1)</a>
+		</div>
+	</div>
+</div>
+</section>
+
+
+	</div>
+	<footer class="footer">
+	<div class="footer__inner inner">
+		<div class="footer__copyright">© 2020 Karl N. Redman. <span class="footer__copyright-credits">Powered by <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/vimux/amnix" rel="nofollow noopener" target="_blank">Amnix</a> theme.</span></div>
+<div class="footer__social social">
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="mailto:karl.redman@gmail.com">
+			<svg class="social__icon" aria-label="Email" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M299 268l124 106c-4 4-10 7-17 7H106c-7 0-13-3-17-7l124-106 43 38 43-38zm-43 13L89 138c4-4 10-7 17-7h300c7 0 13 3 17 7L256 281zm54-23l121-105v208L310 258zM81 153l121 105L81 361V153z"/></svg>
+		</a>
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://twitter.com/Karl_Redman">
+			<svg class="social__icon" aria-label="Twitter" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+		</a>
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/karl-n-redman-850413">
+			<svg class="social__icon" aria-label="LinkedIn" role="img" width="32" height="32" viewBox="0 0 512 512"><circle cx="142" cy="138" r="37"/><path stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+		</a>
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://github.com/karlredman">
+			<svg class="social__icon" aria-label="GitHub" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+		</a>
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://gitlab.com/karl.redman">
+			<svg class="social__icon" aria-label="GitLab" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M450 282l-22-67-43-133c-2-7-12-7-14 0l-43.3 133H184.3L141 82c-2-7-12-7-14 0L84 215l-22 67c-2 6 0 13 6 16l188 137 188-137c6-3 8-10 6-16z"/></svg>
+		</a>
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/users/1725771">
+			<svg class="social__icon" aria-label="Stack Overflow" role="img" width="32" height="32" viewBox="0 0 512 512"><g stroke-width="30"><path fill="none" d="M125 297v105h241V297"/><path d="M170 341h150m-144-68l148 31M199 204l136 64m-95-129l115 97M293 89l90 120"/></g></svg>
+		</a>
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://medium.com/@karl.redman">
+			<svg class="social__icon" aria-label="Medium" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M125 173c0-4-2-9-5-11l-31-38v-6h98l75 166 67-166h93v6l-27 26c-2 1-3 4-3 7v190c0 3 1 6 3 8l27 25v6H289v-6l27-26c3-3 3-4 3-8V193l-76 192h-10l-88-192v129c-1 5 1 11 5 15l35 43v5H85v-5l35-43c4-4 6-10 5-15z"/></svg>
+		</a>
+</div>
+	</div>
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>
