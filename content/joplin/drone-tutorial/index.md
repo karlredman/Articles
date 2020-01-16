@@ -285,22 +285,22 @@ networks:
 * For testing purposes it's easiest to just use [drone/hello-world: simple repository with CI enabled](https://github.com/drone/hello-world).
   * Use Gitea's migrate feature to create a local copy of the `hello-world` repo from github.
 
-![IMAGE_HERE](../../_resources/790e6a6ce3784cc097fa38b3a7d693b9.png)
+![IMAGE_HERE](790e6a6ce3784cc097fa38b3a7d693b9.png)
 
 * navigate to your drone service (`https://drone.example.com`) and refresh/sync the repoitory list if needed.
   * activate the hello-world repository
 
-![](../../_resources/c784e3ca1abe4e35a8176c3b18914e7e.png)
+![](c784e3ca1abe4e35a8176c3b18914e7e.png)
 
 * verify that the webhook was created for the repository in Gitea
   * `settings -> webhooks`
 
-![](../../_resources/9725a941389f476792cf04d55c71cd75.png)
+![](9725a941389f476792cf04d55c71cd75.png)
 
 
 * Add a file named `.trigerfile` to the repository root and save.
 
-![](../../_resources/787f9753cd7c4c37bf709d46fbfe715c.png)
+![](787f9753cd7c4c37bf709d46fbfe715c.png)
 
 * Check the drone activity page
   * This build will timeout because of the `node: build` section at the bottom of `.drone.yml`
@@ -312,13 +312,13 @@ networks:
     build
   ```
 
-![](../../_resources/0c9edf0123c44c5f995a84923b960eb5.png)
-![](../../_resources/133b1641e7b7490bad1b059b9b5452df.png)
+![](0c9edf0123c44c5f995a84923b960eb5.png)
+![](133b1641e7b7490bad1b059b9b5452df.png)
 
 * Remove the last two lines (shown below) of the `.drone.yml` file and save again
   * This will start a new build that will succeed
 
-![](../../_resources/53aefc38d6e14ef89284ecd9ae8a159b.png)
+![](53aefc38d6e14ef89284ecd9ae8a159b.png)
 
 
 ## Pulling a Docker Image from a Private Docker Registry
