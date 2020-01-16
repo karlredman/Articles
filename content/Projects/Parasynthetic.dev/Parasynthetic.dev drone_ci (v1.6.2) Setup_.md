@@ -1,3 +1,25 @@
+---
+title: "Parasynthetic.dev drone/ci (v1.6.2) Setup:"
+published: true
+description: ""
+categories: [programming, utility]
+tags: [python3,jinja2,markdown,front-matter]
+canonical_url: https://github.com/karlredman/My-Articles/wiki/
+
+author: "Karl N. Redman"
+creatordisplayname: "Karl N. Redman"
+creatoremail: "karl.redman@gmail.com"
+date: "2019-06-11T23:13:35-05:00"
+
+lastmodifierdisplayname: "Karl N. Redman"
+lastmodifieremail: "karl.redman@gmail.com"
+lastmod: "2019-06-10T23:13:35-05:00"
+
+type: "page"
+#theme: "league"
+
+weight: 5
+---
 
 # Parasynthetic.dev drone/ci (v1.6.2) Setup:
 
