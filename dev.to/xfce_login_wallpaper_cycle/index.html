@@ -12,22 +12,8 @@
 <meta property="og:description" content="HowTo: randomize LightDM / XFCE v4.x login screen wallpaper images." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://karlredman.github.io/Articles/dev.to/xfce_login_wallpaper_cycle/" />
-
-
-
-<meta property="article:published_time" content="2019-06-24T23:57:02-05:00"/>
-
-<meta property="article:modified_time" content="2019-06-24T23:57:02-05:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2019-06-24T23:57:02-05:00" />
+<meta property="article:modified_time" content="2019-06-24T23:57:02-05:00" />
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Randomize your XFCE / LightDM Login Screen Wallpaper"/>
@@ -96,14 +82,14 @@
 <p>Examples will assume a multi-user system with encrypted home directories.</p>
 
 <h3 id="clone-the-example-project-to-an-appropriate-directory">clone the example project to an appropriate directory:</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># a global directory space
-</span><span style="color:#75715e"></span>cd /opt
-<span style="color:#75715e">#
-</span><span style="color:#75715e"># clone the project
-</span><span style="color:#75715e"></span>sudo git clone git@github.com:karlredman/LoginWallpaper-XFCE-Variety.git
-<span style="color:#75715e">#
-</span><span style="color:#75715e"># set permissions on the project directory
-</span><span style="color:#75715e"></span>sudo chown -R root:users LoginWallpaper-XFCE-Variety</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># a global directory space</span>
+cd /opt
+#
+<span style="color:#75715e"># clone the project</span>
+sudo git clone git@github.com:karlredman/LoginWallpaper-XFCE-Variety.git
+#
+<span style="color:#75715e"># set permissions on the project directory</span>
+sudo chown -R root:users LoginWallpaper-XFCE-Variety</code></pre></div>
 <h3 id="add-images-to-the-image-directory-variety">add images to the image directory <code>Variety</code></h3>
 
 <ul>
@@ -116,25 +102,27 @@
 <p>(i.e. <code>/opt/LoginWallpaper-XFCE-Variety/Greeter/background.jpg</code>)</p>
 
 <ul>
-<li>seed the file</li>
+<li><p>seed the file</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cp <span style="color:#66d9ef">$(</span>/opt/LoginWallpaper-XFCE-Variety/mbin/print_random_file.pl /opt/LoginWallpaper-XFCE-Variety/Variety<span style="color:#66d9ef">)</span> /opt/LoginWallpaper-XFCE-Variety/Greeter/background.jpg</code></pre></div></li>
+
+<li><p>verify the file exists -troubleshoot&hellip;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ls /opt/LoginWallpaper-XFCE-Variety/background.jpb</code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cp <span style="color:#66d9ef">$(</span>/opt/LoginWallpaper-XFCE-Variety/mbin/print_random_file.pl /opt/LoginWallpaper-XFCE-Variety/Variety<span style="color:#66d9ef">)</span> /opt/LoginWallpaper-XFCE-Variety/Greeter/background.jpg</code></pre></div>
-<ul>
-<li>verify the file exists -troubleshoot&hellip;</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ls /opt/LoginWallpaper-XFCE-Variety/background.jpb</code></pre></div>
+
 <h3 id="configure-lightdm-greeter-via-the-gui-interface">Configure LightDM Greeter via the GUI interface</h3>
 
 <ul>
-<li>start the greeter config app using one of these methods:
+<li><p>start the greeter config app using one of these methods:</p>
 
 <ul>
 <li>via the GUI menu for <code>LightDM GTK Greeter settings</code></li>
 <li>name may vary based on linux desktop distribution</li>
-<li>via command line</li>
+
+<li><p>via command line</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo lightdm-gtk-greeter-settings</code></pre></div></li>
 </ul></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  sudo lightdm-gtk-greeter-settings</code></pre></div>
+
 <p><a href="https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/xfce_login_wallpaper_cycle/lightdm-gtk-greeter-settings.png"><img src="https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/xfce_login_wallpaper_cycle/lightdm-gtk-greeter-settings.png" alt="ghtdm-gtk-greeter-settings.png" /></a></p>
 
 <ul>
@@ -157,14 +145,14 @@
 <h3 id="add-cron-job">add cron job</h3>
 
 <ul>
-<li>open cron in your default editor:</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cron -e</code></pre></div>
-<ul>
-<li>add the job (example)</li>
-</ul>
+<li><p>open cron in your default editor:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cron -e</code></pre></div></li>
+
+<li><p>add the job (example)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-crontab" data-lang="crontab"># change to wallpaper every 10 min
-*/10 * * * * cp $(/opt/LoginWallpaper-XFCE-Variety/mbin/print_random_file.pl /opt/LoginWallpaper-XFCE-Variety/Variety) /opt/LoginWallpaper-XFCE-Variety/Greeter/background.jpg</code></pre></div>
+*/10 * * * * cp $(/opt/LoginWallpaper-XFCE-Variety/mbin/print_random_file.pl /opt/LoginWallpaper-XFCE-Variety/Variety) /opt/LoginWallpaper-XFCE-Variety/Greeter/background.jpg</code></pre></div></li>
+</ul>
+
 <h2 id="using-variety-as-the-image-source">Using <code>Variety</code> as the image source:</h2>
 
 <p><a href="https://peterlevi.com/variety/">Variety</a> is a wallpaper background manager that is available for several linux distributions and is compatible with several desktop managers. One of the options <code>variety</code> offers is the ability to manage your login greeter image.</p>
@@ -299,7 +287,7 @@
 	</div>
 	<footer class="footer">
 	<div class="footer__inner inner">
-		<div class="footer__copyright">© 2019 Karl N. Redman. <span class="footer__copyright-credits">Powered by <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/vimux/amnix" rel="nofollow noopener" target="_blank">Amnix</a> theme.</span></div>
+		<div class="footer__copyright">© 2020 Karl N. Redman. <span class="footer__copyright-credits">Powered by <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/vimux/amnix" rel="nofollow noopener" target="_blank">Amnix</a> theme.</span></div>
 <div class="footer__social social">
 		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="mailto:karl.redman@gmail.com">
 			<svg class="social__icon" aria-label="Email" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M299 268l124 106c-4 4-10 7-17 7H106c-7 0-13-3-17-7l124-106 43 38 43-38zm-43 13L89 138c4-4 10-7 17-7h300c7 0 13 3 17 7L256 281zm54-23l121-105v208L310 258zM81 153l121 105L81 361V153z"/></svg>

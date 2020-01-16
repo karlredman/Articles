@@ -12,22 +12,8 @@
 <meta property="og:description" content="EditFrontMatter: A python module for editing markdown front matter using Jinja2 Templates." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://karlredman.github.io/Articles/dev.to/be-a-python-jinja-master-automated-front-matter-editing/" />
-
-
-
-<meta property="article:published_time" content="2019-06-11T23:13:35-05:00"/>
-
-<meta property="article:modified_time" content="2019-06-10T23:13:35-05:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2019-06-11T23:13:35-05:00" />
+<meta property="article:modified_time" content="2019-06-10T23:13:35-05:00" />
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Be a Python Jinja Master: Automated Front Matter Editing"/>
@@ -88,70 +74,68 @@
 <p>This is a simple example that you will also find in the documentation as <a href="https://karlredman.github.io/EditFrontMatter/examples/example1/readme.html">Example 1</a>. Here, we to use a Jinja2 Template to edit the front matter of a markdown file. All fields which are <em>not</em> included in the template will be ignored during editing. Furthermore, while white-space and comments will be eliminated<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>, the order of the original front matter is preserved<sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup> -new fields will be appended.</p>
 
 <ul>
-<li>Original markdown file with yaml front matter (<a href="https://github.com/karlredman/EditFrontMatter/blob/master/examples/data/example1.md">example1.md</a>)</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">---<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>title: &#34;EditFrontMatter Class Example 1&#34;<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>description: &#34;Edit some fields in this front matter&#34;<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>catagories: [programming, python, markdown]<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>deleteme: this will be deleted<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>tags: [front matter, administration, testing]<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span># comments and spaces will be eliminated (see docs)
-<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>author: &#34;Karl N. Redman&#34;<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>creatordisplayname: &#34;Karl N. Redman&#34;<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>creatoremail: &#34;karl.redman@example.com&#34;<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>date: 2019-05-23T17:43:45-05:00<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>lastmodifierdisplayname: &#34;Karl N. Redman&#34;<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>lastmodifieremail: &#34;karl.redman@gmail.com&#34;<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>lastmod: 2019-05-23T17:43:45-05:00<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>toc: false<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>type: &#34;page&#34;<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>hasMath: false<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>draft: false<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>weight: 5<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>---<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span># EditFontMatter Class Example 1
-<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>Edit several fields of front matter.<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">##</span> Fields affected in this example:
+<li><p>Original markdown file with yaml front matter (<a href="https://github.com/karlredman/EditFrontMatter/blob/master/examples/data/example1.md">example1.md</a>)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">---
+title: &#34;EditFrontMatter Class Example 1&#34;
+description: &#34;Edit some fields in this front matter&#34;
+catagories: [programming, python, markdown]
 
-<span style="color:#66d9ef">*</span> toc<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> note: uses local template variable<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> pre: false<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> post: true<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">*</span> draft:<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> note: uses jinja2 filter (callback)<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> pre: false<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> post: true<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">*</span> hasMath<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> note: uses program variable<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> pre: true<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> post: false<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">*</span> stuff:<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> note: uses program variable to create field<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> pre: did not exist<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> post: (list) [&#39;one&#39;, &#39;two&#39;, &#39;three&#39;]<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">*</span> deleteme:<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> note: removed from final result<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> pre: this will be deleted<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  * post: N/A</code></pre></div>
-<ul>
-<li>Jinja2 template that will update the front matter data of the source markdown file (<a href="https://github.com/karlredman/EditFrontMatter/blob/master/examples/data/template1.j2">template1.j2</a>). Note that the <code>toc</code> field processing is overridden by the template. All local <code>set</code> Jinja variables take precedence over other processing methods.</li>
-</ul>
+deleteme: this will be deleted
+
+tags: [front matter, administration, testing]
+
+# comments and spaces will be eliminated (see docs)
+
+author: &#34;Karl N. Redman&#34;
+creatordisplayname: &#34;Karl N. Redman&#34;
+creatoremail: &#34;karl.redman@example.com&#34;
+date: 2019-05-23T17:43:45-05:00
+lastmodifierdisplayname: &#34;Karl N. Redman&#34;
+lastmodifieremail: &#34;karl.redman@gmail.com&#34;
+lastmod: 2019-05-23T17:43:45-05:00
+toc: false
+type: &#34;page&#34;
+hasMath: false
+draft: false
+weight: 5
+---
+
+# EditFontMatter Class Example 1
+
+Edit several fields of front matter.
+
+<span style="color:#75715e">## Fields affected in this example:
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">*</span> toc
+<span style="color:#66d9ef">*</span> note: uses local template variable
+<span style="color:#66d9ef">*</span> pre: false
+<span style="color:#66d9ef">*</span> post: true
+<span style="color:#66d9ef">*</span> draft:
+<span style="color:#66d9ef">*</span> note: uses jinja2 filter (callback)
+<span style="color:#66d9ef">*</span> pre: false
+<span style="color:#66d9ef">*</span> post: true
+<span style="color:#66d9ef">*</span> hasMath
+<span style="color:#66d9ef">*</span> note: uses program variable
+<span style="color:#66d9ef">*</span> pre: true
+<span style="color:#66d9ef">*</span> post: false
+<span style="color:#66d9ef">*</span> stuff:
+<span style="color:#66d9ef">*</span> note: uses program variable to create field
+<span style="color:#66d9ef">*</span> pre: did not exist
+<span style="color:#66d9ef">*</span> post: (list) [&#39;one&#39;, &#39;two&#39;, &#39;three&#39;]
+<span style="color:#66d9ef">*</span> deleteme:
+<span style="color:#66d9ef">*</span> note: removed from final result
+<span style="color:#66d9ef">*</span> pre: this will be deleted
+* post: N/A</code></pre></div></li>
+
+<li><p>Jinja2 template that will update the front matter data of the source markdown file (<a href="https://github.com/karlredman/EditFrontMatter/blob/master/examples/data/template1.j2">template1.j2</a>). Note that the <code>toc</code> field processing is overridden by the template. All local <code>set</code> Jinja variables take precedence over other processing methods.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jinja" data-lang="jinja"><span style="color:#75715e">{%</span> <span style="color:#66d9ef">set</span> toc <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#75715e">%}</span>
 
 toc: <span style="color:#75715e">{{</span> toc <span style="color:#75715e">}}</span>
 draft: <span style="color:#75715e">{{</span> <span style="color:#66d9ef">false</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">canPublish</span> <span style="color:#75715e">}}</span>
 hasMath: <span style="color:#75715e">{{</span> hasMath <span style="color:#75715e">}}</span>
-stuff: <span style="color:#75715e">{{</span> addedVariable <span style="color:#75715e">}}</span></code></pre></div>
-<ul>
-<li>A python program to edit the markdown file with the Jinja2 template (<a href="https://karlredman.github.io/EditFrontMatter/examples/example1/example1.html">example1.py</a>:</li>
+stuff: <span style="color:#75715e">{{</span> addedVariable <span style="color:#75715e">}}</span></code></pre></div></li>
+
+<li><p>A python program to edit the markdown file with the Jinja2 template (<a href="https://karlredman.github.io/EditFrontMatter/examples/example1/example1.html">example1.py</a>:</p></li>
 </ul>
 
 <p>This program/script uses a <a href="http://jinja.pocoo.org/docs/2.10/templates/#filters">Jinja2 template filter</a> and a callback function, specified by a call to <a href="https://karlredman.github.io/EditFrontMatter/editfrontmatter/editfrontmatter.EditFrontMatter.EditFrontMatter.add_JinjaFilter.html">EditFrontMatter.add_JinjaFilter()</a> to provide data for the <code>draft</code> field. In addition, specific <code>key, value</code> variable pairs are provided when <a href="https://karlredman.github.io/EditFrontMatter/editfrontmatter/editfrontmatter.EditFrontMatter.EditFrontMatter.run.html#editfrontmatter.EditFrontMatter.EditFrontMatter.run">EditFrontMatter.run()</a> is called. The values from <code>run()</code> will be used to add or edit the <code>key, value</code> pairs. Lastly the instance (list) variable <code>EditFrontMatter().keys_toDelete</code> specifies which keys to delete in the front matter.</p>
@@ -203,63 +187,64 @@ stuff: <span style="color:#75715e">{{</span> addedVariable <span style="color:#7
 <span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
     main()</code></pre></div>
 <ul>
-<li>Final Output:</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">---<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>title: EditFrontMatter Class Example 1<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>description: Edit some fields in this front matter<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>catagories:
-<span style="color:#66d9ef">-</span> programming<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">-</span> python<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">-</span> markdown<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>tags:
-<span style="color:#66d9ef">-</span> front matter<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">-</span> administration<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">-</span> testing<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>author: Karl N. Redman<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>creatordisplayname: Karl N. Redman<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>creatoremail: karl.redman@example.com<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>date: 2019-05-23 22:43:45<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>lastmodifierdisplayname: Karl N. Redman<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>lastmodifieremail: karl.redman@gmail.com<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>lastmod: 2019-05-23 22:43:45<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>toc: true<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>type: page<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>hasMath: false<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>draft: true<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>weight: 5<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>stuff:
-<span style="color:#66d9ef">-</span> one<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">-</span> two<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">-</span> three<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>---<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span># EditFontMatter Class Example 1
-<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>Edit several fields of front matter.<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">##</span> Fields affected in this example:
+<li><p>Final Output:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">---
+title: EditFrontMatter Class Example 1
+description: Edit some fields in this front matter
+catagories:
+<span style="color:#66d9ef">-</span> programming
+<span style="color:#66d9ef">-</span> python
+<span style="color:#66d9ef">-</span> markdown
+tags:
+<span style="color:#66d9ef">-</span> front matter
+<span style="color:#66d9ef">-</span> administration
+<span style="color:#66d9ef">-</span> testing
+author: Karl N. Redman
+creatordisplayname: Karl N. Redman
+creatoremail: karl.redman@example.com
+date: 2019-05-23 22:43:45
+lastmodifierdisplayname: Karl N. Redman
+lastmodifieremail: karl.redman@gmail.com
+lastmod: 2019-05-23 22:43:45
+toc: true
+type: page
+hasMath: false
+draft: true
+weight: 5
+stuff:
+<span style="color:#66d9ef">-</span> one
+<span style="color:#66d9ef">-</span> two
+<span style="color:#66d9ef">-</span> three
+---
 
-<span style="color:#66d9ef">*</span> toc<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> note: uses local template variable<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> pre: false<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> post: true<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">*</span> draft:<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> note: uses jinja2 filter (callback)<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> pre: false<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> post: true<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">*</span> hasMath<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> note: uses program variable<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> pre: true<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> post: false<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">*</span> stuff:<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> note: uses program variable to create field<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> pre: did not exist<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> post: (list) [&#39;one&#39;, &#39;two&#39;, &#39;three&#39;]<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">*</span> deleteme:<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> note: removed from final result<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> pre: this will be deleted<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span>  * post: N/A</code></pre></div>
+# EditFontMatter Class Example 1
+
+Edit several fields of front matter.
+
+<span style="color:#75715e">## Fields affected in this example:
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">*</span> toc
+<span style="color:#66d9ef">*</span> note: uses local template variable
+<span style="color:#66d9ef">*</span> pre: false
+<span style="color:#66d9ef">*</span> post: true
+<span style="color:#66d9ef">*</span> draft:
+<span style="color:#66d9ef">*</span> note: uses jinja2 filter (callback)
+<span style="color:#66d9ef">*</span> pre: false
+<span style="color:#66d9ef">*</span> post: true
+<span style="color:#66d9ef">*</span> hasMath
+<span style="color:#66d9ef">*</span> note: uses program variable
+<span style="color:#66d9ef">*</span> pre: true
+<span style="color:#66d9ef">*</span> post: false
+<span style="color:#66d9ef">*</span> stuff:
+<span style="color:#66d9ef">*</span> note: uses program variable to create field
+<span style="color:#66d9ef">*</span> pre: did not exist
+<span style="color:#66d9ef">*</span> post: (list) [&#39;one&#39;, &#39;two&#39;, &#39;three&#39;]
+<span style="color:#66d9ef">*</span> deleteme:
+<span style="color:#66d9ef">*</span> note: removed from final result
+<span style="color:#66d9ef">*</span> pre: this will be deleted
+* post: N/A</code></pre></div></li>
+</ul>
+
 <h1 id="my-personal-use-case">My Personal Use Case:</h1>
 
 <p>Allow me paint a picture of my workflow: I maintain a group of repositories of exclusively markdown content. This content is split up between topics ranging form a personal journal to various projects and articles in various states of completion. The number of documents I&rsquo;ve written in the last several years is now over 1000. In order to facilitate my workflow, I want all the content to be accessible in one place while having the ability to preview these documents and, ultimately, publish them using various methods. To that end, all of my markdown files do contain a minimal about of front matter. As I publish these content files I needed some way to batch process the content files and modify their metadata.</p>
@@ -419,7 +404,7 @@ stuff: <span style="color:#75715e">{{</span> addedVariable <span style="color:#7
 	</div>
 	<footer class="footer">
 	<div class="footer__inner inner">
-		<div class="footer__copyright">© 2019 Karl N. Redman. <span class="footer__copyright-credits">Powered by <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/vimux/amnix" rel="nofollow noopener" target="_blank">Amnix</a> theme.</span></div>
+		<div class="footer__copyright">© 2020 Karl N. Redman. <span class="footer__copyright-credits">Powered by <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/vimux/amnix" rel="nofollow noopener" target="_blank">Amnix</a> theme.</span></div>
 <div class="footer__social social">
 		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="mailto:karl.redman@gmail.com">
 			<svg class="social__icon" aria-label="Email" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M299 268l124 106c-4 4-10 7-17 7H106c-7 0-13-3-17-7l124-106 43 38 43-38zm-43 13L89 138c4-4 10-7 17-7h300c7 0 13 3 17 7L256 281zm54-23l121-105v208L310 258zM81 153l121 105L81 361V153z"/></svg>

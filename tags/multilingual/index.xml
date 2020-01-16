@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Multilingual on Articles</title>
+    <title>multilingual on Articles</title>
     <link>https://karlredman.github.io/Articles/tags/multilingual/</link>
-    <description>Recent content in Multilingual on Articles</description>
+    <description>Recent content in multilingual on Articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 10 Apr 2019 07:37:38 -0500</lastBuildDate>

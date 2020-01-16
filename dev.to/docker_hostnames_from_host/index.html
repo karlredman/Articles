@@ -12,22 +12,8 @@
 <meta property="og:description" content="Resolve docker hostnames from host with DNS Proxy Server" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://karlredman.github.io/Articles/dev.to/docker_hostnames_from_host/" />
-
-
-
-<meta property="article:published_time" content="2019-03-03T07:35:35-05:00"/>
-
-<meta property="article:modified_time" content="2019-03-03T07:35:35-05:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2019-03-03T07:35:35-05:00" />
+<meta property="article:modified_time" content="2019-03-03T07:35:35-05:00" />
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Resolve docker hostnames from host with DNS Proxy Server"/>
@@ -103,36 +89,37 @@
 
 <ul>
 <li>directive <code>all-servers</code> to <code>/etc/dnsmasq.conf</code></li>
-<li>also sanity check the settings</li>
-</ul>
+
+<li><p>also sanity check the settings</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">all-servers         # async call to all nameservers
 bind-dynamic        # could use bind-interfaces instead
 listen-address=127.0.0.1
 listen-address=10.127.127.1
 address=/private.home/10.127.127.1
 domain=private.home,10.127.127.0/24
-domain=docker.devnet,172.17.0.0/24</code></pre></div>
-<ul>
-<li>Restart dnsmasq</li>
+domain=docker.devnet,172.17.0.0/24</code></pre></div></li>
+
+<li><p>Restart dnsmasq</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo service dnsmasq restart</code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo service dnsmasq restart</code></pre></div>
+
 <h3 id="add-dps-configuration-to-networkmanager">Add DPS configuration to NetworkManager</h3>
 
 <ul>
-<li>DPS will always bind to address <code>172.17.0.2</code></li>
-</ul>
+<li><p>DPS will always bind to address <code>172.17.0.2</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nmcli con modify <span style="color:#e6db74">&#39;Wired connection 1&#39;</span> ipv4.dns <span style="color:#ae81ff">172</span>.17.0.2
 nmcli con modify <span style="color:#e6db74">&#39;Wired connection 1 offline&#39;</span> ipv4.dns <span style="color:#ae81ff">172</span>.17.0.2
-<span style="color:#75715e">#
-</span><span style="color:#75715e"></span>nmcli con up <span style="color:#e6db74">&#39;Wired connection 1&#39;</span></code></pre></div>
+#
+nmcli con up <span style="color:#e6db74">&#39;Wired connection 1&#39;</span></code></pre></div></li>
+</ul>
+
 <h3 id="create-dps-config-file">Create DPS config file</h3>
 
 <ul>
-<li>Create directories and file</li>
-</ul>
+<li><p>Create directories and file</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo mkdir -p /opt/dns-proxy-server/conf
-sudo touch /opt/dns-proxy-server/conf/config.json</code></pre></div>
-<ul>
+sudo touch /opt/dns-proxy-server/conf/config.json</code></pre></div></li>
+
 <li><p>reference for options: <a href="https://mageddo.github.io/dns-proxy-server/docs/running.html">running dns-proxy-server</a></p>
 
 <ul>
@@ -143,8 +130,7 @@ sudo touch /opt/dns-proxy-server/conf/config.json</code></pre></div>
 <li>allow command line ping for container names</li>
 </ul></li>
 
-<li><p>add DPS settings  to the config file</p></li>
-</ul>
+<li><p>add DPS settings  to the config file</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
 	<span style="color:#f92672">&#34;remoteDnsServers&#34;</span>: [ [<span style="color:#e6db74">&#34;8.8.8.8&#34;</span>] ],
 	<span style="color:#f92672">&#34;envs&#34;</span>: [
@@ -160,29 +146,30 @@ sudo touch /opt/dns-proxy-server/conf/config.json</code></pre></div>
 	<span style="color:#f92672">&#34;logLevel&#34;</span>: <span style="color:#e6db74">&#34;WARNING&#34;</span>,
 	<span style="color:#f92672">&#34;logFile&#34;</span>: <span style="color:#e6db74">&#34;/opt/dns-proxy-server/dps.log&#34;</span>,
 	<span style="color:#f92672">&#34;registerContainerNames&#34;</span>: <span style="color:#66d9ef">true</span>
-}</code></pre></div>
+}</code></pre></div></li>
+</ul>
+
 <h3 id="obtain-and-build-a-docker-image-for-testing">Obtain and build a docker image for testing</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://github.com/karlredman/lighttpd-docker.git
-<span style="color:#75715e">#
-</span><span style="color:#75715e"></span>cd lighttpd-docker
-<span style="color:#75715e">#
-</span><span style="color:#75715e"></span>sudo docker build -t lighttpd .</code></pre></div>
+#
+cd lighttpd-docker
+#
+sudo docker build -t lighttpd .</code></pre></div>
 <h3 id="start-dps">Start DPS</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">docker run --rm --hostname dns.mageddo --name dns-proxy-server -p <span style="color:#ae81ff">5380</span>:5380 -v /opt/dns-proxy-server/conf:/app/conf -v /var/run/docker.sock:/var/run/docker.sock -v /etc/resolv.conf:/etc/resolv.conf defreitas/dns-proxy-server</code></pre></div>
 <h3 id="start-example-containers">Start example containers</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># start FQDN hostname docker container 1
-</span><span style="color:#75715e"></span>sudo docker run -d -p <span style="color:#ae81ff">8081</span>:80 -p <span style="color:#ae81ff">4441</span>:443 --rm -t --name docker-container-1-name -h docker-container-1.docker.devnet --net docker.devnet  lighttpd
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># start FQDN hostname docker container 1</span>
+sudo docker run -d -p <span style="color:#ae81ff">8081</span>:80 -p <span style="color:#ae81ff">4441</span>:443 --rm -t --name docker-container-1-name -h docker-container-1.docker.devnet --net docker.devnet  lighttpd
 
-<span style="color:#75715e"># start container 2
-</span><span style="color:#75715e"></span>sudo docker run -d -p <span style="color:#ae81ff">8082</span>:80 -p <span style="color:#ae81ff">4442</span>:443 --rm -t --name docker-container-2-name -h docker-container-2.docker.devnet --net docker.devnet lighttpd
+<span style="color:#75715e"># start container 2</span>
+sudo docker run -d -p <span style="color:#ae81ff">8082</span>:80 -p <span style="color:#ae81ff">4442</span>:443 --rm -t --name docker-container-2-name -h docker-container-2.docker.devnet --net docker.devnet lighttpd
 
-<span style="color:#75715e"># start container 3
-</span><span style="color:#75715e"></span>sudo docker run -d -p <span style="color:#ae81ff">8083</span>:80 -p <span style="color:#ae81ff">4443</span>:443 --rm -t --name docker-container-3-name -h docker-container-3.docker.devnet --net docker.devnet lighttpd</code></pre></div>
+<span style="color:#75715e"># start container 3</span>
+sudo docker run -d -p <span style="color:#ae81ff">8083</span>:80 -p <span style="color:#ae81ff">4443</span>:443 --rm -t --name docker-container-3-name -h docker-container-3.docker.devnet --net docker.devnet lighttpd</code></pre></div>
 <h3 id="test-pings">Test pings</h3>
 
 <ul>
-<li>note pings in offline mode will be slow due to round robin dns resolution</li>
-</ul>
+<li><p>note pings in offline mode will be slow due to round robin dns resolution</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ping -c <span style="color:#ae81ff">4</span> localhost
 ping -c <span style="color:#ae81ff">4</span> mxtest
 ping -c <span style="color:#ae81ff">4</span> mxacer
@@ -190,12 +177,14 @@ ping -c <span style="color:#ae81ff">4</span> mxacer
 ping -c <span style="color:#ae81ff">4</span> dns.mageddo
 ping -c <span style="color:#ae81ff">4</span> docker-container-1.docker.devnet
 ping -c <span style="color:#ae81ff">4</span> docker-container-3.docker.devnet
-ping -c <span style="color:#ae81ff">4</span> docker-container-2-name       <span style="color:#75715e"># fails offline mode
-</span><span style="color:#75715e"></span>
+ping -c <span style="color:#ae81ff">4</span> docker-container-2-name       <span style="color:#75715e"># fails offline mode</span>
+
 sudo docker exec -ti docker-container-1-name sh -c <span style="color:#e6db74">&#34;ping -c 4 host.docker&#34;</span>
 sudo docker exec -ti docker-container-1-name sh -c <span style="color:#e6db74">&#34;ping -c 4 a-wildcard.private.home&#34;</span>
 sudo docker exec -ti docker-container-2-name sh -c <span style="color:#e6db74">&#34;ping -c 4 docker-container-3-name&#34;</span>
-sudo docker exec -ti docker-container-3-name sh -c <span style="color:#e6db74">&#34;ping -c 4 docker-container-1.docker.devnet&#34;</span></code></pre></div>
+sudo docker exec -ti docker-container-3-name sh -c <span style="color:#e6db74">&#34;ping -c 4 docker-container-1.docker.devnet&#34;</span></code></pre></div></li>
+</ul>
+
 <h3 id="view-dps-web-page-doesn-t-seem-to-work-for-me">View DPS web page (doesn&rsquo;t seem to work for me)</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">http://localhost:5380
 http://dns.mageddo:5380</code></pre></div>
@@ -224,21 +213,19 @@ http://dns.mageddo:5380</code></pre></div>
 <h3 id="test-docker-compose-instance">Test docker-compose instance</h3>
 
 <ul>
-<li>start the container</li>
-</ul>
+<li><p>start the container</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd lighttpd-docker
-sudo docker-compose up -d</code></pre></div>
-<ul>
-<li>test ping to the compose container</li>
-</ul>
+sudo docker-compose up -d</code></pre></div></li>
+
+<li><p>test ping to the compose container</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ping -c <span style="color:#ae81ff">4</span> docker-container-4.docker.devnet
 sudo docker exec -ti docker-container-4-name sh -c <span style="color:#e6db74">&#34;ping -c 4 a-wildcard.private.home&#34;</span>
 sudo docker exec -ti docker-container-4-name sh -c <span style="color:#e6db74">&#34;ping -c 4 docker-container-3-name&#34;</span>
 sudo docker exec -ti docker-container-4-name sh -c <span style="color:#e6db74">&#34;ping -c 4 docker-container-1.docker.devnet&#34;</span>
-<span style="color:#75715e">#
-</span><span style="color:#75715e"></span>sudo docker exec -ti docker-container-1-name sh -c <span style="color:#e6db74">&#34;ping -c 4 docker-container-4.docker.devnet&#34;</span></code></pre></div>
-<ul>
-<li>test browser access to the container
+#
+sudo docker exec -ti docker-container-1-name sh -c <span style="color:#e6db74">&#34;ping -c 4 docker-container-4.docker.devnet&#34;</span></code></pre></div></li>
+
+<li><p>test browser access to the container</p>
 
 <ul>
 <li><a href="http://localhost:8084/hostname.html">http://localhost:8084/hostname.html</a></li>
@@ -378,7 +365,7 @@ sudo docker exec -ti docker-container-4-name sh -c <span style="color:#e6db74">&
 	</div>
 	<footer class="footer">
 	<div class="footer__inner inner">
-		<div class="footer__copyright">© 2019 Karl N. Redman. <span class="footer__copyright-credits">Powered by <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/vimux/amnix" rel="nofollow noopener" target="_blank">Amnix</a> theme.</span></div>
+		<div class="footer__copyright">© 2020 Karl N. Redman. <span class="footer__copyright-credits">Powered by <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/vimux/amnix" rel="nofollow noopener" target="_blank">Amnix</a> theme.</span></div>
 <div class="footer__social social">
 		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="mailto:karl.redman@gmail.com">
 			<svg class="social__icon" aria-label="Email" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M299 268l124 106c-4 4-10 7-17 7H106c-7 0-13-3-17-7l124-106 43 38 43-38zm-43 13L89 138c4-4 10-7 17-7h300c7 0 13 3 17 7L256 281zm54-23l121-105v208L310 258zM81 153l121 105L81 361V153z"/></svg>

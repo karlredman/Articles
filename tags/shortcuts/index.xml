@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Shortcuts on Articles</title>
+    <title>shortcuts on Articles</title>
     <link>https://karlredman.github.io/Articles/tags/shortcuts/</link>
-    <description>Recent content in Shortcuts on Articles</description>
+    <description>Recent content in shortcuts on Articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 15 Mar 2019 07:44:19 -0500</lastBuildDate>

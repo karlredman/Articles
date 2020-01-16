@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Article on Articles</title>
+    <title>article on Articles</title>
     <link>https://karlredman.github.io/Articles/categories/article/</link>
-    <description>Recent content in Article on Articles</description>
+    <description>Recent content in article on Articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 06 Dec 2017 07:57:35 -0500</lastBuildDate>

@@ -12,22 +12,8 @@
 <meta property="og:description" content="Dnsmasq &#43; NetworkManager &#43; Private Network Setup" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://karlredman.github.io/Articles/dev.to/dnsmasq-nm/" />
-
-
-
-<meta property="article:published_time" content="2019-03-01T07:30:30-05:00"/>
-
-<meta property="article:modified_time" content="2019-06-11T07:30:30-05:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2019-03-01T07:30:30-05:00" />
+<meta property="article:modified_time" content="2019-06-11T07:30:30-05:00" />
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Dnsmasq &#43; NetworkManager &#43; Private Network Setup"/>
@@ -143,36 +129,32 @@
 <li><p>determine the connection to use (i.e. eth0, wlan0, etc.)</p>
 
 <ul>
-<li>command</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nmcli connection show</code></pre></div>
-<ul>
-<li>example output</li>
-</ul>
+<li><p>command</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nmcli connection show</code></pre></div></li>
+
+<li><p>example output</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">NAME                UUID                                  TYPE            DEVICE
 Wired connection 1  xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  802-3-ethernet  eth0
 br-0a159c4a8cf4     xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  bridge          br-0a159c4a8cf4
 br-b1bce84765b8     xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  bridge          br-b1bce84765b8
 docker0             xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx  bridge          docker0</code></pre></div></li>
-
-<li><p>add a <code>10</code> network address to our Network Manager connection</p></li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nmcli con mod <span style="color:#e6db74">&#39;Wired connection 1&#39;</span> ipv4.address <span style="color:#ae81ff">10</span>.127.127.1/24
-nmcli con mod <span style="color:#e6db74">&#39;Wired connection 1&#39;</span> connection.autoconnect yes</code></pre></div>
-<ul>
-<li>Set the (auto) connection priority for the connection
-
-<ul>
-<li>This will force this connection to be attepted first followed by the offline (cloned) version configured below</li>
 </ul></li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nmcli connection modify <span style="color:#e6db74">&#39;Wired connection 1&#39;</span> connection.autoconnect-priority -998</code></pre></div>
+
+<li><p>add a <code>10</code> network address to our Network Manager connection</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nmcli con mod <span style="color:#e6db74">&#39;Wired connection 1&#39;</span> ipv4.address <span style="color:#ae81ff">10</span>.127.127.1/24
+nmcli con mod <span style="color:#e6db74">&#39;Wired connection 1&#39;</span> connection.autoconnect yes</code></pre></div></li>
+
+<li><p>Set the (auto) connection priority for the connection</p>
+
 <ul>
-<li>update connection (i.e. save the changes)</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nmcli con up <span style="color:#e6db74">&#39;Wired connection 1&#39;</span></code></pre></div>
-<ul>
-<li>Note: do <em>not</em> add the new IP to your <code>/etc/hosts</code> file. A network/host name for this new address will be configured later through Dnsmasq.</li>
+<li><p>This will force this connection to be attepted first followed by the offline (cloned) version configured below</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nmcli connection modify <span style="color:#e6db74">&#39;Wired connection 1&#39;</span> connection.autoconnect-priority -998</code></pre></div></li>
+</ul></li>
+
+<li><p>update connection (i.e. save the changes)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nmcli con up <span style="color:#e6db74">&#39;Wired connection 1&#39;</span></code></pre></div></li>
+
+<li><p>Note: do <em>not</em> add the new IP to your <code>/etc/hosts</code> file. A network/host name for this new address will be configured later through Dnsmasq.</p></li>
 </ul>
 
 <h3 id="clone-connection-and-configure">Clone connection and configure</h3>
@@ -184,33 +166,34 @@ nmcli con mod <span style="color:#e6db74">&#39;Wired connection 1&#39;</span> co
 <p>Note: switching between NetworkManager connections may require that you restart <code>dnsmasq</code>: <code>sudo service dnsmasq restart</code>. This issue occurs mostly when switching from a fully DHCP authenticated internet connection to one that is not (i.e. a connection that is not DHCP/internet enabled). In the reverse I&rsquo;ve found, rarely, a need to run <code>sudo dhclient</code> when switching from an isolated network to one that is DHCP enabled. Additionally, I&rsquo;ve had to reboot in various situations when switching from DHCP networks to non and visa versa -milage may very (sorry for the ambiguity -that&rsquo;s the state of networking&hellip;).</p>
 
 <ul>
-<li>Clone the connection</li>
+<li><p>Clone the connection</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nmcli connection clone <span style="color:#e6db74">&#39;Wired connection 1&#39;</span> <span style="color:#e6db74">&#39;Wired connection 1 offline&#39;</span></code></pre></div></li>
+
+<li><p>Change cloned connection settings in favor of isolation</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nmcli connection modify <span style="color:#e6db74">&#39;Wired connection 1 offline&#39;</span>  ipv4.method manual</code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nmcli connection clone <span style="color:#e6db74">&#39;Wired connection 1&#39;</span> <span style="color:#e6db74">&#39;Wired connection 1 offline&#39;</span></code></pre></div>
-<ul>
-<li>Change cloned connection settings in favor of isolation</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">nmcli connection modify <span style="color:#e6db74">&#39;Wired connection 1 offline&#39;</span>  ipv4.method manual</code></pre></div>
+
 <h2 id="optional-install-resolvconf">(Optional) Install resolvconf</h2>
 
 <ul>
-<li>this is a workaround for Network Manager that allows for finer grained resolver configuration</li>
+<li><p>this is a workaround for Network Manager that allows for finer grained resolver configuration</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt install resolvconf</code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt install resolvconf</code></pre></div>
+
 <h2 id="install-and-configure-dnsmasq">Install and configure Dnsmasq</h2>
 
 <ul>
-<li>Install dnsmasq</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># uninstall network manager version of dnsmasq
-</span><span style="color:#75715e"></span>sudo apt remove dnsmasq-base -y
+<li><p>Install dnsmasq</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># uninstall network manager version of dnsmasq</span>
+sudo apt remove dnsmasq-base -y
 
-<span style="color:#75715e"># install actual dnsmasq
-</span><span style="color:#75715e"></span>sudo apt install dnsmasq -y</code></pre></div>
-<ul>
-<li>enable dnsmasq service</li>
+<span style="color:#75715e"># install actual dnsmasq</span>
+sudo apt install dnsmasq -y</code></pre></div></li>
+
+<li><p>enable dnsmasq service</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo systemctl enable dnsmasq</code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo systemctl enable dnsmasq</code></pre></div>
+
 <h2 id="configure-dnsmasq">Configure dnsmasq</h2>
 
 <h3 id="dnsmasq-configuration-etc-dnsmasq-conf">Dnsmasq configuration <code>/etc/dnsmasq.conf</code></h3>
@@ -223,23 +206,22 @@ domain=docker.devnet,172.17.0.0/24</code></pre></div>
 <h3 id="restart-dnsmasq-and-inspect-hosts-file">Restart Dnsmasq and inspect hosts file</h3>
 
 <ul>
-<li>restart dnsmasq service</li>
+<li><p>restart dnsmasq service</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo service dnsmasq restart</code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo service dnsmasq restart</code></pre></div>
+
 <h2 id="reboot">!!!! <strong>REBOOT</strong> !!!!!</h2>
 
 <p>This is a cringe worthy necessity. Just reboot, it&rsquo;s easy. Accept that the moving parts are more than you want to deal with and that it&rsquo;s really less time to just reboot. I, personally, hate this statement but &hellip; this is the state of things -accept it or spend some time finding a universal way around the reboot and report back here :D</p>
 
 <ul>
-<li>your <code>/etc/resolv.conf</code> file will look similar to this:</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Dynamic resolv.conf(5) file for glibc resolver(3) generated by resolvconf(8)
-</span><span style="color:#75715e">#     DO NOT EDIT THIS FILE BY HAND -- YOUR CHANGES WILL BE OVERWRITTEN
-</span><span style="color:#75715e"></span>nameserver <span style="color:#ae81ff">127</span>.0.0.1
-search your-isp.net</code></pre></div>
-<ul>
-<li>your <code>/etc/hosts</code> file will look something like this</li>
-</ul>
+<li><p>your <code>/etc/resolv.conf</code> file will look similar to this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Dynamic resolv.conf(5) file for glibc resolver(3) generated by resolvconf(8)</span>
+<span style="color:#75715e">#     DO NOT EDIT THIS FILE BY HAND -- YOUR CHANGES WILL BE OVERWRITTEN</span>
+nameserver <span style="color:#ae81ff">127</span>.0.0.1
+search your-isp.net</code></pre></div></li>
+
+<li><p>your <code>/etc/hosts</code> file will look something like this</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">127.0.0.1	localhost
 127.0.0.1   this-laptop
 
@@ -248,7 +230,9 @@ search your-isp.net</code></pre></div>
 fe00::0		ip6-localnet
 ff00::0		ip6-mcastprefix
 ff02::1		ip6-allnodes
-ff02::2		ip6-allrouters</code></pre></div>
+ff02::2		ip6-allrouters</code></pre></div></li>
+</ul>
+
 <h2 id="test-dnsmasq">Test Dnsmasq</h2>
 
 <h3 id="after-reboot">After reboot:</h3>
@@ -301,33 +285,33 @@ ff02::2		ip6-allrouters</code></pre></div>
 <li><a href="https://download.docker.com/linux/debian/dists/stretch/pool/stable/amd64/docker-ce_18.09.1~3-0~debian-stretch_amd64.deb">download and install docker-ce</a></li>
 </ol></li>
 </ul></li>
-<li>test docker
-<code>sh
-sudo docker run hello-world
-</code></li>
+
+<li><p>test docker</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo docker run hello-world</code></pre></div></li>
 </ol>
 
 <h3 id="install-docker-compose">Install Docker Compose</h3>
 
 <ul>
-<li>reference <a href="https://docs.docker.com/compose/install/">Install Docker Compose</a>
+<li><p>reference <a href="https://docs.docker.com/compose/install/">Install Docker Compose</a></p>
 
 <ul>
-<li><a href="https://github.com/docker/compose/releases">Releases · docker/compose</a></li>
+<li><p><a href="https://github.com/docker/compose/releases">Releases · docker/compose</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># be sure to get the latest version (that is compatible with docker -most likely latest...)</span>
+#
+sudo curl -L <span style="color:#e6db74">&#34;https://github.com/docker/compose/releases/download/1.23.2/docker-compose-</span><span style="color:#66d9ef">$(</span>uname -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">-</span><span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose</code></pre></div></li>
 </ul></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># be sure to get the latest version (that is compatible with docker -most likely latest...)
-</span><span style="color:#75715e">#
-</span><span style="color:#75715e"></span>sudo curl -L <span style="color:#e6db74">&#34;https://github.com/docker/compose/releases/download/1.23.2/docker-compose-</span><span style="color:#66d9ef">$(</span>uname -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">-</span><span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span> -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose</code></pre></div>
+
 <h3 id="build-an-image-for-testing">Build an image for testing</h3>
 
 <p>This image is used for testing throughout this documentation where Docker is specified.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://github.com/karlredman/lighttpd-docker.git
-<span style="color:#75715e">#
-</span><span style="color:#75715e"></span>cd lighttpd-docker
-<span style="color:#75715e">#
-</span><span style="color:#75715e"></span>sudo docker build -t lighttpd .</code></pre></div>
+#
+cd lighttpd-docker
+#
+sudo docker build -t lighttpd .</code></pre></div>
 <h3 id="create-common-docker-network-for-containers">Create common docker network for containers</h3>
 
 <ul>
@@ -335,40 +319,38 @@ sudo chmod +x /usr/local/bin/docker-compose</code></pre></div>
 
 <li><p>Specify a <code>.</code> (dot) delimited network name for finicky applications that require a FQDN (fully qualified domain name).</p></li>
 
-<li><p>Note: use <code>-</code> in names instead of <code>_</code> when possible (if needed) to maintain compatibility with various tools.</p></li>
-</ul>
+<li><p>Note: use <code>-</code> in names instead of <code>_</code> when possible (if needed) to maintain compatibility with various tools.</p>
 
 <pre><code>sudo docker network create docker.devnet
-</code></pre>
+</code></pre></li>
+</ul>
 
 <h3 id="add-dns-to-docker-daemon">Add DNS to Docker daemon</h3>
 
 <ul>
-<li>file /etc/docker/daemon.json</li>
-</ul>
+<li><p>file /etc/docker/daemon.json</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
 	<span style="color:#f92672">&#34;dns&#34;</span>: [<span style="color:#e6db74">&#34;10.127.127.1&#34;</span>, <span style="color:#e6db74">&#34;8.8.8.8&#34;</span>]
-}</code></pre></div>
-<ul>
-<li>restart docker daemon</li>
+}</code></pre></div></li>
+
+<li><p>restart docker daemon</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo service docker restart</code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo service docker restart</code></pre></div>
+
 <h3 id="testing-host-to-docker-container-dns-resolution">Testing host to Docker container DNS resolution</h3>
 
 <ul>
-<li>Start test containers</li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># start FQDN hostname docker container 1
-</span><span style="color:#75715e"></span>sudo docker run -d -p <span style="color:#ae81ff">8081</span>:80 -p <span style="color:#ae81ff">4441</span>:443 --rm -t --name docker-container-1-name -h docker-container-1.docker.devnet --net docker.devnet lighttpd
+<li><p>Start test containers</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># start FQDN hostname docker container 1</span>
+sudo docker run -d -p <span style="color:#ae81ff">8081</span>:80 -p <span style="color:#ae81ff">4441</span>:443 --rm -t --name docker-container-1-name -h docker-container-1.docker.devnet --net docker.devnet lighttpd
 
-<span style="color:#75715e"># start container 2
-</span><span style="color:#75715e"></span>sudo docker run -d -p <span style="color:#ae81ff">8082</span>:80 -p <span style="color:#ae81ff">4442</span>:443 --rm -t --name docker-container-2-name -h docker-container-2 --net docker.devnet lighttpd
+<span style="color:#75715e"># start container 2</span>
+sudo docker run -d -p <span style="color:#ae81ff">8082</span>:80 -p <span style="color:#ae81ff">4442</span>:443 --rm -t --name docker-container-2-name -h docker-container-2 --net docker.devnet lighttpd
 
-<span style="color:#75715e"># start container 3
-</span><span style="color:#75715e"></span>sudo docker run -d -p <span style="color:#ae81ff">8083</span>:80 -p <span style="color:#ae81ff">4443</span>:443 --rm -t --name docker-container-3-name -h docker-container-3 --net docker.devnet lighttpd</code></pre></div>
-<ul>
-<li>Test DNS resolution</li>
-</ul>
+<span style="color:#75715e"># start container 3</span>
+sudo docker run -d -p <span style="color:#ae81ff">8083</span>:80 -p <span style="color:#ae81ff">4443</span>:443 --rm -t --name docker-container-3-name -h docker-container-3 --net docker.devnet lighttpd</code></pre></div></li>
+
+<li><p>Test DNS resolution</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">####### normal docker behavior with user-defined network &#39;docker.devnet&#39;
 #
 # ping container 3 *container name* from container 2
@@ -376,7 +358,9 @@ sudo docker exec -ti docker-container-2-name sh -c &#34;ping -c 4 docker-contain
 #
 # ping private network host wildcard from a container
 ## Note: if this part isn&#39;t working then you likely are being blocked by your own firewall
-sudo docker exec -ti docker-container-1-name sh -c &#34;ping -c 4 a-wildcard.private.home&#34;</code></pre></div>
+sudo docker exec -ti docker-container-1-name sh -c &#34;ping -c 4 a-wildcard.private.home&#34;</code></pre></div></li>
+</ul>
+
 <h2 id="that-s-it">That&rsquo;s it!</h2>
 
 <p>I hope this workes for you&hellip;</p>
@@ -503,7 +487,7 @@ sudo docker exec -ti docker-container-1-name sh -c &#34;ping -c 4 a-wildcard.pri
 	</div>
 	<footer class="footer">
 	<div class="footer__inner inner">
-		<div class="footer__copyright">© 2019 Karl N. Redman. <span class="footer__copyright-credits">Powered by <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/vimux/amnix" rel="nofollow noopener" target="_blank">Amnix</a> theme.</span></div>
+		<div class="footer__copyright">© 2020 Karl N. Redman. <span class="footer__copyright-credits">Powered by <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/vimux/amnix" rel="nofollow noopener" target="_blank">Amnix</a> theme.</span></div>
 <div class="footer__social social">
 		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="mailto:karl.redman@gmail.com">
 			<svg class="social__icon" aria-label="Email" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M299 268l124 106c-4 4-10 7-17 7H106c-7 0-13-3-17-7l124-106 43 38 43-38zm-43 13L89 138c4-4 10-7 17-7h300c7 0 13 3 17 7L256 281zm54-23l121-105v208L310 258zM81 153l121 105L81 361V153z"/></svg>

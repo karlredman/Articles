@@ -6,121 +6,13 @@
     <description>Recent content in Tags on Articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Apr 2019 13:12:51 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 24 Jun 2019 23:57:02 -0500</lastBuildDate>
     
 	<atom:link href="https://karlredman.github.io/Articles/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Administration</title>
-      <link>https://karlredman.github.io/Articles/tags/administration/</link>
-      <pubDate>Sun, 28 Apr 2019 13:12:51 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/administration/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Authentication</title>
-      <link>https://karlredman.github.io/Articles/tags/authentication/</link>
-      <pubDate>Wed, 24 Apr 2019 13:27:21 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/authentication/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Compile</title>
-      <link>https://karlredman.github.io/Articles/tags/compile/</link>
-      <pubDate>Fri, 15 Mar 2019 07:41:28 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/compile/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Debian</title>
-      <link>https://karlredman.github.io/Articles/tags/debian/</link>
-      <pubDate>Fri, 15 Mar 2019 07:41:28 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/debian/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Development</title>
-      <link>https://karlredman.github.io/Articles/tags/development/</link>
-      <pubDate>Wed, 10 Apr 2019 07:37:38 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Diagram</title>
-      <link>https://karlredman.github.io/Articles/tags/diagram/</link>
-      <pubDate>Sun, 28 Apr 2019 12:37:00 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/diagram/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dnsmasq</title>
-      <link>https://karlredman.github.io/Articles/tags/dnsmasq/</link>
-      <pubDate>Fri, 01 Mar 2019 07:30:30 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/dnsmasq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Docker</title>
-      <link>https://karlredman.github.io/Articles/tags/docker/</link>
-      <pubDate>Sun, 03 Mar 2019 07:35:35 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ecosystem</title>
-      <link>https://karlredman.github.io/Articles/tags/ecosystem/</link>
-      <pubDate>Sun, 03 Mar 2019 07:35:35 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/ecosystem/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Flowchart</title>
-      <link>https://karlredman.github.io/Articles/tags/flowchart/</link>
-      <pubDate>Sun, 28 Apr 2019 13:12:51 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/flowchart/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Front Matter</title>
-      <link>https://karlredman.github.io/Articles/tags/front-matter/</link>
-      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/front-matter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gatekeeper</title>
-      <link>https://karlredman.github.io/Articles/tags/gatekeeper/</link>
-      <pubDate>Sun, 28 Apr 2019 13:12:51 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/gatekeeper/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Greeter</title>
+      <title>greeter</title>
       <link>https://karlredman.github.io/Articles/tags/greeter/</link>
       <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
       
@@ -129,43 +21,7 @@
     </item>
     
     <item>
-      <title>Howto</title>
-      <link>https://karlredman.github.io/Articles/tags/howto/</link>
-      <pubDate>Fri, 15 Mar 2019 07:41:28 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/howto/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jinja2</title>
-      <link>https://karlredman.github.io/Articles/tags/jinja2/</link>
-      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/jinja2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Keycloak</title>
-      <link>https://karlredman.github.io/Articles/tags/keycloak/</link>
-      <pubDate>Sun, 28 Apr 2019 13:12:51 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/keycloak/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lifestyle</title>
-      <link>https://karlredman.github.io/Articles/tags/lifestyle/</link>
-      <pubDate>Wed, 06 Dec 2017 07:57:35 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/lifestyle/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lightdm</title>
+      <title>lightdm</title>
       <link>https://karlredman.github.io/Articles/tags/lightdm/</link>
       <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
       
@@ -174,133 +30,7 @@
     </item>
     
     <item>
-      <title>Management</title>
-      <link>https://karlredman.github.io/Articles/tags/management/</link>
-      <pubDate>Wed, 10 Apr 2019 07:37:38 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/management/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Markdown</title>
-      <link>https://karlredman.github.io/Articles/tags/markdown/</link>
-      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mental Health</title>
-      <link>https://karlredman.github.io/Articles/tags/mental-health/</link>
-      <pubDate>Wed, 06 Dec 2017 07:57:35 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/mental-health/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Multilingual</title>
-      <link>https://karlredman.github.io/Articles/tags/multilingual/</link>
-      <pubDate>Wed, 10 Apr 2019 07:37:38 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/multilingual/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Navigation</title>
-      <link>https://karlredman.github.io/Articles/tags/navigation/</link>
-      <pubDate>Fri, 15 Mar 2019 07:44:19 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/navigation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Network</title>
-      <link>https://karlredman.github.io/Articles/tags/network/</link>
-      <pubDate>Sun, 03 Mar 2019 07:35:35 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/network/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Network Manager</title>
-      <link>https://karlredman.github.io/Articles/tags/network-manager/</link>
-      <pubDate>Fri, 01 Mar 2019 07:30:30 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/network-manager/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programming</title>
-      <link>https://karlredman.github.io/Articles/tags/programming/</link>
-      <pubDate>Wed, 06 Dec 2017 07:57:35 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python3</title>
-      <link>https://karlredman.github.io/Articles/tags/python3/</link>
-      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/python3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Shortcuts</title>
-      <link>https://karlredman.github.io/Articles/tags/shortcuts/</link>
-      <pubDate>Fri, 15 Mar 2019 07:44:19 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/shortcuts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Teamwork</title>
-      <link>https://karlredman.github.io/Articles/tags/teamwork/</link>
-      <pubDate>Wed, 10 Apr 2019 07:37:38 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/teamwork/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Traefik</title>
-      <link>https://karlredman.github.io/Articles/tags/traefik/</link>
-      <pubDate>Sun, 28 Apr 2019 12:37:00 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/traefik/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vim</title>
-      <link>https://karlredman.github.io/Articles/tags/vim/</link>
-      <pubDate>Fri, 15 Mar 2019 07:44:19 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/vim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Vscode</title>
-      <link>https://karlredman.github.io/Articles/tags/vscode/</link>
-      <pubDate>Fri, 15 Mar 2019 07:44:19 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/vscode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Wallpaper</title>
+      <title>wallpaper</title>
       <link>https://karlredman.github.io/Articles/tags/wallpaper/</link>
       <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
       
@@ -309,11 +39,281 @@
     </item>
     
     <item>
-      <title>Xfce</title>
+      <title>xfce</title>
       <link>https://karlredman.github.io/Articles/tags/xfce/</link>
       <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
       
       <guid>https://karlredman.github.io/Articles/tags/xfce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>front-matter</title>
+      <link>https://karlredman.github.io/Articles/tags/front-matter/</link>
+      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/front-matter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jinja2</title>
+      <link>https://karlredman.github.io/Articles/tags/jinja2/</link>
+      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/jinja2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>markdown</title>
+      <link>https://karlredman.github.io/Articles/tags/markdown/</link>
+      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python3</title>
+      <link>https://karlredman.github.io/Articles/tags/python3/</link>
+      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/python3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>administration</title>
+      <link>https://karlredman.github.io/Articles/tags/administration/</link>
+      <pubDate>Sun, 28 Apr 2019 13:12:51 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/administration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>flowchart</title>
+      <link>https://karlredman.github.io/Articles/tags/flowchart/</link>
+      <pubDate>Sun, 28 Apr 2019 13:12:51 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/flowchart/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gatekeeper</title>
+      <link>https://karlredman.github.io/Articles/tags/gatekeeper/</link>
+      <pubDate>Sun, 28 Apr 2019 13:12:51 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/gatekeeper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>keycloak</title>
+      <link>https://karlredman.github.io/Articles/tags/keycloak/</link>
+      <pubDate>Sun, 28 Apr 2019 13:12:51 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/keycloak/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>diagram</title>
+      <link>https://karlredman.github.io/Articles/tags/diagram/</link>
+      <pubDate>Sun, 28 Apr 2019 12:37:00 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/diagram/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>traefik</title>
+      <link>https://karlredman.github.io/Articles/tags/traefik/</link>
+      <pubDate>Sun, 28 Apr 2019 12:37:00 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/traefik/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>authentication</title>
+      <link>https://karlredman.github.io/Articles/tags/authentication/</link>
+      <pubDate>Wed, 24 Apr 2019 13:27:21 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/authentication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>development</title>
+      <link>https://karlredman.github.io/Articles/tags/development/</link>
+      <pubDate>Wed, 10 Apr 2019 07:37:38 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>management</title>
+      <link>https://karlredman.github.io/Articles/tags/management/</link>
+      <pubDate>Wed, 10 Apr 2019 07:37:38 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>multilingual</title>
+      <link>https://karlredman.github.io/Articles/tags/multilingual/</link>
+      <pubDate>Wed, 10 Apr 2019 07:37:38 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/multilingual/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>teamwork</title>
+      <link>https://karlredman.github.io/Articles/tags/teamwork/</link>
+      <pubDate>Wed, 10 Apr 2019 07:37:38 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/teamwork/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>navigation</title>
+      <link>https://karlredman.github.io/Articles/tags/navigation/</link>
+      <pubDate>Fri, 15 Mar 2019 07:44:19 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/navigation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shortcuts</title>
+      <link>https://karlredman.github.io/Articles/tags/shortcuts/</link>
+      <pubDate>Fri, 15 Mar 2019 07:44:19 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/shortcuts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vim</title>
+      <link>https://karlredman.github.io/Articles/tags/vim/</link>
+      <pubDate>Fri, 15 Mar 2019 07:44:19 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vscode</title>
+      <link>https://karlredman.github.io/Articles/tags/vscode/</link>
+      <pubDate>Fri, 15 Mar 2019 07:44:19 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/vscode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>compile</title>
+      <link>https://karlredman.github.io/Articles/tags/compile/</link>
+      <pubDate>Fri, 15 Mar 2019 07:41:28 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/compile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debian</title>
+      <link>https://karlredman.github.io/Articles/tags/debian/</link>
+      <pubDate>Fri, 15 Mar 2019 07:41:28 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/debian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>howto</title>
+      <link>https://karlredman.github.io/Articles/tags/howto/</link>
+      <pubDate>Fri, 15 Mar 2019 07:41:28 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/howto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://karlredman.github.io/Articles/tags/docker/</link>
+      <pubDate>Sun, 03 Mar 2019 07:35:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ecosystem</title>
+      <link>https://karlredman.github.io/Articles/tags/ecosystem/</link>
+      <pubDate>Sun, 03 Mar 2019 07:35:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/ecosystem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>network</title>
+      <link>https://karlredman.github.io/Articles/tags/network/</link>
+      <pubDate>Sun, 03 Mar 2019 07:35:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dnsmasq</title>
+      <link>https://karlredman.github.io/Articles/tags/dnsmasq/</link>
+      <pubDate>Fri, 01 Mar 2019 07:30:30 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/dnsmasq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>network-manager</title>
+      <link>https://karlredman.github.io/Articles/tags/network-manager/</link>
+      <pubDate>Fri, 01 Mar 2019 07:30:30 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/network-manager/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lifestyle</title>
+      <link>https://karlredman.github.io/Articles/tags/lifestyle/</link>
+      <pubDate>Wed, 06 Dec 2017 07:57:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/lifestyle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mental-health</title>
+      <link>https://karlredman.github.io/Articles/tags/mental-health/</link>
+      <pubDate>Wed, 06 Dec 2017 07:57:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/mental-health/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://karlredman.github.io/Articles/tags/programming/</link>
+      <pubDate>Wed, 06 Dec 2017 07:57:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/programming/</guid>
       <description></description>
     </item>
     
