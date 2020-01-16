@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Jun 2019 23:57:02 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://karlredman.github.io/Articles/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>front-matter</title>
+      <link>https://karlredman.github.io/Articles/tags/front-matter/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/front-matter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jinja2</title>
+      <link>https://karlredman.github.io/Articles/tags/jinja2/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/jinja2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>markdown</title>
+      <link>https://karlredman.github.io/Articles/tags/markdown/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python3</title>
+      <link>https://karlredman.github.io/Articles/tags/python3/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/tags/python3/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>greeter</title>
@@ -44,42 +80,6 @@
       <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
       
       <guid>https://karlredman.github.io/Articles/tags/xfce/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>front-matter</title>
-      <link>https://karlredman.github.io/Articles/tags/front-matter/</link>
-      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/front-matter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>jinja2</title>
-      <link>https://karlredman.github.io/Articles/tags/jinja2/</link>
-      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/jinja2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>markdown</title>
-      <link>https://karlredman.github.io/Articles/tags/markdown/</link>
-      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python3</title>
-      <link>https://karlredman.github.io/Articles/tags/python3/</link>
-      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/tags/python3/</guid>
       <description></description>
     </item>
     
