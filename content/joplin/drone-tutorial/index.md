@@ -13,7 +13,7 @@ date: "2020-01-10"
 
 lastmodifierdisplayname: "Karl N. Redman"
 lastmodifieremail: "karl.redman@gmail.com"
-lastmod: "2020-10"
+lastmod: "2020-01-10"
 
 type: "page"
 #theme: "league"
