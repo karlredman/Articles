@@ -22,6 +22,17 @@
     </item>
     
     <item>
+      <title>Parasynthetic.dev drone/ci (v1.6.2) Setup:</title>
+      <link>https://karlredman.github.io/Articles/projects/parasynthetic.dev/parasynthetic.dev-drone_ci-v1.6.2-setup_/</link>
+      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/projects/parasynthetic.dev/parasynthetic.dev-drone_ci-v1.6.2-setup_/</guid>
+      <description>Original document creation date: 10/01/2020
+Parasynthetic.dev drone/ci (v1.6.2) Setup: Parasynthetic.dev is an eccosystem of development tools that includes the following services:
+ Traefik (v1.7.11): Network Proxy server (and Let&amp;rsquo;s Encrypt ACME v2 client)  As of this writing Traefik v2+ is not entirely production ready IMHO.  Gitea (v1.10.2): Private git repository  bare metal installation uses Mysql on bare metal  Drone CI (v1.6.2): Private build system instance  Docker based installation uses Sqlite as database  Portus (v2.</description>
+    </item>
+    
+    <item>
       <title>How To Be A Computer Programmer</title>
       <link>https://karlredman.github.io/Articles/medium/howto_beaprogrammer/</link>
       <pubDate>Wed, 06 Dec 2017 07:57:35 -0500</pubDate>
