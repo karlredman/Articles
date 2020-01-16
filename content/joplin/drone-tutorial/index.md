@@ -23,7 +23,7 @@ weight: 5
 
 # Parasynthetic.dev drone/ci (v1.6.2) Setup:
 
-QQQQQQ
+GGGGGG
 
 Original document creation date: 10/01/2020
 
