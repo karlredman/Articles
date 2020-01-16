@@ -283,7 +283,7 @@ networks:
 * For testing purposes it's easiest to just use [drone/hello-world: simple repository with CI enabled](https://github.com/drone/hello-world).
   * Use Gitea's migrate feature to create a local copy of the `hello-world` repo from github.
 
-![](../../_resources/790e6a6ce3784cc097fa38b3a7d693b9.png)
+![](../_resources/790e6a6ce3784cc097fa38b3a7d693b9.png)
 
 * navigate to your drone service (`https://drone.example.com`) and refresh/sync the repoitory list if needed.
   * activate the hello-world repository
