@@ -3,16 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://karlredman.github.io/Articles/joplin/drone-tutorial/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://karlredman.github.io/Articles/joplin/thing/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://karlredman.github.io/Articles/dev.to/xfce_login_wallpaper_cycle/</loc>
     <lastmod>2019-06-24T23:57:02-05:00</lastmod>
   </url>
@@ -69,53 +59,8 @@
   
   <url>
     <loc>https://karlredman.github.io/Articles/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
+    <lastmod>2019-06-25T02:58:38-05:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://karlredman.github.io/Articles/categories/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://karlredman.github.io/Articles/tags/front-matter/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://karlredman.github.io/Articles/tags/jinja2/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://karlredman.github.io/Articles/joplin/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://karlredman.github.io/Articles/tags/markdown/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://karlredman.github.io/Articles/categories/programming/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://karlredman.github.io/Articles/tags/python3/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://karlredman.github.io/Articles/tags/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://karlredman.github.io/Articles/categories/utility/</loc>
-    <lastmod>2020-01-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -126,6 +71,11 @@
   
   <url>
     <loc>https://karlredman.github.io/Articles/categories/admin/</loc>
+    <lastmod>2019-06-25T02:58:38-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/</loc>
     <lastmod>2019-06-25T02:58:38-05:00</lastmod>
   </url>
   
@@ -155,6 +105,11 @@
   </url>
   
   <url>
+    <loc>https://karlredman.github.io/Articles/tags/</loc>
+    <lastmod>2019-06-25T02:58:38-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://karlredman.github.io/Articles/tags/wallpaper/</loc>
     <lastmod>2019-06-24T23:57:02-05:00</lastmod>
   </url>
@@ -162,6 +117,36 @@
   <url>
     <loc>https://karlredman.github.io/Articles/tags/xfce/</loc>
     <lastmod>2019-06-24T23:57:02-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/front-matter/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/jinja2/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/markdown/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/programming/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/python3/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/utility/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
   </url>
   
   <url>
@@ -250,12 +235,12 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/tags/shortcuts/</loc>
+    <loc>https://karlredman.github.io/Articles/categories/shortcuts/</loc>
     <lastmod>2019-06-25T02:58:38-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/categories/shortcuts/</loc>
+    <loc>https://karlredman.github.io/Articles/tags/shortcuts/</loc>
     <lastmod>2019-06-25T02:58:38-05:00</lastmod>
   </url>
   
@@ -265,12 +250,12 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/categories/vscode/</loc>
+    <loc>https://karlredman.github.io/Articles/tags/vscode/</loc>
     <lastmod>2019-06-25T02:58:38-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/tags/vscode/</loc>
+    <loc>https://karlredman.github.io/Articles/categories/vscode/</loc>
     <lastmod>2019-06-25T02:58:38-05:00</lastmod>
   </url>
   
