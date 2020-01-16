@@ -23,7 +23,7 @@ weight: 5
 
 # Parasynthetic.dev drone/ci (v1.6.2) Setup:
 
-LLLLLLLLL
+TTTTTTTTTTTTTTTTTTT
 
 Original document creation date: 10/01/2020
 
@@ -285,12 +285,12 @@ networks:
 * For testing purposes it's easiest to just use [drone/hello-world: simple repository with CI enabled](https://github.com/drone/hello-world).
   * Use Gitea's migrate feature to create a local copy of the `hello-world` repo from github.
 
-![IMAGE_HERE](../../_resources/790e6a6ce3784cc097fa38b3a7d693b9.png)
+![IMAGE_HERE](790e6a6ce3784cc097fa38b3a7d693b9.png)
 
 * navigate to your drone service (`https://drone.example.com`) and refresh/sync the repoitory list if needed.
   * activate the hello-world repository
 
-![IMAGE_HERE](../_resources/c784e3ca1abe4e35a8176c3b18914e7e.png)
+![IMAGE_HERE](c784e3ca1abe4e35a8176c3b18914e7e.png)
 
 * verify that the webhook was created for the repository in Gitea
   * `settings -> webhooks`
