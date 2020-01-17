@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://karlredman.github.io/Articles/joplin/parasynthetic.dev-drone_ci-v1.6.2-setup/</loc>
+    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://karlredman.github.io/Articles/dev.to/xfce_login_wallpaper_cycle/</loc>
     <lastmod>2019-06-24T23:57:02-05:00</lastmod>
   </url>
@@ -86,6 +91,11 @@
   
   <url>
     <loc>https://karlredman.github.io/Articles/tags/greeter/</loc>
+    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/joplin/</loc>
     <lastmod>2019-06-24T23:57:02-05:00</lastmod>
   </url>
   
@@ -235,12 +245,12 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/categories/shortcuts/</loc>
+    <loc>https://karlredman.github.io/Articles/tags/shortcuts/</loc>
     <lastmod>2019-06-25T02:58:38-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/tags/shortcuts/</loc>
+    <loc>https://karlredman.github.io/Articles/categories/shortcuts/</loc>
     <lastmod>2019-06-25T02:58:38-05:00</lastmod>
   </url>
   
@@ -250,12 +260,12 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/tags/vscode/</loc>
+    <loc>https://karlredman.github.io/Articles/categories/vscode/</loc>
     <lastmod>2019-06-25T02:58:38-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/categories/vscode/</loc>
+    <loc>https://karlredman.github.io/Articles/tags/vscode/</loc>
     <lastmod>2019-06-25T02:58:38-05:00</lastmod>
   </url>
   

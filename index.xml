@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Parasynthetic.dev drone/ci (v1.6.2) Setup:</title>
+      <link>https://karlredman.github.io/Articles/joplin/parasynthetic.dev-drone_ci-v1.6.2-setup/</link>
+      <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/joplin/parasynthetic.dev-drone_ci-v1.6.2-setup/</guid>
+      <description>Parasynthetic.dev drone/ci (v1.6.2) Setup: Parasynthetic.dev is an eccosystem of development tools that includes the following services:
+ Traefik (v1.7.11): Network Proxy server (and Let&amp;rsquo;s Encrypt ACME v2 client)  As of this writing Traefik v2+ is not entirely production ready IMHO.  Gitea (v1.10.2): Private git repository  bare metal installation uses Mysql on bare metal  Drone CI (v1.6.2): Private build system instance  Docker based installation uses Sqlite as database  Portus (v2.</description>
+    </item>
+    
+    <item>
       <title>Randomize your XFCE / LightDM Login Screen Wallpaper</title>
       <link>https://karlredman.github.io/Articles/dev.to/xfce_login_wallpaper_cycle/</link>
       <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
