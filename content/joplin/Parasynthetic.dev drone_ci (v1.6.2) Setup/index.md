@@ -22,7 +22,7 @@ date: 2019-06-24T23:57:02-05:00
 weight: 5
 ---
 
-# Parasynthetic.dev drone/ci (v1.6.2) Setup:
+# XXX Parasynthetic.dev drone/ci (v1.6.2) Setup:
 
 Parasynthetic.dev is an eccosystem of development tools that includes the following services:
 
