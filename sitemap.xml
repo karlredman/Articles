@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://karlredman.github.io/Articles/joplin/parasynthetic.dev-drone_ci-v1.6.2-setup/</loc>
-    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://karlredman.github.io/Articles/dev.to/xfce_login_wallpaper_cycle/</loc>
     <lastmod>2019-06-24T23:57:02-05:00</lastmod>
   </url>
@@ -63,19 +58,12 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/</loc>
-    <lastmod>2019-06-25T02:58:38-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://karlredman.github.io/Articles/dev.to/</loc>
-    <lastmod>2019-06-25T02:58:38-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://karlredman.github.io/Articles/categories/admin/</loc>
+    <lastmod>2019-06-25T02:58:38-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/</loc>
     <lastmod>2019-06-25T02:58:38-05:00</lastmod>
   </url>
   
@@ -90,12 +78,12 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/tags/greeter/</loc>
-    <lastmod>2019-06-24T23:57:02-05:00</lastmod>
+    <loc>https://karlredman.github.io/Articles/dev.to/</loc>
+    <lastmod>2019-06-25T02:58:38-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/joplin/</loc>
+    <loc>https://karlredman.github.io/Articles/tags/greeter/</loc>
     <lastmod>2019-06-24T23:57:02-05:00</lastmod>
   </url>
   
@@ -260,12 +248,12 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/categories/vscode/</loc>
+    <loc>https://karlredman.github.io/Articles/tags/vscode/</loc>
     <lastmod>2019-06-25T02:58:38-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/tags/vscode/</loc>
+    <loc>https://karlredman.github.io/Articles/categories/vscode/</loc>
     <lastmod>2019-06-25T02:58:38-05:00</lastmod>
   </url>
   
@@ -280,12 +268,12 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/categories/howto/</loc>
+    <loc>https://karlredman.github.io/Articles/tags/howto/</loc>
     <lastmod>2019-06-23T07:41:28-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/tags/howto/</loc>
+    <loc>https://karlredman.github.io/Articles/categories/howto/</loc>
     <lastmod>2019-06-23T07:41:28-05:00</lastmod>
   </url>
   
@@ -325,12 +313,6 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/medium/</loc>
-    <lastmod>2017-12-06T07:58:09-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://karlredman.github.io/Articles/categories/advice/</loc>
     <lastmod>2017-12-06T07:58:09-05:00</lastmod>
   </url>
@@ -342,6 +324,11 @@
   
   <url>
     <loc>https://karlredman.github.io/Articles/tags/lifestyle/</loc>
+    <lastmod>2017-12-06T07:58:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/medium/</loc>
     <lastmod>2017-12-06T07:58:09-05:00</lastmod>
   </url>
   
@@ -358,15 +345,6 @@
   <url>
     <loc>https://karlredman.github.io/Articles/tags/programming/</loc>
     <lastmod>2017-12-06T07:58:09-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://karlredman.github.io/Articles/diary/2019-06-26/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://karlredman.github.io/Articles/diary/</loc>
   </url>
   
 </urlset>
