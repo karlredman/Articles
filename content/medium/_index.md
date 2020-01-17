@@ -1,1 +1,0 @@
-# vimwiki medium index
