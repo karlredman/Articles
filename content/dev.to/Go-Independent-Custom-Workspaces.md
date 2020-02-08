@@ -24,10 +24,6 @@ weight: 5
 ---
 
 
-# Golang: Independent Custom Workspaces
-
-## TL;DR:
-
 Up to and including `go1.13.7`, `$GOPATH`, `$GOBIN` and the `Go toolchain` make it very difficult to isolate the `Go Workspace` for any *development* / *production* / *runtime* environments outside of the `Go Contributers'` agenda and scope of ideology.
 
 This article attempts to illustrate how one might go about working around these *severe* `Go` environment limitations. Also, I'm a big fan of `golang` and I want to use it in a more wide ranging and versatile real-world environment.
