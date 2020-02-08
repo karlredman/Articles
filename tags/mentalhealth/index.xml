@@ -6,7 +6,7 @@
     <description>Recent content in mentalhealth on Articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Jun 2019 23:13:35 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 08 Feb 2020 02:53:15 -0600</lastBuildDate>
     
 	<atom:link href="https://karlredman.github.io/Articles/tags/mentalhealth/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,11 +14,11 @@
     <item>
       <title>Golang: Independent Custom Workspaces</title>
       <link>https://karlredman.github.io/Articles/dev.to/go-independent-custom-workspaces/</link>
-      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
+      <pubDate>Sat, 08 Feb 2020 02:53:15 -0600</pubDate>
       
       <guid>https://karlredman.github.io/Articles/dev.to/go-independent-custom-workspaces/</guid>
-      <description>Golang: Independent Custom Workspaces  Originally published 20200207 Go: Independent Custom Workspaces - DEV Community 👩‍💻👨‍💻  TL;DR: Up to and including go1.13.7, $GOPATH, $GOBIN and the Go toolchain make it very difficult to isolate the Go Workspace for any development / production / runtime environments outside of the Go Contributers&#39; agenda and scope of ideology.
-This article attempts to illustrate how one might go about working around these severe Go environment limitations.</description>
+      <description>Golang: Independent Custom Workspaces TL;DR: Up to and including go1.13.7, $GOPATH, $GOBIN and the Go toolchain make it very difficult to isolate the Go Workspace for any development / production / runtime environments outside of the Go Contributers&#39; agenda and scope of ideology.
+This article attempts to illustrate how one might go about working around these severe Go environment limitations. Also, I&amp;rsquo;m a big fan of golang and I want to use it in a more wide ranging and versatile real-world environment.</description>
     </item>
     
   </channel>

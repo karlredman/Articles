@@ -6,10 +6,20 @@
     <description>Recent content on Articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Jun 2019 23:57:02 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 08 Feb 2020 02:53:15 -0600</lastBuildDate>
     
 	<atom:link href="https://karlredman.github.io/Articles/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Golang: Independent Custom Workspaces</title>
+      <link>https://karlredman.github.io/Articles/dev.to/go-independent-custom-workspaces/</link>
+      <pubDate>Sat, 08 Feb 2020 02:53:15 -0600</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/go-independent-custom-workspaces/</guid>
+      <description>Golang: Independent Custom Workspaces TL;DR: Up to and including go1.13.7, $GOPATH, $GOBIN and the Go toolchain make it very difficult to isolate the Go Workspace for any development / production / runtime environments outside of the Go Contributers&#39; agenda and scope of ideology.
+This article attempts to illustrate how one might go about working around these severe Go environment limitations. Also, I&amp;rsquo;m a big fan of golang and I want to use it in a more wide ranging and versatile real-world environment.</description>
+    </item>
     
     <item>
       <title>Randomize your XFCE / LightDM Login Screen Wallpaper</title>
@@ -29,16 +39,6 @@ For fans of the lightweight and highly configurable linux desktop environment XF
       <guid>https://karlredman.github.io/Articles/dev.to/be-a-python-jinja-master-automated-front-matter-editing/</guid>
       <description>I&amp;rsquo;m pleased to announce the initial release of EditFrontMatter: A python module for editing markdown front matter using Jinja2 Templates.
  See: EditFrontMatter Project Homepage Several examples are included in the documentation  Basic usage Advanced mulit-pass processor Recursive directory walker that uses multi-threading to edit files   The Pitch: Imagine that you could retain all of your various article and documentation content in markdown. And then cater that content to whichever static site generator1, and theme thereof, without manually editing each and every file.</description>
-    </item>
-    
-    <item>
-      <title>Golang: Independent Custom Workspaces</title>
-      <link>https://karlredman.github.io/Articles/dev.to/go-independent-custom-workspaces/</link>
-      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/dev.to/go-independent-custom-workspaces/</guid>
-      <description>Golang: Independent Custom Workspaces  Originally published 20200207 Go: Independent Custom Workspaces - DEV Community 👩‍💻👨‍💻  TL;DR: Up to and including go1.13.7, $GOPATH, $GOBIN and the Go toolchain make it very difficult to isolate the Go Workspace for any development / production / runtime environments outside of the Go Contributers&#39; agenda and scope of ideology.
-This article attempts to illustrate how one might go about working around these severe Go environment limitations.</description>
     </item>
     
     <item>
