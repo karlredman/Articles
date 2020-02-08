@@ -1,7 +1,7 @@
 ---
 title: "Multilingual Development: an english perspective"
-published: true
-public_article: true
+published: false
+public_article: false
 description: "Multilingual Development: an english perspective"
 categories: [dev.to,opinion,journal]
 tags: [development,multilingual,teamwork,management]
