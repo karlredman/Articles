@@ -1,43 +1,27 @@
 ---
 title: "Golang: Independent Custom Workspaces"
 published: true
-public_article: true
 description: "Customizing Go workspaces with symlinks."
 categories: [dev.to,programming,devops,administration]
 tags: [go,workspace,mentalhealth,development]
-canonical_url:
+canonical_url: https://github.com/karlredman/My-Articles/wiki/
 published_url: https://dev.to/karlredman/go-independent-custom-workspaces-5d27
-is_public: true
 
 author: "Karl N. Redman"
 creatordisplayname: "Karl N. Redman"
 creatoremail: "karl.redman@gmail.com"
+date: "2020-02-08T23:57:02-05:00"
 
 lastmodifierdisplayname: "Karl N. Redman"
 lastmodifieremail: "karl.redman@gmail.com"
+lastmod: "2020-02-08T23:57:02-05:00"
 
-lastmod: 2020-02-08T23:57:02-05:00
-date: 2020-02-08T23:57:02-05:00
-
-slug: null
-
-hide: false
-alwaysopen: false
-
-toc: true
 type: "page"
 #theme: "league"
-hasMath: false
-
-revealOptions:
-  - transition: 'concave'
-  - controls: true
-  - progress: true
-  - history: true
-  - center: true
 
 weight: 5
 ---
+
 
 # Golang: Independent Custom Workspaces
 
