@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>programming on Articles</title>
+    <title>Programming on Articles</title>
     <link>https://karlredman.github.io/Articles/categories/programming/</link>
-    <description>Recent content in programming on Articles</description>
+    <description>Recent content in Programming on Articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 11 Jun 2019 23:13:35 -0500</lastBuildDate>

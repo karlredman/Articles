@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>admin</title>
+      <title>Admin</title>
       <link>https://karlredman.github.io/Articles/categories/admin/</link>
       <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
       
@@ -21,124 +21,7 @@
     </item>
     
     <item>
-      <title>dev.to</title>
-      <link>https://karlredman.github.io/Articles/categories/dev.to/</link>
-      <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/categories/dev.to/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://karlredman.github.io/Articles/categories/linux/</link>
-      <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ricing</title>
-      <link>https://karlredman.github.io/Articles/categories/ricing/</link>
-      <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/categories/ricing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programming</title>
-      <link>https://karlredman.github.io/Articles/categories/programming/</link>
-      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/categories/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>utility</title>
-      <link>https://karlredman.github.io/Articles/categories/utility/</link>
-      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/categories/utility/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>auth</title>
-      <link>https://karlredman.github.io/Articles/categories/auth/</link>
-      <pubDate>Sun, 28 Apr 2019 13:12:51 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/categories/auth/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>web</title>
-      <link>https://karlredman.github.io/Articles/categories/web/</link>
-      <pubDate>Sun, 28 Apr 2019 13:12:51 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/categories/web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>network</title>
-      <link>https://karlredman.github.io/Articles/categories/network/</link>
-      <pubDate>Sun, 28 Apr 2019 12:37:00 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/categories/network/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shortcuts</title>
-      <link>https://karlredman.github.io/Articles/categories/shortcuts/</link>
-      <pubDate>Fri, 15 Mar 2019 07:44:19 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/categories/shortcuts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vscode</title>
-      <link>https://karlredman.github.io/Articles/categories/vscode/</link>
-      <pubDate>Fri, 15 Mar 2019 07:44:19 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/categories/vscode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>howto</title>
-      <link>https://karlredman.github.io/Articles/categories/howto/</link>
-      <pubDate>Fri, 15 Mar 2019 07:41:28 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/categories/howto/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://karlredman.github.io/Articles/categories/docker/</link>
-      <pubDate>Sun, 03 Mar 2019 07:35:35 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/categories/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ecosystem</title>
-      <link>https://karlredman.github.io/Articles/categories/ecosystem/</link>
-      <pubDate>Sun, 03 Mar 2019 07:35:35 -0500</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/categories/ecosystem/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>advice</title>
+      <title>Advice</title>
       <link>https://karlredman.github.io/Articles/categories/advice/</link>
       <pubDate>Wed, 06 Dec 2017 07:57:35 -0500</pubDate>
       
@@ -147,7 +30,7 @@
     </item>
     
     <item>
-      <title>article</title>
+      <title>Article</title>
       <link>https://karlredman.github.io/Articles/categories/article/</link>
       <pubDate>Wed, 06 Dec 2017 07:57:35 -0500</pubDate>
       
@@ -156,11 +39,128 @@
     </item>
     
     <item>
-      <title>medium.com</title>
+      <title>Auth</title>
+      <link>https://karlredman.github.io/Articles/categories/auth/</link>
+      <pubDate>Sun, 28 Apr 2019 13:12:51 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/auth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dev.to</title>
+      <link>https://karlredman.github.io/Articles/categories/dev.to/</link>
+      <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/dev.to/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://karlredman.github.io/Articles/categories/docker/</link>
+      <pubDate>Sun, 03 Mar 2019 07:35:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ecosystem</title>
+      <link>https://karlredman.github.io/Articles/categories/ecosystem/</link>
+      <pubDate>Sun, 03 Mar 2019 07:35:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/ecosystem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Howto</title>
+      <link>https://karlredman.github.io/Articles/categories/howto/</link>
+      <pubDate>Fri, 15 Mar 2019 07:41:28 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/howto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://karlredman.github.io/Articles/categories/linux/</link>
+      <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Medium.com</title>
       <link>https://karlredman.github.io/Articles/categories/medium.com/</link>
       <pubDate>Wed, 06 Dec 2017 07:57:35 -0500</pubDate>
       
       <guid>https://karlredman.github.io/Articles/categories/medium.com/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://karlredman.github.io/Articles/categories/network/</link>
+      <pubDate>Sun, 28 Apr 2019 12:37:00 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://karlredman.github.io/Articles/categories/programming/</link>
+      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ricing</title>
+      <link>https://karlredman.github.io/Articles/categories/ricing/</link>
+      <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/ricing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shortcuts</title>
+      <link>https://karlredman.github.io/Articles/categories/shortcuts/</link>
+      <pubDate>Fri, 15 Mar 2019 07:44:19 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/shortcuts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Utility</title>
+      <link>https://karlredman.github.io/Articles/categories/utility/</link>
+      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/utility/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vscode</title>
+      <link>https://karlredman.github.io/Articles/categories/vscode/</link>
+      <pubDate>Fri, 15 Mar 2019 07:44:19 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/vscode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>https://karlredman.github.io/Articles/categories/web/</link>
+      <pubDate>Sun, 28 Apr 2019 13:12:51 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/web/</guid>
       <description></description>
     </item>
     

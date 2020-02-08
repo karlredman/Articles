@@ -12,8 +12,8 @@
 <meta property="og:description" content="Navigate your vscode like it&#39;s 1999 (the vim way)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://karlredman.github.io/Articles/dev.to/vscode1999/" />
-<meta property="article:published_time" content="2019-03-15T07:44:19-05:00" />
-<meta property="article:modified_time" content="2019-06-25T02:58:38-05:00" />
+<meta property="article:published_time" content="2019-03-15T07:44:19-05:00"/>
+<meta property="article:modified_time" content="2019-06-25T02:58:38-05:00"/>
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Navigate your vscode like it&#39;s 1999 (the vim way)"/>
@@ -75,19 +75,17 @@
 
 <ul>
 <li>Add this following line to your <code>~/.vimrc</code></li>
-
-<li><p>This (default) means <code>\ov</code> will open the current file in vscode from vim</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">nnoremap</span> &lt;<span style="color:#a6e22e">leader</span>&gt;<span style="color:#a6e22e">ov</span> :<span style="color:#a6e22e">exe</span> <span style="color:#e6db74">&#39;:silent !code %&#39;</span>&lt;<span style="color:#a6e22e">CR</span>&gt;:<span style="color:#a6e22e">redraw</span>!&lt;<span style="color:#a6e22e">CR</span>&gt;</code></pre></div></li>
+<li>This (default) means <code>\ov</code> will open the current file in vscode from vim</li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">nnoremap</span> &lt;<span style="color:#a6e22e">leader</span>&gt;<span style="color:#a6e22e">ov</span> :<span style="color:#a6e22e">exe</span> <span style="color:#e6db74">&#39;:silent !code %&#39;</span>&lt;<span style="color:#a6e22e">CR</span>&gt;:<span style="color:#a6e22e">redraw</span>!&lt;<span style="color:#a6e22e">CR</span>&gt;</code></pre></div>
 <h3 id="use-ctrl-j-and-ctrl-k-to-change-tabs-in-vim-i-prefer-up-down-adjust-as-needed">Use <code>ctrl+j</code> and <code>ctrl+k</code> to change tabs in vim (I prefer up/down -adjust as needed)</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#75715e">&#34; switch tabs (same as gt &amp; gT)</span><span style="color:#960050;background-color:#1e0010">
 </span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">nnoremap</span> &lt;<span style="color:#a6e22e">C</span>-<span style="color:#a6e22e">j</span>&gt; :<span style="color:#a6e22e">tabprevious</span>&lt;<span style="color:#a6e22e">CR</span>&gt;<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">nnoremap</span> &lt;<span style="color:#a6e22e">C</span>-<span style="color:#a6e22e">k</span>&gt; :<span style="color:#a6e22e">tabnext</span>&lt;<span style="color:#a6e22e">CR</span>&gt;<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34;</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">&#34; (bonus) move tabls right or left</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">map</span> &lt;<span style="color:#a6e22e">C</span>-<span style="color:#a6e22e">h</span>&gt; :<span style="color:#a6e22e">execute</span> <span style="color:#e6db74">&#34;tabmove&#34;</span> <span style="color:#a6e22e">tabpagenr</span>() - <span style="color:#ae81ff">2</span> &lt;<span style="color:#a6e22e">CR</span>&gt;<span style="color:#960050;background-color:#1e0010">
-</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">map</span> &lt;<span style="color:#a6e22e">C</span>-<span style="color:#a6e22e">l</span>&gt; :<span style="color:#a6e22e">execute</span> <span style="color:#e6db74">&#34;tabmove&#34;</span> <span style="color:#a6e22e">tabpagenr</span>() + <span style="color:#ae81ff">1</span> &lt;<span style="color:#a6e22e">CR</span>&gt;</code></pre></div>
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">nnoremap</span> &lt;<span style="color:#a6e22e">C</span>-<span style="color:#a6e22e">k</span>&gt; :<span style="color:#a6e22e">tabnext</span>&lt;<span style="color:#a6e22e">CR</span>&gt;<span style="color:#75715e">
+</span><span style="color:#75715e">&#34;
+</span><span style="color:#75715e">&#34; (bonus) move tabls right or left</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">map</span> &lt;<span style="color:#a6e22e">C</span>-<span style="color:#a6e22e">h</span>&gt; :<span style="color:#a6e22e">execute</span><span style="color:#75715e"> &#34;tabmove&#34; tabpagenr() - 2 &lt;CR&gt;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">map</span> &lt;<span style="color:#a6e22e">C</span>-<span style="color:#a6e22e">l</span>&gt; :<span style="color:#a6e22e">execute</span><span style="color:#75715e"> &#34;tabmove&#34; tabpagenr() + 1 &lt;CR&gt;</span></code></pre></div>
 <h2 id="vs-code-changes">VS Code changes</h2>
 
 <p>This get&rsquo;s really complicated to explain. I&rsquo;m going to list the functions with examples here and then the code -edit as needed. I had to configure <code>keybindings.json</code> and <code>settings.json</code> -I haven&rsquo;t tried combining the configurations.</p>
@@ -105,460 +103,463 @@
 <li><p>focus active editor (vim windows)</p>
 
 <ul>
-<li><p>i.e. (similar to vim <code>C-w</code> shortcuts)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-<span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w j&#34;</span>,
-<span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.focusBelowGroup&#34;</span>,
-}<span style="color:#960050;background-color:#1e0010">,</span></code></pre></div></li>
+<li>i.e. (similar to vim <code>C-w</code> shortcuts)</li>
 </ul></li>
-
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w j&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.focusBelowGroup&#34;</span>,
+    }<span style="color:#960050;background-color:#1e0010">,</span></code></pre></div>
+<ul>
 <li><p>focus window groups</p>
 
 <ul>
-<li><p>(similar to tmux panes)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-<span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w down&#34;</span>,
-<span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.moveActiveEditorGroupDown&#34;</span>,
-}<span style="color:#960050;background-color:#1e0010">,</span></code></pre></div></li>
+<li>(similar to tmux panes)</li>
 </ul></li>
-
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w down&#34;</span>,
+    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.moveActiveEditorGroupDown&#34;</span>,
+}<span style="color:#960050;background-color:#1e0010">,</span></code></pre></div>
+<ul>
 <li><p>do nothing for <code>&lt;ALT&gt;</code>+<code>h</code>,<code>j</code>,<code>k</code>,<code>l</code></p>
 
 <ul>
 <li><p>be sure to disable menu keys in vscode settings: <code>Uncheck</code>  &ldquo;Settings-&gt;Window-&gt;Enable Menubar Mneumonics&rdquo;</p></li>
 
-<li><p>Same as default vim behavior</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-<span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;alt+h&#34;</span>,
-<span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;extension.vim_escape&#34;</span>,
-<span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Insert&#39;&#34;</span>
-}<span style="color:#960050;background-color:#1e0010">,</span></code></pre></div></li>
-
+<li><p>Same as default vim behavior</p></li>
+</ul></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">   {
+    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;alt+h&#34;</span>,
+    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;extension.vim_escape&#34;</span>,
+    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Insert&#39;&#34;</span>
+}<span style="color:#960050;background-color:#1e0010">,</span></code></pre></div>
+<ul>
 <li><p>create <code>mark</code></p>
 
 <ul>
-<li><p>see file (<code>/.conf/Code/User/settings.json</code>)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#e6db74">&#34;vim.normalModeKeyBindingsNonRecursive&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
-{
-<span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;a&#34;</span>],
-<span style="color:#f92672">&#34;commands&#34;</span>: [
-    <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark1&#34;</span>
-]
-}
-]</code></pre></div></li>
+<li>see file (<code>/.conf/Code/User/settings.json</code>)</li>
 </ul></li>
-
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">     <span style="color:#e6db74">&#34;vim.normalModeKeyBindingsNonRecursive&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [
+        {
+            <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;a&#34;</span>],
+            <span style="color:#f92672">&#34;commands&#34;</span>: [
+                <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark1&#34;</span>
+            ]
+        }
+    ]</code></pre></div>
+<ul>
 <li><p>jump to <code>mark</code></p>
 
 <ul>
-<li><p>i.e. jump to <code>mark a</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-<span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; a&#34;</span>,
-<span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark1&#34;</span>,
-<span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
-}<span style="color:#960050;background-color:#1e0010">,</span></code></pre></div></li>
-</ul></li>
+<li>i.e. jump to <code>mark a</code></li>
 </ul></li>
 </ul>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; a&#34;</span>,
+    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark1&#34;</span>,
+    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
+}<span style="color:#960050;background-color:#1e0010">,</span></code></pre></div>
 <h2 id="the-files-configs">The files / configs</h2>
 
 <p>At this point I think you get the idea. There are several other vim-like settins I&rsquo;ve added into the config files but, like Vim, you&rsquo;ll have to read the code to find the gems.</p>
 
 <ul>
-<li><p><code>~/.config/Code/User/keybindings.json</code></p>
+<li><code>~/.config/Code/User/keybindings.json</code></li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-<span style="color:#f92672">&#34;vim.easymotion&#34;</span>: <span style="color:#66d9ef">true</span>,
-<span style="color:#f92672">&#34;vim.sneak&#34;</span>: <span style="color:#66d9ef">true</span>,
-<span style="color:#f92672">&#34;vim.incsearch&#34;</span>: <span style="color:#66d9ef">true</span>,
-<span style="color:#f92672">&#34;vim.useSystemClipboard&#34;</span>: <span style="color:#66d9ef">true</span>,
-<span style="color:#f92672">&#34;vim.useCtrlKeys&#34;</span>: <span style="color:#66d9ef">true</span>,
-<span style="color:#f92672">&#34;vim.hlsearch&#34;</span>: <span style="color:#66d9ef">true</span>,
-<span style="color:#f92672">&#34;vim.leader&#34;</span>: <span style="color:#e6db74">&#34;\\&#34;</span>,
-<span style="color:#f92672">&#34;vim.handleKeys&#34;</span>: {
-    <span style="color:#f92672">&#34;&lt;C-a&gt;&#34;</span>: <span style="color:#66d9ef">false</span>,
-    <span style="color:#f92672">&#34;&lt;C-f&gt;&#34;</span>: <span style="color:#66d9ef">false</span>
-},
-<span style="color:#f92672">&#34;vim.normalModeKeyBindingsNonRecursive&#34;</span>: [
-    {
-        <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;&lt;C-n&gt;&#34;</span>],
-        <span style="color:#f92672">&#34;commands&#34;</span>: [<span style="color:#e6db74">&#34;:nohl&#34;</span>]
+    <span style="color:#f92672">&#34;vim.easymotion&#34;</span>: <span style="color:#66d9ef">true</span>,
+    <span style="color:#f92672">&#34;vim.sneak&#34;</span>: <span style="color:#66d9ef">true</span>,
+    <span style="color:#f92672">&#34;vim.incsearch&#34;</span>: <span style="color:#66d9ef">true</span>,
+    <span style="color:#f92672">&#34;vim.useSystemClipboard&#34;</span>: <span style="color:#66d9ef">true</span>,
+    <span style="color:#f92672">&#34;vim.useCtrlKeys&#34;</span>: <span style="color:#66d9ef">true</span>,
+    <span style="color:#f92672">&#34;vim.hlsearch&#34;</span>: <span style="color:#66d9ef">true</span>,
+    <span style="color:#f92672">&#34;vim.leader&#34;</span>: <span style="color:#e6db74">&#34;\\&#34;</span>,
+    <span style="color:#f92672">&#34;vim.handleKeys&#34;</span>: {
+        <span style="color:#f92672">&#34;&lt;C-a&gt;&#34;</span>: <span style="color:#66d9ef">false</span>,
+        <span style="color:#f92672">&#34;&lt;C-f&gt;&#34;</span>: <span style="color:#66d9ef">false</span>
     },
-    {
-        <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;a&#34;</span>],
-        <span style="color:#f92672">&#34;commands&#34;</span>: [
-            <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark1&#34;</span>
-        ]
-    },
-    {
-        <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;b&#34;</span>],
-        <span style="color:#f92672">&#34;commands&#34;</span>: [
-            <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark2&#34;</span>
-        ]
-    },
-    {
-        <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;c&#34;</span>],
-        <span style="color:#f92672">&#34;commands&#34;</span>: [
-            <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark3&#34;</span>
-        ]
-    },
-    {
-        <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;d&#34;</span>],
-        <span style="color:#f92672">&#34;commands&#34;</span>: [
-            <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark4&#34;</span>
-        ]
-    },
-    {
-        <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;e&#34;</span>],
-        <span style="color:#f92672">&#34;commands&#34;</span>: [
-            <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark5&#34;</span>
-        ]
-    },
-    {
-        <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;f&#34;</span>],
-        <span style="color:#f92672">&#34;commands&#34;</span>: [
-            <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark6&#34;</span>
-        ]
-    },
-    {
-        <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;g&#34;</span>],
-        <span style="color:#f92672">&#34;commands&#34;</span>: [
-            <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark7&#34;</span>
-        ]
-    },
-    {
-        <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;h&#34;</span>],
-        <span style="color:#f92672">&#34;commands&#34;</span>: [
-            <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark8&#34;</span>
-        ]
-    },
-    {
-        <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;i&#34;</span>],
-        <span style="color:#f92672">&#34;commands&#34;</span>: [
-            <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark9&#34;</span>
-        ]
-    },
-    {
-        <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;j&#34;</span>],
-        <span style="color:#f92672">&#34;commands&#34;</span>: [
-            <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark0&#34;</span>
-        ]
-    },
-],
-<span style="color:#f92672">&#34;breadcrumbs.enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
-<span style="color:#f92672">&#34;workbench.activityBar.visible&#34;</span>: <span style="color:#66d9ef">true</span>,
-<span style="color:#f92672">&#34;workbench.statusBar.visible&#34;</span>: <span style="color:#66d9ef">true</span>,
-<span style="color:#f92672">&#34;workbench.sideBar.location&#34;</span>: <span style="color:#e6db74">&#34;left&#34;</span>,
-<span style="color:#f92672">&#34;zenMode.hideStatusBar&#34;</span>: <span style="color:#66d9ef">false</span>,
-<span style="color:#f92672">&#34;zenMode.hideTabs&#34;</span>: <span style="color:#66d9ef">false</span>,
-<span style="color:#f92672">&#34;window.enableMenuBarMnemonics&#34;</span>: <span style="color:#66d9ef">false</span>,
-<span style="color:#f92672">&#34;window.menuBarVisibility&#34;</span>: <span style="color:#e6db74">&#34;default&#34;</span>,
-<span style="color:#f92672">&#34;window.zoomLevel&#34;</span>: <span style="color:#ae81ff">1</span>,
-<span style="color:#f92672">&#34;telemetry.enableTelemetry&#34;</span>: <span style="color:#66d9ef">false</span>,
-<span style="color:#f92672">&#34;telemetry.enableCrashReporter&#34;</span>: <span style="color:#66d9ef">false</span>
-}</code></pre></div></li>
-
-<li><p><code>~/.config/Code/User/settings.json</code></p>
+    <span style="color:#f92672">&#34;vim.normalModeKeyBindingsNonRecursive&#34;</span>: [
+        {
+            <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;&lt;C-n&gt;&#34;</span>],
+            <span style="color:#f92672">&#34;commands&#34;</span>: [<span style="color:#e6db74">&#34;:nohl&#34;</span>]
+        },
+        {
+            <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;a&#34;</span>],
+            <span style="color:#f92672">&#34;commands&#34;</span>: [
+                <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark1&#34;</span>
+            ]
+        },
+        {
+            <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;b&#34;</span>],
+            <span style="color:#f92672">&#34;commands&#34;</span>: [
+                <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark2&#34;</span>
+            ]
+        },
+        {
+            <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;c&#34;</span>],
+            <span style="color:#f92672">&#34;commands&#34;</span>: [
+                <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark3&#34;</span>
+            ]
+        },
+        {
+            <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;d&#34;</span>],
+            <span style="color:#f92672">&#34;commands&#34;</span>: [
+                <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark4&#34;</span>
+            ]
+        },
+        {
+            <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;e&#34;</span>],
+            <span style="color:#f92672">&#34;commands&#34;</span>: [
+                <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark5&#34;</span>
+            ]
+        },
+        {
+            <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;f&#34;</span>],
+            <span style="color:#f92672">&#34;commands&#34;</span>: [
+                <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark6&#34;</span>
+            ]
+        },
+        {
+            <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;g&#34;</span>],
+            <span style="color:#f92672">&#34;commands&#34;</span>: [
+                <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark7&#34;</span>
+            ]
+        },
+        {
+            <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;h&#34;</span>],
+            <span style="color:#f92672">&#34;commands&#34;</span>: [
+                <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark8&#34;</span>
+            ]
+        },
+        {
+            <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;i&#34;</span>],
+            <span style="color:#f92672">&#34;commands&#34;</span>: [
+                <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark9&#34;</span>
+            ]
+        },
+        {
+            <span style="color:#f92672">&#34;before&#34;</span>: [<span style="color:#e6db74">&#34;m&#34;</span>,<span style="color:#e6db74">&#34;j&#34;</span>],
+            <span style="color:#f92672">&#34;commands&#34;</span>: [
+                <span style="color:#e6db74">&#34;numberedBookmarks.toggleBookmark0&#34;</span>
+            ]
+        },
+    ],
+    <span style="color:#f92672">&#34;breadcrumbs.enabled&#34;</span>: <span style="color:#66d9ef">true</span>,
+    <span style="color:#f92672">&#34;workbench.activityBar.visible&#34;</span>: <span style="color:#66d9ef">true</span>,
+    <span style="color:#f92672">&#34;workbench.statusBar.visible&#34;</span>: <span style="color:#66d9ef">true</span>,
+    <span style="color:#f92672">&#34;workbench.sideBar.location&#34;</span>: <span style="color:#e6db74">&#34;left&#34;</span>,
+    <span style="color:#f92672">&#34;zenMode.hideStatusBar&#34;</span>: <span style="color:#66d9ef">false</span>,
+    <span style="color:#f92672">&#34;zenMode.hideTabs&#34;</span>: <span style="color:#66d9ef">false</span>,
+    <span style="color:#f92672">&#34;window.enableMenuBarMnemonics&#34;</span>: <span style="color:#66d9ef">false</span>,
+    <span style="color:#f92672">&#34;window.menuBarVisibility&#34;</span>: <span style="color:#e6db74">&#34;default&#34;</span>,
+    <span style="color:#f92672">&#34;window.zoomLevel&#34;</span>: <span style="color:#ae81ff">1</span>,
+    <span style="color:#f92672">&#34;telemetry.enableTelemetry&#34;</span>: <span style="color:#66d9ef">false</span>,
+    <span style="color:#f92672">&#34;telemetry.enableCrashReporter&#34;</span>: <span style="color:#66d9ef">false</span>
+}</code></pre></div>
+<ul>
+<li><code>~/.config/Code/User/settings.json</code></li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">Place</span> <span style="color:#960050;background-color:#1e0010">your</span> <span style="color:#960050;background-color:#1e0010">key</span> <span style="color:#960050;background-color:#1e0010">bindings</span> <span style="color:#960050;background-color:#1e0010">in</span> <span style="color:#960050;background-color:#1e0010">this</span> <span style="color:#960050;background-color:#1e0010">file</span> <span style="color:#960050;background-color:#1e0010">to</span> <span style="color:#960050;background-color:#1e0010">override</span> <span style="color:#960050;background-color:#1e0010">the</span> <span style="color:#960050;background-color:#1e0010">defaults</span>
 [
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w j&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.focusBelowGroup&#34;</span>,
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w k&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.focusAboveGroup&#34;</span>,
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w h&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.focusLeftGroup&#34;</span>,
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w l&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.focusRightGroup&#34;</span>,
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w down&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.moveActiveEditorGroupDown&#34;</span>,
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w up&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.moveActiveEditorGroupUp&#34;</span>,
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w left&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.moveActiveEditorGroupLeft&#34;</span>,
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w right&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.moveActiveEditorGroupRight&#34;</span>,
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;alt+h&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;extension.vim_escape&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Insert&#39;&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;alt+j&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;extension.vim_escape&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Insert&#39;&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;alt+k&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;extension.vim_escape&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Insert&#39;&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;alt+l&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;extension.vim_escape&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Insert&#39;&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; a&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark1&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; b&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark2&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; c&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark3&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; d&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark4&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; e&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark5&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; f&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark6&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; g&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark7&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; h&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark8&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; i&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark9&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; j&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark0&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+1&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-numberedBookmarks.jumpToBookmark1&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+2&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-numberedBookmarks.jumpToBookmark2&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+3&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-numberedBookmarks.jumpToBookmark3&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+4&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-numberedBookmarks.jumpToBookmark4&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+5&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-numberedBookmarks.jumpToBookmark5&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+6&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-numberedBookmarks.jumpToBookmark6&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+7&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-numberedBookmarks.jumpToBookmark7&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+8&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-numberedBookmarks.jumpToBookmark8&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+9&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-numberedBookmarks.jumpToBookmark9&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+shift+tab&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.focusNextGroup&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+j&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.previousEditorInGroup&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+pagedown&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.nextEditorInGroup&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w shift+-&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.minimizeOtherEditors&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w =&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.evenEditorWidths&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w v&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.splitEditorRight&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w s&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.splitEditorDown&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w c&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.closeActiveEditor&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w shift+k&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.moveEditorToAboveGroup&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w shift+j&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.moveEditorToBelowGroup&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w shift+h&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.moveEditorToLeftGroup&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w shift+l&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.moveEditorToRightGroup&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-extension.vim_ctrl+b&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.use&lt;C-b&gt; &amp;&amp; !inDebugRepl &amp;&amp; vim.mode != &#39;Insert&#39;&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+k&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-extension.vim_ctrl+k&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.use&lt;C-k&gt; &amp;&amp; !inDebugRepl&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b b&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.toggleSidebarVisibility&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-workbench.action.toggleSidebarVisibility&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b a&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.toggleActivityBarVisibility&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b f&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.files.action.showActiveFileInExplorer&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b n&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.nextSideBarView&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b p&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.previousSideBarView&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b m&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.toggleMenuBar&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b s&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.toggleStatusbarVisibility&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b l&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.toggleSidebarPosition&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b o&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;outline.focus&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b e&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.files.action.focusFilesExplorer&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b r&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;search.action.focusSearchList&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+&#39; l&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.togglePanelPosition&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+&#39; &#39;&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.togglePanel&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+j&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-workbench.action.togglePanel&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+&#39; c&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.debug.panel.action.clearReplAction&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;inDebugRepl&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;meta+l&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-workbench.debug.panel.action.clearReplAction&#34;</span>,
-    <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;inDebugRepl&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+&#39; c&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.closePanel&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+&#39; space&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.focusPanel&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+&#39; n&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.nextPanelView&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+&#39; p&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.previousPanelView&#34;</span>
-},
-{
-    <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+&#39; shift+-&#34;</span>,
-    <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.toggleMaximizedPanel&#34;</span>
-}
-]</code></pre></div></li>
-</ul>
-</div>
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w j&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.focusBelowGroup&#34;</span>,
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w k&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.focusAboveGroup&#34;</span>,
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w h&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.focusLeftGroup&#34;</span>,
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w l&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.focusRightGroup&#34;</span>,
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w down&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.moveActiveEditorGroupDown&#34;</span>,
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w up&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.moveActiveEditorGroupUp&#34;</span>,
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w left&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.moveActiveEditorGroupLeft&#34;</span>,
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w right&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.moveActiveEditorGroupRight&#34;</span>,
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;alt+h&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;extension.vim_escape&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Insert&#39;&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;alt+j&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;extension.vim_escape&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Insert&#39;&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;alt+k&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;extension.vim_escape&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Insert&#39;&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;alt+l&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;extension.vim_escape&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Insert&#39;&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; a&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark1&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; b&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark2&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; c&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark3&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; d&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark4&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; e&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark5&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; f&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark6&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; g&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark7&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; h&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark8&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; i&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark9&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;&#39; j&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;numberedBookmarks.jumpToBookmark0&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.mode == &#39;Normal&#39;&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+1&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-numberedBookmarks.jumpToBookmark1&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+2&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-numberedBookmarks.jumpToBookmark2&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+3&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-numberedBookmarks.jumpToBookmark3&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+4&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-numberedBookmarks.jumpToBookmark4&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+5&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-numberedBookmarks.jumpToBookmark5&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+6&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-numberedBookmarks.jumpToBookmark6&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+7&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-numberedBookmarks.jumpToBookmark7&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+8&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-numberedBookmarks.jumpToBookmark8&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+9&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-numberedBookmarks.jumpToBookmark9&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+shift+tab&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.focusNextGroup&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+j&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.previousEditorInGroup&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+pagedown&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.nextEditorInGroup&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w shift+-&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.minimizeOtherEditors&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w =&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.evenEditorWidths&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w v&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.splitEditorRight&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w s&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.splitEditorDown&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w c&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.closeActiveEditor&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w shift+k&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.moveEditorToAboveGroup&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w shift+j&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.moveEditorToBelowGroup&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w shift+h&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.moveEditorToLeftGroup&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+w shift+l&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.moveEditorToRightGroup&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-extension.vim_ctrl+b&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.use&lt;C-b&gt; &amp;&amp; !inDebugRepl &amp;&amp; vim.mode != &#39;Insert&#39;&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+k&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-extension.vim_ctrl+k&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;editorTextFocus &amp;&amp; vim.active &amp;&amp; vim.use&lt;C-k&gt; &amp;&amp; !inDebugRepl&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b b&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.toggleSidebarVisibility&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-workbench.action.toggleSidebarVisibility&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b a&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.toggleActivityBarVisibility&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b f&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.files.action.showActiveFileInExplorer&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b n&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.nextSideBarView&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b p&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.previousSideBarView&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b m&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.toggleMenuBar&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b s&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.toggleStatusbarVisibility&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b l&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.toggleSidebarPosition&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b o&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;outline.focus&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b e&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.files.action.focusFilesExplorer&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+b r&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;search.action.focusSearchList&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+&#39; l&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.togglePanelPosition&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+&#39; &#39;&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.togglePanel&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+j&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-workbench.action.togglePanel&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+&#39; c&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.debug.panel.action.clearReplAction&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;inDebugRepl&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;meta+l&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;-workbench.debug.panel.action.clearReplAction&#34;</span>,
+        <span style="color:#f92672">&#34;when&#34;</span>: <span style="color:#e6db74">&#34;inDebugRepl&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+&#39; c&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.closePanel&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+&#39; space&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.focusPanel&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+&#39; n&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.nextPanelView&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+&#39; p&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.previousPanelView&#34;</span>
+    },
+    {
+        <span style="color:#f92672">&#34;key&#34;</span>: <span style="color:#e6db74">&#34;ctrl+&#39; shift+-&#34;</span>,
+        <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;workbench.action.toggleMaximizedPanel&#34;</span>
+    }
+]</code></pre></div></div>
 			
 			<footer class="post__footer">
 				

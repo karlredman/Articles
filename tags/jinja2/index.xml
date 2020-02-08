@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>jinja2 on Articles</title>
+    <title>Jinja2 on Articles</title>
     <link>https://karlredman.github.io/Articles/tags/jinja2/</link>
-    <description>Recent content in jinja2 on Articles</description>
+    <description>Recent content in Jinja2 on Articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 11 Jun 2019 23:13:35 -0500</lastBuildDate>
