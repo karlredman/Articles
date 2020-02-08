@@ -12,8 +12,8 @@
 <meta property="og:description" content="Compile and install vim 8.1 from source (debian / MX Linux) with pyenv" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://karlredman.github.io/Articles/dev.to/vim81/" />
-<meta property="article:published_time" content="2019-03-15T07:41:28-05:00"/>
-<meta property="article:modified_time" content="2019-06-23T07:41:28-05:00"/>
+<meta property="article:published_time" content="2019-03-15T07:41:28-05:00" />
+<meta property="article:modified_time" content="2019-06-23T07:41:28-05:00" />
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Compile and install vim 8.1 from source (debian / MX Linux) with pyenv"/>
@@ -86,29 +86,27 @@
 <p><code>pyenv</code> provides a localized python, versioned, installation at the user level.</p>
 
 <ul>
-<li>reference: <a href="https://github.com/pyenv/pyenv-installer">pyenv/pyenv-installer: This tool is used to install <code>pyenv</code> and friends.</a></li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl https://pyenv.run | bash</code></pre></div>
-<ul>
-<li>config: add to your <code>~/.bashrc</code> file and relogin (terminal or desktop env)</li>
-</ul>
+<li><p>reference: <a href="https://github.com/pyenv/pyenv-installer">pyenv/pyenv-installer: This tool is used to install <code>pyenv</code> and friends.</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl https://pyenv.run | bash</code></pre></div></li>
+
+<li><p>config: add to your <code>~/.bashrc</code> file and relogin (terminal or desktop env)</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># Load pyenv automatically by adding</span>
 <span style="color:#75715e"># the following to ~/.bashrc:</span>
 
 export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/home/karl/.pyenv/bin:</span>$PATH<span style="color:#e6db74">&#34;</span>
 eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pyenv init -<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pyenv virtualenv-init -<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></div>
-<ul>
-<li>install a python version</li>
-</ul>
+eval <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>pyenv virtualenv-init -<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span></code></pre></div></li>
+
+<li><p>install a python version</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># list available versions</span>
 pyenv install -l |less
 <span style="color:#75715e"># insta a version</span>
-pyenv install <span style="color:#ae81ff">3</span>.7.2</code></pre></div>
-<ul>
-<li>set a python version for global</li>
+pyenv install <span style="color:#ae81ff">3</span>.7.2</code></pre></div></li>
+
+<li><p>set a python version for global</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">pyenv global <span style="color:#ae81ff">3</span>.7.2</code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">pyenv global <span style="color:#ae81ff">3</span>.7.2</code></pre></div>
+
 <h3 id="script-for-vim-compile-and-installation">Script for vim compile and installation</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#! /usr/bin/env bash
 </span><span style="color:#75715e"></span>
