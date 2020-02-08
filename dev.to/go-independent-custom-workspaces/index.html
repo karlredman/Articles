@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#5b5b67">
+	<title>Golang: Independent Custom Workspaces | Articles</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Customizing Go workspaces with symlinks.">
+		<meta property="og:title" content="Golang: Independent Custom Workspaces" />
+<meta property="og:description" content="Customizing Go workspaces with symlinks." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://karlredman.github.io/Articles/dev.to/go-independent-custom-workspaces/" />
+<meta property="article:published_time" content="2019-06-11T23:13:35-05:00" />
+<meta property="article:modified_time" content="2019-06-10T23:13:35-05:00" />
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Golang: Independent Custom Workspaces"/>
+<meta name="twitter:description" content="Customizing Go workspaces with symlinks."/>
+
+	<link rel="stylesheet" href="/Articles/css/main.css">
+	<link rel="stylesheet" href="/Articles/css/custom.css">
+	
+	<link rel="icon" href="/Articles/icons/16.png" sizes="16x16" type="image/png">
+	<link rel="icon" href="/Articles/icons/32.png" sizes="32x32" type="image/png">
+	<link rel="icon" href="/Articles/icons/48.png" sizes="48x48" type="image/png"><link rel="manifest" href="/Articles/manifest.json">
+		
+</head>
+<body>
+	<header class="header">
+	<div class="header__inner inner">
+    <a href="https://karlredman.github.io"><img alt="[Home]" src="/Articles/images/home.png" width="10"> Karl N. Redman: </a>
+    
+      <a class="logo" alt="Articles" href="/Articles">Articles ⇦</a>
+    
+	</div>
+</header>
+
+	<div class="wrapper wrapper--flex">
+	
+	<section class="single">
+		<article class="post block">
+			<header class="post__header">
+				<h1 class="post__title">Golang: Independent Custom Workspaces</h1>
+				
+<div class="post__meta meta">
+<time class="meta__datetime" datetime="2019-06-11T23:13:35" >June 11, 2019</time>
+<time class="meta__lastmod" datetime="2019-06-10T23:13:35"> • Updated: June 10, 2019</time>
+</div>
+
+			</header>
+			<div class="post__content">
+
+<h1 id="golang-independent-custom-workspaces">Golang: Independent Custom Workspaces</h1>
+
+<ul>
+<li>Originally published 20200207 <a href="https://dev.to/karlredman/go-independent-custom-workspaces-5d27">Go: Independent Custom Workspaces - DEV Community 👩‍💻👨‍💻</a></li>
+</ul>
+
+<h2 id="tl-dr">TL;DR:</h2>
+
+<p>Up to and including <code>go1.13.7</code>, <code>$GOPATH</code>, <code>$GOBIN</code> and the <code>Go toolchain</code> make it very difficult to isolate the <code>Go Workspace</code> for any <em>development</em> / <em>production</em> / <em>runtime</em> environments outside of the <code>Go Contributers'</code> agenda and scope of ideology.</p>
+
+<p>This article attempts to illustrate how one might go about working around these <em>severe</em> <code>Go</code> environment limitations. Also, I&rsquo;m a big fan of <code>golang</code> and I want to use it in a more wide ranging and versatile real-world environment.</p>
+
+<ul>
+<li>I&rsquo;ll start by trying to describe the problems while offering generic solutions. As this document progresses the workarounds will be more specific.</li>
+</ul>
+
+<h2 id="what-s-the-problem-s">What&rsquo;s the problem(s)?</h2>
+
+<h3 id="but-it-s-go-we-re-special">But it&rsquo;s <code>Go</code>, we&rsquo;re special!</h3>
+
+<p>No, Go is is not special. It&rsquo;s a top notch development platform but forcing programmers and administrators to treat it special is not just annoying, it makes people hate it. Administrators  and developers don&rsquo;t need special, they need to be able to implement and use Go without retooling their entire workflows and environments.</p>
+
+<h3 id="features-of-this-hack">Features of this hack</h3>
+
+<ul>
+<li>Ability to set a custom workspace root (i.e. proper dependency resolution from a custom path)</li>
+<li><code>go build</code> and <code>go build &lt;package/module name&gt;</code> works from the <em>custom workspace root</em></li>
+<li><code>go test</code> and <code>go test -v --bench . --banchmem &lt;package/module name&gt;</code> works from the <em>custom workspace root</em></li>
+
+<li><p><code>go install</code> will install a built binary in the <em>custom workspace root</em> <code>bin/</code> directory</p>
+
+<ul>
+<li><p>to create a properly named binary I recommend that you use</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">go build <span style="color:#f92672">[</span>-i<span style="color:#f92672">]</span> -o bin/&lt;binary name&gt;</code></pre></div></li>
+</ul></li>
+
+<li><p>Dependencies will be installed in the <code>pkg/</code> subdirectory of the <em>custom workspace root</em></p></li>
+</ul>
+
+<h3 id="impediments-of-current-go-workspaces">Impediments of Current Go Workspaces:</h3>
+
+<ul>
+<li>Production coding disasters <em>do</em> happen -The <code>Go</code> workspace enforcement by the tool chain increases the complexity (and thereby delays) of performing real-time <code>hot fixes</code> on production systems
+
+<ul>
+<li>Wrangling with the environment of your development tools is the last thing you want to do when you just need to drop a file somewhere in the heat of the moment.</li>
+</ul></li>
+<li>Collaborative containersized environments become broken unless developers, testers, and admins all agree on the build/development layout
+
+<ul>
+<li>Specifically containerized work environments like <a href="https://en.wikipedia.org/wiki/Singularity_(software)">Singularity</a> are affected because of the nomadic nature of their workflows</li>
+<li>Inflexible workspace layouts like <code>Go</code> forces upon developers and testers and admins increased <em>time to product</em> during collaborative endeavors</li>
+</ul></li>
+<li>CI/CD operations are forced to keep separate file paths for various development, product, and testing artifacts -again increasing complexity and possible <em>tech debt</em></li>
+<li>Development, testing, production, and administration <em>one offs</em> are overly complex and require too much knowledge about the environment to be effective
+
+<ul>
+<li>See below for my &lsquo;Ugly Real World Example&rsquo; where I manage to just add a <code>main.go</code> in a flat directory structure in order to take <code>Go</code> code challenges</li>
+<li>In cases where full blown environments aren&rsquo;t shared <code>Go</code> becomes very cumbersome to work with when trying to just test out some code</li>
+<li>Not everyone has the time or patience to learn every aspect of how <code>Go's</code> <em>special</em> environment needs can be dealt with properly -cheap workarounds had to be found &hellip;</li>
+</ul></li>
+</ul>
+
+<h3 id="details-of-issues-with-enforced-go-workspace-environments">Details of issues with enforced Go workspace environments:</h3>
+
+<ul>
+<li><p><code>$GOPATH</code> and <code>$GOBIN</code> are required to be set up manually for isolated project roots</p>
+
+<ul>
+<li><p><strong>Fix/Hack</strong>: use an environment script for this (<strong>execute from the project root</strong>)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># build_env</span>
+<span style="color:#75715e"># from project root run: `source &lt;this file&gt;`</span>
+<span style="color:#75715e"># only use this from the project root !!!!</span>
+THIS_PROJECT_PATH<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>
+
+export GOPATH<span style="color:#f92672">=</span>$GOPATH:$THIS_PROJECT_PATH
+mkdir -k $THIS_PROJECT_PATH/bin
+export GOBIN<span style="color:#f92672">=</span>$THIS_PROJECT_PATH/bin</code></pre></div></li>
+</ul></li>
+
+<li><p><em>Packages</em> require(ish) the directory name to be the same as the name of the package</p>
+
+<ul>
+<li>While it&rsquo;s <a href="https://stackoverflow.com/a/43580332/1725771">possible</a> to use custom paths for Packages and Modules -It&rsquo;s a <code>PITA</code>.</li>
+<li><strong>Hack</strong>: solved with symlinks if needed</li>
+</ul></li>
+
+<li><p><em>Packages</em> and modules are hard coded in the <code>Go</code> tool chain to be under <code>$GOPATH/src</code></p>
+
+<ul>
+<li>You can read about the various opinions and examples of this obtrusive behavior <a href="https://github.com/go-lang-plugin-org/go-lang-idea-plugin/issues/215">here</a></li>
+<li>Basically you see a lot of similar <a href="https://stackoverflow.com/a/39534720/1725771">&ldquo;get used to it&rdquo;</a> kind of attitude thrown about in this regard</li>
+<li><strong>Hack</strong>: solved with symlinks if needed</li>
+</ul></li>
+
+<li><p><code>import</code> paths for <em>modules</em> <strong>require</strong> a <code>.</code> (dot) in the top most directory</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// REQUIRED &#39;.&#39; notation
+</span><span style="color:#75715e"></span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;example.com/myuser/myproject/platform&#34;</span></code></pre></div>
+<ul>
+<li>There are no settings that alter this behavior</li>
+<li>see: <a href="https://golang.org/cmd/go/#hdr-Module_configuration_for_non_public_modules">The Go Programming Language - Module configuration for non-public modules</a></li>
+<li>This standard may change soon</li>
+
+<li><p><a href="https://github.com/golang/go/issues/35273">cmd/go: confusing error &ldquo;missing dot in first path element&rdquo; when importing missing package  Issue #35273</a></p></li>
+
+<li><p><strong>Hack</strong>:solved with symlinks if needed</p></li>
+</ul></li>
+
+<li><p><code>$GOBIN</code> is a single path for <em>where to put executable build artifacts</em></p>
+
+<ul>
+<li>This forces executables from a project to either:</li>
+<li>all reside in a custom <code>$GOBIN</code></li>
+<li>be installed in <code>$GOROOT/bin</code></li>
+<li><code>$GOBIN</code> <strong>does not have a workaround</strong> when it comes to <code>go install</code>. Effectively making <code>go install</code> useless</li>
+<li>the only way to keep <code>$GOROOT/bin</code> from becoming polluted is to use a single custom &ldquo;user space wide&rdquo; <code>$GOBIN</code></li>
+
+<li><p>Binaries <strong>can</strong> be built with any target path however</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">go build <span style="color:#f92672">[</span>-i<span style="color:#f92672">]</span> -o &lt;path/binary_file&gt;</code></pre></div></li>
+</ul></li>
+</ul>
+
+<h2 id="eeep-using-symlinks-to-solve-path-issues">EEEP! Using Symlinks to Solve Path Issues:</h2>
+
+<p>This whole article started out as personal notes on how I could get the flat structure used by <a href="https://exercism.io">exercism.io</a> to work as a <code>git</code> backed workspace for <code>Go</code> and the other languages I plan to practice on at that site. I&rsquo;d been struggling on and off with workspace environment issues/annoyances for a while so I finally decided to just see what it would take to completely customize the <code>Go</code> workspace in as few steps as possible.</p>
+
+<p>The answer was, ugh, symbolic links. Any other fixes I came up with were just too complex (IMHO) or invasive. This was a way to <em><code>just get it over with</code></em>.</p>
+
+<ul>
+<li>In the below example it&rsquo;s important to note that <code>exercism</code> is a self contained binary that downloads a code challenge from <a href="https://exercism.io">exercism.io</a> into an non-configurable directory path (<code>~/exercism</code>) and imposes a directory structure as shown (minus the symlinks I created).</li>
+<li>This is one program that imposes these kinds of things that makes <code>Go</code> very difficult to use or experiment with overall. This is only one scenario.</li>
+</ul>
+
+<h3 id="ugly-real-world-example">Ugly Real World Example:</h3>
+
+<ul>
+<li>Packages and Modules requiring a <code>&lt;workspace&gt;/src/&lt;package-module&gt;</code> directory structure can be worked around by using symlinks.
+
+<ul>
+<li>we use symlinks to satisfy both module and package requirements</li>
+</ul></li>
+<li>In the directory tree below we see that the <code>exercism</code> binary forces a directory structure for <code>go</code> based code challenges.</li>
+<li>In order to stay compatible with <code>exercism</code> and the <code>go</code> tool chain we use symlinks to make it appear that go modules and packages are found under the <code>src/</code> directory.</li>
+<li>Also we&rsquo;ve added a link, <code>greeting</code> to satisfy the naming convention go uses for packages and their respective directory names.</li>
+
+<li><p>The <code>main.go</code> file is intended to be used to execute the code challenges as desired</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">~/exercism:
+├── go
+│   ├── .git                        <span style="color:#75715e"># the git repo dir</span>
+│   ├── bin
+│   ├── greeting -&gt; hello-world     <span style="color:#75715e"># package name link to satisfy `greeting`</span>
+│   ├── hello-world                 <span style="color:#75715e"># A project (package/module `greeting`)</span>
+│   │   ├── go.mod                  <span style="color:#75715e"># `greeting` module file</span>
+│   │   ├── hello_world.go          <span style="color:#75715e"># `greeting` package file</span>
+│   │   ├── hello_world_test.go     <span style="color:#75715e"># `greeting` module test file</span>
+│   │   └── README.md
+│   ├── local.localhost -&gt; .        <span style="color:#75715e"># `greeting` module path</span>
+│   ├── main.go                     <span style="color:#75715e"># project main</span>
+│   ├── README.md
+│   ├── src -&gt; .                    <span style="color:#75715e"># link to satisfy packages and modules are under `$GOPATH/src/`</span>
+│   └── util
+│       └── build_env               <span style="color:#75715e"># script to set environment variables</span>
+└── README.md</code></pre></div></li>
+
+<li><p>In this case a package <code>import</code> will look like this</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+  <span style="color:#e6db74">&#34;fmt&#34;</span>
+  <span style="color:#e6db74">&#34;greeting&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">greeting</span>.<span style="color:#a6e22e">HelloWorld</span>())
+}</code></pre></div></li>
+
+<li><p>a module <code>import</code> will look like this</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+  <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+  <span style="color:#e6db74">&#34;local.localhost/greeting&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">greeting</span>.<span style="color:#a6e22e">HelloWorld</span>())
+}</code></pre></div></li>
+
+<li><p>for reference here are the package and module files under <code>hellow-world</code> directory</p>
+
+<ul>
+<li>note that <code>hello-world</code> is linked as <code>greeting</code> and that we&rsquo;ve created a link for <code>src/</code> as well -all under the same &ldquo;workspace tree&rdquo;</li>
+
+<li><p><code>hello-world/go.mod</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">module</span> <span style="color:#a6e22e">greeting</span>
+
+<span style="color:#66d9ef">go</span> <span style="color:#ae81ff">1.13</span></code></pre></div></li>
+
+<li><p><code>hello-world/hello_world.go</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">greeting</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">HelloWorld</span>() <span style="color:#66d9ef">string</span> {
+<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hello, World!&#34;</span>
+}</code></pre></div></li>
+</ul></li>
+</ul>
+</div>
+			
+			<footer class="post__footer">
+				
+
+
+<div class="post__tags tags">
+	<a class="post__tag transition" href="/Articles/tags/go">go</a><a class="post__tag transition" href="/Articles/tags/workspace">workspace</a><a class="post__tag transition" href="/Articles/tags/mentalhealth">mentalhealth</a><a class="post__tag transition" href="/Articles/tags/development">development</a>
+</div>
+
+
+				
+<div class="post__share share">
+	<a class="share__link" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fgo-independent-custom-workspaces%2f" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Facebook', 'width=800,height=600,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--facebook transition" aria-label="Facebook" role="img" width="28" height="28" viewBox="0 0 512 512"><path d="M330 512V322h64l9-74h-73v-47c0-22 6-36 37-36h39V99c-7-1-30-3-57-3-57 0-95 34-95 98v54h-64v74h64v190z"/></svg>
+	</a>
+	<a class="share__link" title="Share on Twitter" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fgo-independent-custom-workspaces%2f&amp;text=Golang%3a%20Independent%20Custom%20Workspaces" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Twitter', 'width=800,height=450,resizable=yes,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--twitter transition" aria-label="Twitter" role="img" width="28" height="28" viewBox="0 0 512 512"><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+	</a>
+	<a class="share__link" title="Share on Reddit" href="https://www.reddit.com/submit?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fgo-independent-custom-workspaces%2f&amp;title=Golang%3a%20Independent%20Custom%20Workspaces" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Reddit', 'width=832,height=624,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--reddit transition" aria-label="Reddit" role="img" width="28" height="28" viewBox="0 0 512 512"><path fill-rule="evenodd" d="M375 146a32 32 0 1 0-29-46l-65-13c-5-1-9 2-10 6l-22 97c-45 1-85 15-113 36a42 42 0 1 0-45 69l-1 12c0 65 74 117 166 117s166-52 166-117l-1-11a42 42 0 1 0-44-69c-28-21-67-35-111-37l19-86 58 13a32 32 0 0 0 32 29zM190 353c2-1 4 0 5 1 15 11 38 18 61 18s46-6 61-18a7 7 0 0 1 8 10c-18 14-44 21-69 21-25-1-51-7-69-21a6 6 0 0 1 3-11zm23-44a31 31 0 1 1-44-44 31 31 0 0 1 44 44zm130 0a31 31 0 1 0-44-44 31 31 0 0 0 44 44z"/></svg>
+
+	</a>
+	<a class="share__link" title="Share on Telegram" href="https://t.me/share/url?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fgo-independent-custom-workspaces%2f&amp;title=Golang%3a%20Independent%20Custom%20Workspaces" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Telegram', 'width=800,height=600,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--telegram transition" aria-label="Telegram" role="img" width="28" height="28" viewBox="0 0 512 512"><path d="M199 404c-11 0-10-4-13-14l-32-105 245-144"/><path d="M199 404c7 0 11-4 16-8l45-43-56-34"/><path d="M204 319l135 99c14 9 26 4 30-14l55-258c5-22-9-32-24-25L79 245c-21 8-21 21-4 26l83 26 190-121c9-5 17-3 11 4"/></svg>
+	</a>
+	<a class="share__link transition" title="Share on LinkedIn" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fgo-independent-custom-workspaces%2f&title=Golang%3a%20Independent%20Custom%20Workspaces" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on LinkedIn', 'width=640,height=480,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--linkedin transition" aria-label="LinkedIn" role="img" width="28" height="28" viewBox="0 0 512 512"><circle cx="142" cy="138" r="37"/><path stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+	</a>
+	<a class="share__link transition" title="Share on VK" href="https://vk.com/share.php?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fgo-independent-custom-workspaces%2f" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on VK', 'width=640,height=480,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--vk transition" aria-label="VK" role="img" width="28" height="28" viewBox="0 0 512 512"><path d="M274 363c5-1 14-3 14-15 0 0-1-30 13-34s32 29 51 42c14 9 25 8 25 8l51-1s26-2 14-23c-1-2-9-15-39-42-31-30-26-25 11-76 23-31 33-50 30-57-4-7-20-6-20-6h-57c-6 0-9 1-12 6 0 0-9 25-21 45-25 43-35 45-40 42-9-5-7-24-7-37 0-45 7-61-13-65-13-2-59-4-73 3-7 4-11 11-8 12 3 0 12 1 17 7 8 13 9 75-2 81-15 11-53-62-62-86-2-6-5-7-12-9H79c-6 0-15 1-11 13 27 56 83 193 184 192z"/></svg>
+	</a>
+	<a class="share__link transition" title="Save on Pocket" href="https://getpocket.com/edit?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fgo-independent-custom-workspaces%2f&amp;title=Golang%3a%20Independent%20Custom%20Workspaces" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Save on Pocket', 'width=480,height=320,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--pocket transition" aria-label="Pocket" role="img" width="28" height="28" viewBox="0 0 512 512"><path d="M388.8 88.9H123.2A47.4 47.4 0 0 0 76 136.5v131.9c0 2.4.2 4.8.5 7.2a101.8 101.8 0 0 0-.5 10.6c0 75.6 80.6 137 180 137s180-61.4 180-137c0-3.6-.2-7.1-.5-10.6.3-2.4.5-4.8.5-7.2v-132A47.4 47.4 0 0 0 388.8 89zm-22.4 132.6l-93 93c-4.7 4.6-11 7-17.1 7a23.8 23.8 0 0 1-17.7-7l-93-93a24 24 0 0 1 33.8-33.8l76.6 76.5 76.6-76.5a24 24 0 0 1 33.8 33.8z"/></svg>
+	</a>
+</div>
+			</footer>
+			
+		</article>
+		
+<section class="post__related related block">
+	<h3 class="related__title">Related</h3>
+	<ul class="related__list">
+		
+		<li class="related__item"><a class="related__link" href="/Articles/dev.to/docker_hostnames_from_host/">Resolve docker hostnames from host with DNS Proxy Server</a></li>
+		
+	</ul>
+</section>
+		
+	</section>
+	
+<section class="sidebar
+		 sidecards">
+	
+	
+<div class="sidecard">
+	<div class="widget widget-categories block">
+		<h3 class="widget__title">Categories</h3>
+		<div class="widget__content">
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/admin">Admin</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/administration">Administration</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/advice">Advice</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/article">Article</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/auth">Auth</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/dev.to">Dev.to</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/devops">Devops</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/docker">Docker</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/ecosystem">Ecosystem</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/howto">Howto</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/linux">Linux</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/medium.com">Medium.com</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/network">Network</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/programming">Programming</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/ricing">Ricing</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/shortcuts">Shortcuts</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/utility">Utility</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/vscode">Vscode</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/web">Web</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+	
+<div class="sidecard">
+	<div class="widget widget-tags block">
+		<h3 class="widget__title">Tags</h3>
+		<div class="widget-tags__content widget__content">
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/administration" title="Administration">Administration (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/authentication" title="Authentication">Authentication (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/compile" title="Compile">Compile (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/debian" title="Debian">Debian (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/development" title="Development">Development (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/diagram" title="Diagram">Diagram (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/dnsmasq" title="Dnsmasq">Dnsmasq (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/docker" title="Docker">Docker (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/ecosystem" title="Ecosystem">Ecosystem (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/flowchart" title="Flowchart">Flowchart (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/front-matter" title="Front matter">Front matter (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/gatekeeper" title="Gatekeeper">Gatekeeper (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/go" title="Go">Go (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/greeter" title="Greeter">Greeter (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/howto" title="Howto">Howto (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/jinja2" title="Jinja2">Jinja2 (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/keycloak" title="Keycloak">Keycloak (3)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/lifestyle" title="Lifestyle">Lifestyle (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/lightdm" title="Lightdm">Lightdm (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/markdown" title="Markdown">Markdown (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/mental-health" title="Mental health">Mental health (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/mentalhealth" title="Mentalhealth">Mentalhealth (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/navigation" title="Navigation">Navigation (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/network" title="Network">Network (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/network-manager" title="Network manager">Network manager (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/programming" title="Programming">Programming (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/python3" title="Python3">Python3 (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/shortcuts" title="Shortcuts">Shortcuts (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/traefik" title="Traefik">Traefik (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/vim" title="Vim">Vim (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/vscode" title="Vscode">Vscode (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/wallpaper" title="Wallpaper">Wallpaper (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/workspace" title="Workspace">Workspace (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/xfce" title="Xfce">Xfce (1)</a>
+		</div>
+	</div>
+</div>
+</section>
+
+
+	</div>
+	<footer class="footer">
+	<div class="footer__inner inner">
+		<div class="footer__copyright">© 2020 Karl N. Redman. <span class="footer__copyright-credits">Powered by <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/vimux/amnix" rel="nofollow noopener" target="_blank">Amnix</a> theme.</span></div>
+<div class="footer__social social">
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="mailto:karl.redman@gmail.com">
+			<svg class="social__icon" aria-label="Email" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M299 268l124 106c-4 4-10 7-17 7H106c-7 0-13-3-17-7l124-106 43 38 43-38zm-43 13L89 138c4-4 10-7 17-7h300c7 0 13 3 17 7L256 281zm54-23l121-105v208L310 258zM81 153l121 105L81 361V153z"/></svg>
+		</a>
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://twitter.com/Karl_Redman">
+			<svg class="social__icon" aria-label="Twitter" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+		</a>
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/karl-n-redman-850413">
+			<svg class="social__icon" aria-label="LinkedIn" role="img" width="32" height="32" viewBox="0 0 512 512"><circle cx="142" cy="138" r="37"/><path stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+		</a>
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://github.com/karlredman">
+			<svg class="social__icon" aria-label="GitHub" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+		</a>
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://gitlab.com/karl.redman">
+			<svg class="social__icon" aria-label="GitLab" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M450 282l-22-67-43-133c-2-7-12-7-14 0l-43.3 133H184.3L141 82c-2-7-12-7-14 0L84 215l-22 67c-2 6 0 13 6 16l188 137 188-137c6-3 8-10 6-16z"/></svg>
+		</a>
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/users/1725771">
+			<svg class="social__icon" aria-label="Stack Overflow" role="img" width="32" height="32" viewBox="0 0 512 512"><g stroke-width="30"><path fill="none" d="M125 297v105h241V297"/><path d="M170 341h150m-144-68l148 31M199 204l136 64m-95-129l115 97M293 89l90 120"/></g></svg>
+		</a>
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://medium.com/@karl.redman">
+			<svg class="social__icon" aria-label="Medium" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M125 173c0-4-2-9-5-11l-31-38v-6h98l75 166 67-166h93v6l-27 26c-2 1-3 4-3 7v190c0 3 1 6 3 8l27 25v6H289v-6l27-26c3-3 3-4 3-8V193l-76 192h-10l-88-192v129c-1 5 1 11 5 15l35 43v5H85v-5l35-43c4-4 6-10 5-15z"/></svg>
+		</a>
+</div>
+	</div>
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>

@@ -13,6 +13,11 @@
   </url>
   
   <url>
+    <loc>https://karlredman.github.io/Articles/dev.to/go-independent-custom-workspaces/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://karlredman.github.io/Articles/dev.to/keycloakv5_oidc_client_flowcharts/</loc>
     <lastmod>2019-06-23T13:12:51-05:00</lastmod>
   </url>
@@ -113,7 +118,27 @@
   </url>
   
   <url>
+    <loc>https://karlredman.github.io/Articles/categories/administration/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/development/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/categories/devops/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://karlredman.github.io/Articles/tags/front-matter/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/go/</loc>
     <lastmod>2019-06-10T23:13:35-05:00</lastmod>
   </url>
   
@@ -124,6 +149,11 @@
   
   <url>
     <loc>https://karlredman.github.io/Articles/tags/markdown/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/mentalhealth/</loc>
     <lastmod>2019-06-10T23:13:35-05:00</lastmod>
   </url>
   
@@ -139,6 +169,11 @@
   
   <url>
     <loc>https://karlredman.github.io/Articles/categories/utility/</loc>
+    <lastmod>2019-06-10T23:13:35-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/workspace/</loc>
     <lastmod>2019-06-10T23:13:35-05:00</lastmod>
   </url>
   
@@ -240,11 +275,6 @@
   <url>
     <loc>https://karlredman.github.io/Articles/tags/howto/</loc>
     <lastmod>2019-06-23T07:41:28-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://karlredman.github.io/Articles/tags/development/</loc>
-    <lastmod>2019-03-03T07:35:35-05:00</lastmod>
   </url>
   
   <url>

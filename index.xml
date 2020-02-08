@@ -32,6 +32,16 @@ For fans of the lightweight and highly configurable linux desktop environment XF
     </item>
     
     <item>
+      <title>Golang: Independent Custom Workspaces</title>
+      <link>https://karlredman.github.io/Articles/dev.to/go-independent-custom-workspaces/</link>
+      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/dev.to/go-independent-custom-workspaces/</guid>
+      <description>Golang: Independent Custom Workspaces  Originally published 20200207 Go: Independent Custom Workspaces - DEV Community 👩‍💻👨‍💻  TL;DR: Up to and including go1.13.7, $GOPATH, $GOBIN and the Go toolchain make it very difficult to isolate the Go Workspace for any development / production / runtime environments outside of the Go Contributers&#39; agenda and scope of ideology.
+This article attempts to illustrate how one might go about working around these severe Go environment limitations.</description>
+    </item>
+    
+    <item>
       <title>Keycloak v5 &#43; Gatekeeper v5: Flowcharts - Easily Create and Restrict an Isolated (IODC) Client Service by Group-Role</title>
       <link>https://karlredman.github.io/Articles/dev.to/keycloakv5_oidc_client_flowcharts/</link>
       <pubDate>Sun, 28 Apr 2019 13:12:51 -0500</pubDate>
