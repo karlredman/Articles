@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Advice on Articles</title>
+    <link>https://karlredman.github.io/Articles/categories/advice/</link>
+    <description>Recent content in Advice on Articles</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Dec 2017 07:57:35 -0500</lastBuildDate>
+    
+	<atom:link href="https://karlredman.github.io/Articles/categories/advice/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How To Be A Computer Programmer</title>
+      <link>https://karlredman.github.io/Articles/medium/howto_beaprogrammer/</link>
+      <pubDate>Wed, 06 Dec 2017 07:57:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/medium/howto_beaprogrammer/</guid>
+      <description>(A Realistic Assessment): Every so often someone asks me or for advice on how to be a computer programmer. This question has always caused me a bit of anxiety because it brings up all sorts of other thoughts like, &amp;lsquo;the semantic and social differences in the definitions between a coder, a programmer and an engineer&amp;rsquo;, or &amp;lsquo;what is the context of the word &amp;ldquo;how&amp;rdquo; in this question?&amp;rsquo;. It&amp;rsquo;s a simple question with an extremely complex and subjective set of answers.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#5b5b67">
+	<title>Be a Python Jinja Master: Automated Front Matter Editing | Articles</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="EditFrontMatter: A python module for editing markdown front matter using Jinja2 Templates.">
+		<meta property="og:title" content="Be a Python Jinja Master: Automated Front Matter Editing" />
+<meta property="og:description" content="EditFrontMatter: A python module for editing markdown front matter using Jinja2 Templates." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://karlredman.github.io/Articles/dev.to/be-a-python-jinja-master-automated-front-matter-editing/" />
+<meta property="article:published_time" content="2019-06-11T23:13:35-05:00"/>
+<meta property="article:modified_time" content="2019-06-10T23:13:35-05:00"/>
+
+		<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Be a Python Jinja Master: Automated Front Matter Editing"/>
+<meta name="twitter:description" content="EditFrontMatter: A python module for editing markdown front matter using Jinja2 Templates."/>
+
+	<link rel="stylesheet" href="/Articles/css/main.css">
+	<link rel="stylesheet" href="/Articles/css/custom.css">
+	
+	<link rel="icon" href="/Articles/icons/16.png" sizes="16x16" type="image/png">
+	<link rel="icon" href="/Articles/icons/32.png" sizes="32x32" type="image/png">
+	<link rel="icon" href="/Articles/icons/48.png" sizes="48x48" type="image/png"><link rel="manifest" href="/Articles/manifest.json">
+		
+</head>
+<body>
+	<header class="header">
+	<div class="header__inner inner">
+    <a href="https://karlredman.github.io"><img alt="[Home]" src="/Articles/images/home.png" width="10"> Karl N. Redman: </a>
+    
+      <a class="logo" alt="Articles" href="/Articles">Articles ⇦</a>
+    
+	</div>
+</header>
+
+	<div class="wrapper wrapper--flex">
+	
+	<section class="single">
+		<article class="post block">
+			<header class="post__header">
+				<h1 class="post__title">Be a Python Jinja Master: Automated Front Matter Editing</h1>
+				
+<div class="post__meta meta">
+<time class="meta__datetime" datetime="2019-06-11T23:13:35" >June 11, 2019</time>
+<time class="meta__lastmod" datetime="2019-06-10T23:13:35"> • Updated: June 10, 2019</time>
+</div>
+
+			</header>
+			<div class="post__content">
+
+<p>I&rsquo;m pleased to announce the initial release of EditFrontMatter: A python module for editing markdown front matter using Jinja2 Templates.</p>
+
+<ul>
+<li>See: <a href="https://karlredman.github.io/EditFrontMatter/index.html">EditFrontMatter Project Homepage</a></li>
+<li>Several examples are included in the documentation
+
+<ol>
+<li><a href="https://karlredman.github.io/EditFrontMatter/examples/example1/readme.html">Basic usage</a></li>
+<li><a href="https://karlredman.github.io/EditFrontMatter/examples/example2/readme.html">Advanced mulit-pass processor</a></li>
+<li><a href="https://karlredman.github.io/EditFrontMatter/examples/example3/readme.html">Recursive directory walker that uses multi-threading to edit files</a></li>
+</ol></li>
+</ul>
+
+<h2 id="the-pitch">The Pitch:</h2>
+
+<p>Imagine that you could retain all of your various article and documentation content in markdown. And then cater that content to whichever static site generator<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>, and theme thereof, without manually editing each and every file. With <a href="https://karlredman.github.io/EditFrontMatter/index.html">EditFrontMatter</a> you can write simple scripts, leveraging the power of <a href="http://jinja.pocoo.org/">Jinja2</a>, to add / edit / delete the front matter of your markdown files easily.</p>
+
+<h2 id="a-demonstration">A demonstration:</h2>
+
+<p>This is a simple example that you will also find in the documentation as <a href="https://karlredman.github.io/EditFrontMatter/examples/example1/readme.html">Example 1</a>. Here, we to use a Jinja2 Template to edit the front matter of a markdown file. All fields which are <em>not</em> included in the template will be ignored during editing. Furthermore, while white-space and comments will be eliminated<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>, the order of the original front matter is preserved<sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup> -new fields will be appended.</p>
+
+<ul>
+<li>Original markdown file with yaml front matter (<a href="https://github.com/karlredman/EditFrontMatter/blob/master/examples/data/example1.md">example1.md</a>)</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">---<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>title: &#34;EditFrontMatter Class Example 1&#34;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>description: &#34;Edit some fields in this front matter&#34;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>catagories: [programming, python, markdown]<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>deleteme: this will be deleted<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>tags: [front matter, administration, testing]<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span># comments and spaces will be eliminated (see docs)
+<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>author: &#34;Karl N. Redman&#34;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>creatordisplayname: &#34;Karl N. Redman&#34;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>creatoremail: &#34;karl.redman@example.com&#34;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>date: 2019-05-23T17:43:45-05:00<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>lastmodifierdisplayname: &#34;Karl N. Redman&#34;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>lastmodifieremail: &#34;karl.redman@gmail.com&#34;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>lastmod: 2019-05-23T17:43:45-05:00<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>toc: false<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>type: &#34;page&#34;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>hasMath: false<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>draft: false<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>weight: 5<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>---<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span># EditFontMatter Class Example 1
+<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>Edit several fields of front matter.<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">##</span> Fields affected in this example:
+
+<span style="color:#66d9ef">*</span> toc<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> note: uses local template variable<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> pre: false<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> post: true<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">*</span> draft:<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> note: uses jinja2 filter (callback)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> pre: false<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> post: true<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">*</span> hasMath<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> note: uses program variable<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> pre: true<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> post: false<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">*</span> stuff:<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> note: uses program variable to create field<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> pre: did not exist<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> post: (list) [&#39;one&#39;, &#39;two&#39;, &#39;three&#39;]<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">*</span> deleteme:<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> note: removed from final result<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> pre: this will be deleted<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  * post: N/A</code></pre></div>
+<ul>
+<li>Jinja2 template that will update the front matter data of the source markdown file (<a href="https://github.com/karlredman/EditFrontMatter/blob/master/examples/data/template1.j2">template1.j2</a>). Note that the <code>toc</code> field processing is overridden by the template. All local <code>set</code> Jinja variables take precedence over other processing methods.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jinja" data-lang="jinja"><span style="color:#75715e">{%</span> <span style="color:#66d9ef">set</span> toc <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#75715e">%}</span>
+
+toc: <span style="color:#75715e">{{</span> toc <span style="color:#75715e">}}</span>
+draft: <span style="color:#75715e">{{</span> <span style="color:#66d9ef">false</span> <span style="color:#f92672">|</span> <span style="color:#a6e22e">canPublish</span> <span style="color:#75715e">}}</span>
+hasMath: <span style="color:#75715e">{{</span> hasMath <span style="color:#75715e">}}</span>
+stuff: <span style="color:#75715e">{{</span> addedVariable <span style="color:#75715e">}}</span></code></pre></div>
+<ul>
+<li>A python program to edit the markdown file with the Jinja2 template (<a href="https://karlredman.github.io/EditFrontMatter/examples/example1/example1.html">example1.py</a>:</li>
+</ul>
+
+<p>This program/script uses a <a href="http://jinja.pocoo.org/docs/2.10/templates/#filters">Jinja2 template filter</a> and a callback function, specified by a call to <a href="https://karlredman.github.io/EditFrontMatter/editfrontmatter/editfrontmatter.EditFrontMatter.EditFrontMatter.add_JinjaFilter.html">EditFrontMatter.add_JinjaFilter()</a> to provide data for the <code>draft</code> field. In addition, specific <code>key, value</code> variable pairs are provided when <a href="https://karlredman.github.io/EditFrontMatter/editfrontmatter/editfrontmatter.EditFrontMatter.EditFrontMatter.run.html#editfrontmatter.EditFrontMatter.EditFrontMatter.run">EditFrontMatter.run()</a> is called. The values from <code>run()</code> will be used to add or edit the <code>key, value</code> pairs. Lastly the instance (list) variable <code>EditFrontMatter().keys_toDelete</code> specifies which keys to delete in the front matter.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#75715e">#!/usr/bin/env python3</span>
+<span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+
+
+<span style="color:#f92672">from</span> editfrontmatter <span style="color:#f92672">import</span> EditFrontMatter
+<span style="color:#f92672">import</span> os
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">canPublish_func</span>(val):
+    <span style="color:#75715e"># do some processing....</span>
+    <span style="color:#66d9ef">return</span> True
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+
+    <span style="color:#75715e"># generic path - overridden by env var `TEST_DATA_DIR`</span>
+    DATA_PATH <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;../data/&#34;</span>
+
+    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#34;TEST_DATA_DIR&#34;</span> <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>environ:
+        DATA_PATH <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>abspath(os<span style="color:#f92672">.</span>environ<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;TEST_DATA_DIR&#34;</span>)) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/&#34;</span>
+
+    <span style="color:#75715e"># set path to input file</span>
+    file_path <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>abspath(DATA_PATH <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;example1.md&#34;</span>)
+
+    <span style="color:#75715e"># initialize `template_str` with template file content</span>
+    template_str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span><span style="color:#f92672">.</span>join(open(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>abspath(DATA_PATH <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;template1.j2&#34;</span>), <span style="color:#e6db74">&#34;r&#34;</span>)<span style="color:#f92672">.</span>readlines())
+    <span style="color:#66d9ef">print</span>(template_str)
+
+    <span style="color:#75715e"># instantiate the processor</span>
+    proc <span style="color:#f92672">=</span> EditFrontMatter(file_path<span style="color:#f92672">=</span>file_path, template_str<span style="color:#f92672">=</span>template_str)
+
+    <span style="color:#75715e"># set fields to delete from yaml</span>
+    proc<span style="color:#f92672">.</span>keys_toDelete <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;deleteme&#39;</span>]
+
+    <span style="color:#75715e"># add a filter and callback function</span>
+    proc<span style="color:#f92672">.</span>add_JinjaFilter(<span style="color:#e6db74">&#39;canPublish&#39;</span>, canPublish_func)
+
+    <span style="color:#75715e"># populate variables and run processor</span>
+    proc<span style="color:#f92672">.</span>run({<span style="color:#e6db74">&#39;toc&#39;</span>: <span style="color:#e6db74">&#39;no effect&#39;</span>, <span style="color:#e6db74">&#39;hasMath&#39;</span>: <span style="color:#e6db74">&#34;false&#34;</span>,
+              <span style="color:#e6db74">&#39;addedVariable&#39;</span>: [<span style="color:#e6db74">&#39;one&#39;</span>, <span style="color:#e6db74">&#39;two&#39;</span>, <span style="color:#e6db74">&#39;three&#39;</span>]})
+
+    <span style="color:#75715e"># dump file</span>
+    <span style="color:#66d9ef">print</span>(proc<span style="color:#f92672">.</span>dumpFileData())
+
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    main()</code></pre></div>
+<ul>
+<li>Final Output:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">---<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>title: EditFrontMatter Class Example 1<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>description: Edit some fields in this front matter<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>catagories:
+<span style="color:#66d9ef">-</span> programming<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">-</span> python<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">-</span> markdown<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>tags:
+<span style="color:#66d9ef">-</span> front matter<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">-</span> administration<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">-</span> testing<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>author: Karl N. Redman<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>creatordisplayname: Karl N. Redman<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>creatoremail: karl.redman@example.com<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>date: 2019-05-23 22:43:45<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>lastmodifierdisplayname: Karl N. Redman<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>lastmodifieremail: karl.redman@gmail.com<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>lastmod: 2019-05-23 22:43:45<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>toc: true<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>type: page<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>hasMath: false<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>draft: true<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>weight: 5<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>stuff:
+<span style="color:#66d9ef">-</span> one<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">-</span> two<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">-</span> three<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>---<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span># EditFontMatter Class Example 1
+<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>Edit several fields of front matter.<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e">##</span> Fields affected in this example:
+
+<span style="color:#66d9ef">*</span> toc<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> note: uses local template variable<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> pre: false<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> post: true<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">*</span> draft:<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> note: uses jinja2 filter (callback)<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> pre: false<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> post: true<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">*</span> hasMath<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> note: uses program variable<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> pre: true<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> post: false<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">*</span> stuff:<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> note: uses program variable to create field<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> pre: did not exist<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> post: (list) [&#39;one&#39;, &#39;two&#39;, &#39;three&#39;]<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">*</span> deleteme:<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> note: removed from final result<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">*</span> pre: this will be deleted<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  * post: N/A</code></pre></div>
+<h1 id="my-personal-use-case">My Personal Use Case:</h1>
+
+<p>Allow me paint a picture of my workflow: I maintain a group of repositories of exclusively markdown content. This content is split up between topics ranging form a personal journal to various projects and articles in various states of completion. The number of documents I&rsquo;ve written in the last several years is now over 1000. In order to facilitate my workflow, I want all the content to be accessible in one place while having the ability to preview these documents and, ultimately, publish them using various methods. To that end, all of my markdown files do contain a minimal about of front matter. As I publish these content files I needed some way to batch process the content files and modify their metadata.</p>
+
+<p>I use <a href="https://vimwiki.github.io/">vimwiki</a> for editing all of my markdown content. Vimwiki allows me to easily index various topics, keep topic related diaries, and otherwise edit content using <a href="https://www.vim.org/">Vim</a>: my &lsquo;go to&rsquo; editor of choice. All of my various projects and topic related content are tracked in individual <a href="https://git-scm.com/">git</a> repositories and imported to a &lsquo;working tree&rsquo; as <a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">submodules</a>. This makes adding, archiving, and modifying topics very simple.</p>
+
+<p>My personal development ecosystem uses a static site generated by <a href="https://gohugo.io/">Hugo</a> to host content (my knowledge base - I use <a href="https://themes.gohugo.io/docdock/">docdock theme</a> by the way). This static site is plugged into my ecosystem&rsquo;s build system (<a href="https://drone.io/">drone</a>). When I edit any document within the <code>working three</code>, and push that content to my git repository, my <a href="https://gitea.io">Gitea</a> instance picks up the change and triggers a drone build.</p>
+
+<p>In turn, drone builds my searchable knowledge base and publishes it to be hosted by my ecosystem&rsquo;s web server. From a <code>git push</code> to the content showing up through my web services, the total time is <code>&lt; 1 minute</code>. And that includes the processing <a href="https://karlredman.github.io/EditFrontMatter">EditFrontMatter</a> does to set the front matter fields needed for any number of specific themes and other purposes (i.e. like changing the &lsquo;edit this page&rsquo; link in front matter to point to the corresponding content&rsquo;s Gitea <code>edit page</code> of the document itself: online editing of the content is a built in bonus!).</p>
+
+<p>With the help of EditFrontmatter, I can easily change the &lsquo;edit this page&rsquo; URL pragmatically when I decide to move, for instance, a project from my personal knowledge base to a publishing entity (such as Github). I no longer worry about having to manually edit a bunch of content files in order to change the Hugo theme, or change the static site generator being used.</p>
+
+<p>The scripts that I have in place use a set of Jinja Templates that perform these actions for me. And it takes mere seconds to produce accurate results instead minutes of error prone tedious editing. While this all might seem complicated, it really isn&rsquo;t. Most of, if not all, of these steps are things we do as developers anyway. This is my attempt at streamlining the process since it&rsquo;s a well defined workflow.</p>
+
+<h1 id="conclusion">Conclusion:</h1>
+
+<p>In previous articles I&rsquo;ve mentioned that many of the, said, articles are interrelated. I&rsquo;ve also eluded to the fact that I am working on a much larger, and more complicated, set of documentation for a project that I&rsquo;m working on -building a complete development ecosystem you can use anywhere. While EditFrontmatter is a small class/module (less than 150 lines of code), the documentation is 1000&rsquo;s of lines of text. And that is the nature of documentation -the product is always much shorter than the documentation relative to lines of code.</p>
+
+<p>The power of markdown is that I can continue writing the content of my project&rsquo;s documentation without having to necessarily worry about how I will eventually publish it -or where I will publish it. In fact, because EditFrontMatter provides the ability to easily manipulate the metadata of the content I create, I can review changes in near real-time in a variety of publishing entities. I&rsquo;m not &lsquo;vendor locked&rsquo; and neither is my project. Furthermore, depending on the build system I use, I can easily include content from one document to the next within the markdown itself -promoting the &lsquo;write it once&rsquo; concept.</p>
+
+<p>Lastly, if you are curious about how I generated the <a href="https://sphinx-rtd-theme.readthedocs.io/en/stable/">Sphinx Read The Docs Theme</a> documentation to be hosted via <a href="https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages">Github Pages</a> check out the <a href="https://karlredman.github.io/EditFrontMatter/about_theme/about_theme.html">About Theme</a> section on the EditFrontMatter home page. And if you would like to read about why I&rsquo;m using <code>reST</code> and <code>python</code> to to build static pages for <code>Hugo</code>, check out the <a href="https://karlredman.github.io/EditFrontMatter/faq.html">FAQ</a>.</p>
+
+<p>Now go be a Python Jinja Master!</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Popular site generators that support markdown front matter: Directly - <a href="https://www.gatsbyjs.org/docs/adding-markdown-pages/#add-a-markdown-file">Gatsby</a>, <a href="https://hexo.io/docs/front-matter">Hexo</a>, <a href="https://gohugo.io/content-management/front-matter">Hugo</a>, <a href="https://jekyllrb.com/docs/front-matter/">Jeykyll</a>. Indirectly - <a href="https://www.netlifycms.org/docs/nextjs/">Netlify CMS</a>, <a href="https://jaketrent.com/post/serve-markdown-nextjs-server/">Next.js</a>, <a href="https://dzone.com/articles/including-markdown-content-in-a-vue-or-nuxt-spa">Nuxt</a>. <a href="https://www.staticgen.com/">And Many more &hellip;</a>
+ <a class="footnote-return" href="#fnref:1">↩</a></li>
+<li id="fn:2">Future versions of this module may provide extra functionality, like preserving comments, via <a href="https://yaml.readthedocs.io/en/latest/overview.html">ruamel.yaml</a>; depending upon frequency of requests for such features.
+ <a class="footnote-return" href="#fnref:2">↩</a></li>
+<li id="fn:3">EditFrontMatter uses <a href="https://github.com/wimglenn/oyaml">oyaml</a> to preserve the order front matter. (see footnote <code>2</code>)
+ <a class="footnote-return" href="#fnref:3">↩</a></li>
+</ol>
+</div>
+</div>
+			
+			<footer class="post__footer">
+				
+
+
+<div class="post__tags tags">
+	<a class="post__tag transition" href="/Articles/tags/python3">python3</a><a class="post__tag transition" href="/Articles/tags/jinja2">jinja2</a><a class="post__tag transition" href="/Articles/tags/markdown">markdown</a><a class="post__tag transition" href="/Articles/tags/front-matter">front-matter</a>
+</div>
+
+
+				
+<div class="post__share share">
+	<a class="share__link" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fbe-a-python-jinja-master-automated-front-matter-editing%2f" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Facebook', 'width=800,height=600,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--facebook transition" aria-label="Facebook" role="img" width="28" height="28" viewBox="0 0 512 512"><path d="M330 512V322h64l9-74h-73v-47c0-22 6-36 37-36h39V99c-7-1-30-3-57-3-57 0-95 34-95 98v54h-64v74h64v190z"/></svg>
+	</a>
+	<a class="share__link" title="Share on Twitter" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fbe-a-python-jinja-master-automated-front-matter-editing%2f&amp;text=Be%20a%20Python%20Jinja%20Master%3a%20Automated%20Front%20Matter%20Editing" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Twitter', 'width=800,height=450,resizable=yes,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--twitter transition" aria-label="Twitter" role="img" width="28" height="28" viewBox="0 0 512 512"><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+	</a>
+	<a class="share__link" title="Share on Reddit" href="https://www.reddit.com/submit?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fbe-a-python-jinja-master-automated-front-matter-editing%2f&amp;title=Be%20a%20Python%20Jinja%20Master%3a%20Automated%20Front%20Matter%20Editing" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Reddit', 'width=832,height=624,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--reddit transition" aria-label="Reddit" role="img" width="28" height="28" viewBox="0 0 512 512"><path fill-rule="evenodd" d="M375 146a32 32 0 1 0-29-46l-65-13c-5-1-9 2-10 6l-22 97c-45 1-85 15-113 36a42 42 0 1 0-45 69l-1 12c0 65 74 117 166 117s166-52 166-117l-1-11a42 42 0 1 0-44-69c-28-21-67-35-111-37l19-86 58 13a32 32 0 0 0 32 29zM190 353c2-1 4 0 5 1 15 11 38 18 61 18s46-6 61-18a7 7 0 0 1 8 10c-18 14-44 21-69 21-25-1-51-7-69-21a6 6 0 0 1 3-11zm23-44a31 31 0 1 1-44-44 31 31 0 0 1 44 44zm130 0a31 31 0 1 0-44-44 31 31 0 0 0 44 44z"/></svg>
+
+	</a>
+	<a class="share__link" title="Share on Telegram" href="https://t.me/share/url?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fbe-a-python-jinja-master-automated-front-matter-editing%2f&amp;title=Be%20a%20Python%20Jinja%20Master%3a%20Automated%20Front%20Matter%20Editing" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Telegram', 'width=800,height=600,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--telegram transition" aria-label="Telegram" role="img" width="28" height="28" viewBox="0 0 512 512"><path d="M199 404c-11 0-10-4-13-14l-32-105 245-144"/><path d="M199 404c7 0 11-4 16-8l45-43-56-34"/><path d="M204 319l135 99c14 9 26 4 30-14l55-258c5-22-9-32-24-25L79 245c-21 8-21 21-4 26l83 26 190-121c9-5 17-3 11 4"/></svg>
+	</a>
+	<a class="share__link transition" title="Share on LinkedIn" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fbe-a-python-jinja-master-automated-front-matter-editing%2f&title=Be%20a%20Python%20Jinja%20Master%3a%20Automated%20Front%20Matter%20Editing" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on LinkedIn', 'width=640,height=480,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--linkedin transition" aria-label="LinkedIn" role="img" width="28" height="28" viewBox="0 0 512 512"><circle cx="142" cy="138" r="37"/><path stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+	</a>
+	<a class="share__link transition" title="Share on VK" href="https://vk.com/share.php?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fbe-a-python-jinja-master-automated-front-matter-editing%2f" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on VK', 'width=640,height=480,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--vk transition" aria-label="VK" role="img" width="28" height="28" viewBox="0 0 512 512"><path d="M274 363c5-1 14-3 14-15 0 0-1-30 13-34s32 29 51 42c14 9 25 8 25 8l51-1s26-2 14-23c-1-2-9-15-39-42-31-30-26-25 11-76 23-31 33-50 30-57-4-7-20-6-20-6h-57c-6 0-9 1-12 6 0 0-9 25-21 45-25 43-35 45-40 42-9-5-7-24-7-37 0-45 7-61-13-65-13-2-59-4-73 3-7 4-11 11-8 12 3 0 12 1 17 7 8 13 9 75-2 81-15 11-53-62-62-86-2-6-5-7-12-9H79c-6 0-15 1-11 13 27 56 83 193 184 192z"/></svg>
+	</a>
+	<a class="share__link transition" title="Save on Pocket" href="https://getpocket.com/edit?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fbe-a-python-jinja-master-automated-front-matter-editing%2f&amp;title=Be%20a%20Python%20Jinja%20Master%3a%20Automated%20Front%20Matter%20Editing" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Save on Pocket', 'width=480,height=320,toolbar=0,status=0'); return false">
+		<svg class="share__icon share__icon--pocket transition" aria-label="Pocket" role="img" width="28" height="28" viewBox="0 0 512 512"><path d="M388.8 88.9H123.2A47.4 47.4 0 0 0 76 136.5v131.9c0 2.4.2 4.8.5 7.2a101.8 101.8 0 0 0-.5 10.6c0 75.6 80.6 137 180 137s180-61.4 180-137c0-3.6-.2-7.1-.5-10.6.3-2.4.5-4.8.5-7.2v-132A47.4 47.4 0 0 0 388.8 89zm-22.4 132.6l-93 93c-4.7 4.6-11 7-17.1 7a23.8 23.8 0 0 1-17.7-7l-93-93a24 24 0 0 1 33.8-33.8l76.6 76.5 76.6-76.5a24 24 0 0 1 33.8 33.8z"/></svg>
+	</a>
+</div>
+			</footer>
+			
+		</article>
+		
+		
+	</section>
+	
+<section class="sidebar
+		 sidecards">
+	
+	
+<div class="sidecard">
+	<div class="widget widget-categories block">
+		<h3 class="widget__title">Categories</h3>
+		<div class="widget__content">
+			<ul class="widget__list">
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/admin">Admin</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/advice">Advice</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/article">Article</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/auth">Auth</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/dev.to">Dev.to</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/docker">Docker</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/ecosystem">Ecosystem</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/howto">Howto</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/linux">Linux</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/medium.com">Medium.com</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/network">Network</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/programming">Programming</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/ricing">Ricing</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/shortcuts">Shortcuts</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/utility">Utility</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/vscode">Vscode</a></li>
+				<li class="widget__item"><a class="widget__link" href="/Articles/categories/web">Web</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+	
+<div class="sidecard">
+	<div class="widget widget-tags block">
+		<h3 class="widget__title">Tags</h3>
+		<div class="widget-tags__content widget__content">
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/administration" title="Administration">Administration (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/authentication" title="Authentication">Authentication (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/compile" title="Compile">Compile (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/debian" title="Debian">Debian (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/development" title="Development">Development (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/diagram" title="Diagram">Diagram (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/dnsmasq" title="Dnsmasq">Dnsmasq (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/docker" title="Docker">Docker (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/ecosystem" title="Ecosystem">Ecosystem (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/flowchart" title="Flowchart">Flowchart (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/front-matter" title="Front matter">Front matter (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/gatekeeper" title="Gatekeeper">Gatekeeper (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/greeter" title="Greeter">Greeter (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/howto" title="Howto">Howto (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/jinja2" title="Jinja2">Jinja2 (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/keycloak" title="Keycloak">Keycloak (3)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/lifestyle" title="Lifestyle">Lifestyle (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/lightdm" title="Lightdm">Lightdm (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/markdown" title="Markdown">Markdown (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/mental-health" title="Mental health">Mental health (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/navigation" title="Navigation">Navigation (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/network" title="Network">Network (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/network-manager" title="Network manager">Network manager (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/programming" title="Programming">Programming (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/python3" title="Python3">Python3 (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/shortcuts" title="Shortcuts">Shortcuts (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/traefik" title="Traefik">Traefik (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/vim" title="Vim">Vim (2)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/vscode" title="Vscode">Vscode (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/wallpaper" title="Wallpaper">Wallpaper (1)</a>
+			<a class="widget-tags__link widget__link transition" href="/Articles/tags/xfce" title="Xfce">Xfce (1)</a>
+		</div>
+	</div>
+</div>
+</section>
+
+
+	</div>
+	<footer class="footer">
+	<div class="footer__inner inner">
+		<div class="footer__copyright">© 2020 Karl N. Redman. <span class="footer__copyright-credits">Powered by <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/vimux/amnix" rel="nofollow noopener" target="_blank">Amnix</a> theme.</span></div>
+<div class="footer__social social">
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="mailto:karl.redman@gmail.com">
+			<svg class="social__icon" aria-label="Email" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M299 268l124 106c-4 4-10 7-17 7H106c-7 0-13-3-17-7l124-106 43 38 43-38zm-43 13L89 138c4-4 10-7 17-7h300c7 0 13 3 17 7L256 281zm54-23l121-105v208L310 258zM81 153l121 105L81 361V153z"/></svg>
+		</a>
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://twitter.com/Karl_Redman">
+			<svg class="social__icon" aria-label="Twitter" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
+		</a>
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/karl-n-redman-850413">
+			<svg class="social__icon" aria-label="LinkedIn" role="img" width="32" height="32" viewBox="0 0 512 512"><circle cx="142" cy="138" r="37"/><path stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
+		</a>
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://github.com/karlredman">
+			<svg class="social__icon" aria-label="GitHub" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z"/></svg>
+		</a>
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://gitlab.com/karl.redman">
+			<svg class="social__icon" aria-label="GitLab" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M450 282l-22-67-43-133c-2-7-12-7-14 0l-43.3 133H184.3L141 82c-2-7-12-7-14 0L84 215l-22 67c-2 6 0 13 6 16l188 137 188-137c6-3 8-10 6-16z"/></svg>
+		</a>
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://stackoverflow.com/users/1725771">
+			<svg class="social__icon" aria-label="Stack Overflow" role="img" width="32" height="32" viewBox="0 0 512 512"><g stroke-width="30"><path fill="none" d="M125 297v105h241V297"/><path d="M170 341h150m-144-68l148 31M199 204l136 64m-95-129l115 97M293 89l90 120"/></g></svg>
+		</a>
+		<a class="social__link transition" target="_blank" rel="noopener noreferrer" href="https://medium.com/@karl.redman">
+			<svg class="social__icon" aria-label="Medium" role="img" width="32" height="32" viewBox="0 0 512 512"><path d="M125 173c0-4-2-9-5-11l-31-38v-6h98l75 166 67-166h93v6l-27 26c-2 1-3 4-3 7v190c0 3 1 6 3 8l27 25v6H289v-6l27-26c3-3 3-4 3-8V193l-76 192h-10l-88-192v129c-1 5 1 11 5 15l35 43v5H85v-5l35-43c4-4 6-10 5-15z"/></svg>
+		</a>
+</div>
+	</div>
+</footer>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script>
+</body>
+</html>
