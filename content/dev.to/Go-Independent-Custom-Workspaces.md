@@ -75,7 +75,7 @@ No, Go is is not special. It's a top notch development platform but forcing prog
     THIS_PROJECT_PATH=$(pwd)
 
     export GOPATH=$GOPATH:$THIS_PROJECT_PATH
-    mkdir -k $THIS_PROJECT_PATH/bin
+    mkdir -p $THIS_PROJECT_PATH/bin
     export GOBIN=$THIS_PROJECT_PATH/bin
     ```
 
