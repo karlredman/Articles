@@ -39,8 +39,6 @@ revealOptions:
 weight: 5
 ---
 
-
-
 # Golang: Independent Custom Workspaces
 
 * Originally published 20200207 [Go: Independent Custom Workspaces - DEV Community 👩‍💻👨‍💻](https://dev.to/karlredman/go-independent-custom-workspaces-5d27)
