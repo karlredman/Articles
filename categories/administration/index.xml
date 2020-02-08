@@ -17,7 +17,7 @@
       <pubDate>Sat, 08 Feb 2020 02:53:15 -0600</pubDate>
       
       <guid>https://karlredman.github.io/Articles/dev.to/go-independent-custom-workspaces/</guid>
-      <description>Golang: Independent Custom Workspaces TL;DR: Up to and including go1.13.7, $GOPATH, $GOBIN and the Go toolchain make it very difficult to isolate the Go Workspace for any development / production / runtime environments outside of the Go Contributers&#39; agenda and scope of ideology.
+      <description>Up to and including go1.13.7, $GOPATH, $GOBIN and the Go toolchain make it very difficult to isolate the Go Workspace for any development / production / runtime environments outside of the Go Contributers&#39; agenda and scope of ideology.
 This article attempts to illustrate how one might go about working around these severe Go environment limitations. Also, I&amp;rsquo;m a big fan of golang and I want to use it in a more wide ranging and versatile real-world environment.</description>
     </item>
     
