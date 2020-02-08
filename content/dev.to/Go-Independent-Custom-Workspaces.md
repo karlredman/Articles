@@ -10,11 +10,12 @@ published_url: https://dev.to/karlredman/go-independent-custom-workspaces-5d27
 author: "Karl N. Redman"
 creatordisplayname: "Karl N. Redman"
 creatoremail: "karl.redman@gmail.com"
-date: "2019-06-11T23:13:35-05:00"
+date: 2020-02-08T02:53:15-06:00
+
 
 lastmodifierdisplayname: "Karl N. Redman"
 lastmodifieremail: "karl.redman@gmail.com"
-lastmod: "2019-06-10T23:13:35-05:00"
+lastmod: 2020-02-08T02:53:33-06:00
 
 type: "page"
 #theme: "league"
@@ -22,9 +23,8 @@ type: "page"
 weight: 5
 ---
 
-# Golang: Independent Custom Workspaces
 
-* Originally published 20200207 [Go: Independent Custom Workspaces - DEV Community 👩‍💻👨‍💻](https://dev.to/karlredman/go-independent-custom-workspaces-5d27)
+# Golang: Independent Custom Workspaces
 
 ## TL;DR:
 
@@ -205,3 +205,6 @@ The answer was, ugh, symbolic links. Any other fixes I came up with were just to
         return "Hello, World!"
     }
     ```
+
+[ Originally published 20200207 [Go: Independent Custom Workspaces - DEV Community 👩‍💻👨‍💻](https://dev.to/karlredman/go-independent-custom-workspaces-5d27) ]
+
