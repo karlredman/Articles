@@ -30,6 +30,7 @@ Admittedly, this is a long post with a lot of specific information that is impor
 * Side Note: I've found this page to be very helpful/interesting: [An Overview of Go's Tooling - Alex Edwards](https://www.alexedwards.net/blog/an-overview-of-go-tooling)
 
 * A "distilled" (short) version of this article can be found here: [Go: GVM and Portable-ish Workspaces (Part 1: Setup DISTILLED) | Articles](https://karlredman.github.io/Articles/dev.to/go_gvm_and_portable-ish_workspaces_part_1_setup_distilled/)
+* This article was originally published on [dev.to](https://dev.to/karlredman/go-gvm-and-portable-ish-workspaces-part-1-setup-2nko)
 
 ## Drawbacks of native Go installations
 
