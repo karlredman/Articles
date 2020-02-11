@@ -12,8 +12,8 @@
 <meta property="og:description" content="Customizing Go workspaces with gvm (setup)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://karlredman.github.io/Articles/dev.to/go_gvm_and_portable-ish_workspaces_part_1_setup/" />
-<meta property="article:published_time" content="2020-02-11T05:56:37-06:00" />
-<meta property="article:modified_time" content="2020-02-11T05:56:50-06:00" />
+<meta property="article:published_time" content="2020-02-11T06:10:31-06:00" />
+<meta property="article:modified_time" content="2020-02-11T06:10:41-06:00" />
 
 		<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Go: GVM and Portable-ish Workspaces (Part 1: Setup)"/>
@@ -45,8 +45,8 @@
 				<h1 class="post__title">Go: GVM and Portable-ish Workspaces (Part 1: Setup)</h1>
 				
 <div class="post__meta meta">
-<time class="meta__datetime" datetime="2020-02-11T05:56:37" >February 11, 2020</time>
-<time class="meta__lastmod" datetime="2020-02-11T05:56:50"> • Updated: February 11, 2020</time>
+<time class="meta__datetime" datetime="2020-02-11T06:10:31" >February 11, 2020</time>
+<time class="meta__lastmod" datetime="2020-02-11T06:10:41"> • Updated: February 11, 2020</time>
 </div>
 
 			</header>
@@ -57,7 +57,9 @@
 <p>Admittedly, this is a long post with a lot of specific information that is important to running <code>gvm</code> efficiently. I promis you that, while the content here seems arduious, tasks outlined here will save you a lot of time and frustration in the future. Also, honestly, it&rsquo;s not really as bad as it looks :D</p>
 
 <ul>
-<li>Side Note: I&rsquo;ve found this page to be very helpful/interesting: <a href="https://www.alexedwards.net/blog/an-overview-of-go-tooling">An Overview of Go&rsquo;s Tooling - Alex Edwards</a></li>
+<li><p>Side Note: I&rsquo;ve found this page to be very helpful/interesting: <a href="https://www.alexedwards.net/blog/an-overview-of-go-tooling">An Overview of Go&rsquo;s Tooling - Alex Edwards</a></p></li>
+
+<li><p>A &ldquo;distilled&rdquo; (short) version of this article can be found here: <a href="https://karlredman.github.io/Articles/dev.to/go_gvm_and_portable-ish_workspaces_part_1_setup_distilled/">Go: GVM and Portable-ish Workspaces (Part 1: Setup DISTILLED) | Articles</a></p></li>
 </ul>
 
 <h2 id="drawbacks-of-native-go-installations">Drawbacks of native Go installations</h2>
@@ -115,10 +117,8 @@ find $HOME/.gvm/pkgsets -type f -exec chmod <span style="color:#ae81ff">660</spa
 <li><p>This is an annoying bug/feature of <code>gvm</code> unfortunately</p></li>
 
 <li><p>Reference: <a href="https://github.com/moovweb/gvm/issues/319">ERROR: Couldn&rsquo;t remove pkgsets · Issue #319 · moovweb/gvm</a></p>
-
-<pre><code># This will run for a few seconds....
-alias &quot;gvm_pkgset_perms&quot;=&quot;find $HOME/.gvm/pkgsets -type d -exec chmod 770 {} \; &amp;&amp; find $HOME/.gvm/pkgsets -type f -exec chmod 660 {} \;&quot;
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># This will run for a few seconds....</span>
+alias <span style="color:#e6db74">&#34;gvm_pkgset_perms&#34;</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;find </span>$HOME<span style="color:#e6db74">/.gvm/pkgsets -type d -exec chmod 770 {} \; &amp;&amp; find </span>$HOME<span style="color:#e6db74">/.gvm/pkgsets -type f -exec chmod 660 {} \;&#34;</span></code></pre></div></li>
 
 <li><p>Go <code>module mode</code> is a generally more opaque and troublesome environment for gvm</p></li>
 
@@ -142,19 +142,14 @@ alias &quot;gvm_pkgset_perms&quot;=&quot;find $HOME/.gvm/pkgsets -type d -exec c
 
 <ul>
 <li><p>Uninstall</p>
-
-<pre><code>cd
-gvm implode
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd
+gvm implode</code></pre></div>
 <ul>
 <li>Note: if gvm doesn&rsquo;t uninstall properly nuke the entire <code>$HOME/.gvm</code> directory</li>
 
 <li><p>One reason <code>gvm implode</code> may fail is if file permisions were set to <code>read only</code> when using <code>gvm</code> improperly</p>
-
-<pre><code>cd
-[sudo] rm -rf $HOME/.gvm
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd
+<span style="color:#f92672">[</span>sudo<span style="color:#f92672">]</span> rm -rf $HOME/.gvm</code></pre></div></li>
 </ul></li>
 </ul>
 
@@ -168,25 +163,19 @@ gvm implode
 
 <ul>
 <li><p>This will install the latest version from <code>master</code> branch</p>
-
-<pre><code># install curl if needed (ubuntu/debian: `sudo apt install curl`)
-bash &lt; &lt;(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># install curl if needed (ubuntu/debian: `sudo apt install curl`)</span>
+bash &lt; &lt;<span style="color:#f92672">(</span>curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer<span style="color:#f92672">)</span></code></pre></div></li>
 </ul></li>
 
 <li><p>Follow the instructions from the output of the script.</p>
 
 <ul>
 <li><p>Use <code>source</code> to include <code>gvm</code> to initialization script from command line to use the current terminal</p>
-
-<pre><code>source /home/karl/.gvm/scripts/gvm
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">source /home/karl/.gvm/scripts/gvm</code></pre></div></li>
 
 <li><p>Ensure that the <code>bashrc</code> equivalent file will source the script. Mine appears as follows:</p>
-
-<pre><code># .bashrc
-[[ -s &quot;/home/karl/.gvm/scripts/gvm&quot; ]] &amp;&amp; source &quot;/home/karl/.gvm/scripts/gvm&quot;
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># .bashrc</span>
+<span style="color:#f92672">[[</span> -s <span style="color:#e6db74">&#34;/home/karl/.gvm/scripts/gvm&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> source <span style="color:#e6db74">&#34;/home/karl/.gvm/scripts/gvm&#34;</span></code></pre></div></li>
 </ul></li>
 
 <li><p>Install <code>go version 1.4</code> to allow for compiling newer versions of go</p>
@@ -196,29 +185,21 @@ bash &lt; &lt;(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/maste
 <li>In order to compile go language from scratch you will either need to download the desired binary version or build from scratch after downlading <code>v1.4</code></li>
 
 <li><p>You can choose to use a newer version of go over <code>1.4</code> but <em>do not</em> binary install the version you intend to develop with -you will want the development files for development later</p>
-
-<pre><code># download a binary only bootstrap version of go
-gvm install go1.4 -B
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># download a binary only bootstrap version of go</span>
+gvm install go1.4 -B</code></pre></div></li>
 </ul></li>
 
 <li><p>Set the bootstrap version as current</p>
-
-<pre><code>gvm use go1.4
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gvm use go1.4</code></pre></div></li>
 
 <li><p>Select and download the version of go that you want to compile and install</p>
-
-<pre><code># show available versions
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># show available versions</span>
 gvm listall
-# compile/install the version you want/need
-gvm install go1.13.7
-</code></pre></li>
+<span style="color:#75715e"># compile/install the version you want/need</span>
+gvm install go1.13.7</code></pre></div></li>
 
 <li><p>Select the go version to use as default</p>
-
-<pre><code>gvm use go1.13.7 --default
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gvm use go1.13.7 --default</code></pre></div></li>
 </ul>
 
 <h3 id="reopen-your-terminal-i-highly-advise-this">Reopen your terminal. I <strong>HIGHLY</strong> advise this!!!!</h3>
@@ -258,40 +239,27 @@ system</code></pre></div></li>
 
 <ul>
 <li><p>Make sure you are using the global package set</p>
-
-<pre><code>gvm pkgset list
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gvm pkgset list</code></pre></div></li>
 
 <li><p>Expected output from <code>gvm pkgset list</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gvm go package sets <span style="color:#f92672">(</span>go1.13.7<span style="color:#f92672">)</span>
 
-<pre><code>gvm go package sets (go1.13.7)
-
-=&gt;  global
-
-</code></pre></li>
+<span style="color:#f92672">=</span>&gt;  global</code></pre></div></li>
 
 <li><p>Be sure that your <code>.vimrc</code> equivalent file installs <code>faith/vim-go</code> (I use Plug)</p>
-
-<pre><code>Plug 'fatih/vim-go'                         &quot;needs :GoInstallBinaries or :GoUpdateBinaries
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">Plug <span style="color:#e6db74">&#39;fatih/vim-go&#39;</span>                         <span style="color:#e6db74">&#34;needs :GoInstallBinaries or :GoUpdateBinaries</span></code></pre></div></li>
 
 <li><p>Install the plugin from the command line</p>
-
-<pre><code>vim +PlugInstall +qall
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vim +PlugInstall +qall</code></pre></div></li>
 
 <li><p>Install go dependencies for the <code>vim-go</code> plugin</p>
-
-<pre><code>vim +GoInstallBinaries +qall
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">vim +GoInstallBinaries +qall</code></pre></div></li>
 
 <li><p>Install missing <code>gopls</code></p>
 
 <ul>
 <li><p>Go package <code>gopls</code> is needed for <code>vim-go</code> but the <code>:GoInstallBinaries</code> fails to download and install it properly -so we do it manually</p>
-
-<pre><code>go get golang.org/x/tools/gopls
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">go get golang.org/x/tools/gopls</code></pre></div></li>
 </ul></li>
 </ul>
 
@@ -299,16 +267,12 @@ system</code></pre></div></li>
 
 <ul>
 <li><p>Do <strong>not</strong> use the <code>global</code> package set for anything other than packages and modules you will need for overall development work</p>
-
-<pre><code>gvm pkgset create NONE      # used for a default -see ### Cleaning Up Your `global` Package Set
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gvm pkgset create NONE      <span style="color:#75715e"># used for a default -see ### Cleaning Up Your `global` Package Set</span>
 gvm pkgset create Scratch
-gvm pkgset use Scratch
-</code></pre></li>
+gvm pkgset use Scratch</code></pre></div></li>
 
 <li><p>output</p>
-
-<pre><code>Now using version go1.13.7@Scratch
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">Now using version go1.13.7@Scratch</code></pre></div></li>
 </ul>
 
 <h3 id="cleaning-up-your-global-package-set-keep-global-pure">Cleaning Up Your <code>global</code> Package Set - Keep <code>global</code> pure!</h3>
@@ -316,12 +280,9 @@ gvm pkgset use Scratch
 <p>Basically, if you polute your <code>global</code> package set you are <strong>screwed</strong>. Never, ever, polute the global package set!</p>
 
 <p><strong>Add this to your <code>.bashrc</code> equivalent:</strong></p>
-
-<pre><code># add after sourcing gvm
-gvm pkgset create NONE &gt;/dev/null 2&gt;&amp;1
-gvm pkgset use NONE
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># add after sourcing gvm</span>
+gvm pkgset create NONE &gt;/dev/null <span style="color:#ae81ff">2</span>&gt;&amp;<span style="color:#ae81ff">1</span>
+gvm pkgset use NONE</code></pre></div>
 <p>The <strong>only</strong> way to clean up your <em>package set</em> is to just <em>delete</em> the entire version of <code>go</code> that the set is associated with. This can be a PITA and, in the case of having <code>vim-go</code> default packages in global space, time consuming -up to 30 min of active terminal time.</p>
 
 <p>Don&rsquo;t bother trying to delete packages from global package sets (i.e. <code>$HOME/.gvm/pkgsets/go1.13.7/global/pkg/[...]</code>). The way <code>gvm</code> works is that everything ends up in the global folders in one way or another. Obviously this is a <em>huge</em> flaw in <code>gvm</code>.</p>
@@ -343,20 +304,15 @@ gvm pkgset use NONE
 
 <ul>
 <li><p>list local high level packages in this directory structure</p>
-
-<pre><code>$ go list ./...
-example.com/hello
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ go list ./...
+example.com/hello</code></pre></div></li>
 
 <li><p>list packages imported by project in this directory</p>
-
-<pre><code>$ go list -f &quot;{{.ImportPath}} {{.Imports}}&quot; ./...
-example.com/hello [rsc.io/quote]
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ go list -f <span style="color:#e6db74">&#34;{{.ImportPath}} {{.Imports}}&#34;</span> ./...
+example.com/hello <span style="color:#f92672">[</span>rsc.io/quote<span style="color:#f92672">]</span></code></pre></div></li>
 
 <li><p>list all dependencies of the project directory that you are in</p>
-
-<pre><code>$ go list -m all
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ go list -m all
 example.com/hello
 golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550
 golang.org/x/mod v0.1.1-0.20191105210325-c90efee705ee
@@ -367,21 +323,16 @@ golang.org/x/text v0.3.0
 golang.org/x/tools v0.0.0-20200211045251-2de505fc5306
 golang.org/x/xerrors v0.0.0-20191011141410-1b5146add898
 rsc.io/quote v1.5.2
-rsc.io/sampler v1.3.0
-</code></pre></li>
+rsc.io/sampler v1.3.0</code></pre></div></li>
 
 <li><p>list all packages (recursively) used by project in this directory</p>
-
-<pre><code>$ go list -f &quot;{{.ImportPath}} {{.Deps}}&quot; ./...
-example.com/hello [bytes errors fmt golang.org/x/text/internal/tag golang.org/x/text/language internal/bytealg internal/cpu internal/fmtsort internal/oserror internal/poll internal/race internal/reflectlite internal/syscall/unix internal/testlog io math math/bits os reflect rsc.io/quote rsc.io/sampler runtime runtime/internal/atomic runtime/internal/math runtime/internal/sys sort strconv strings sync sync/atomic syscall time unicode unicode/utf8 unsafe]
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ go list -f <span style="color:#e6db74">&#34;{{.ImportPath}} {{.Deps}}&#34;</span> ./...
+example.com/hello <span style="color:#f92672">[</span>bytes errors fmt golang.org/x/text/internal/tag golang.org/x/text/language internal/bytealg internal/cpu internal/fmtsort internal/oserror internal/poll internal/race internal/reflectlite internal/syscall/unix internal/testlog io math math/bits os reflect rsc.io/quote rsc.io/sampler runtime runtime/internal/atomic runtime/internal/math runtime/internal/sys sort strconv strings sync sync/atomic syscall time unicode unicode/utf8 unsafe<span style="color:#f92672">]</span></code></pre></div>
 <ul>
 <li><p>better looking output</p>
-
-<pre><code>$ go list -f &quot;{{.ImportPath}} {{.Deps}}&quot; ./... | sed  's/ /\n/g'
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ go list -f <span style="color:#e6db74">&#34;{{.ImportPath}} {{.Deps}}&#34;</span> ./... | sed  <span style="color:#e6db74">&#39;s/ /\n/g&#39;</span>
 example.com/hello
-[bytes
+<span style="color:#f92672">[</span>bytes
 errors
 fmt
 golang.org/x/text/internal/tag
@@ -415,27 +366,20 @@ syscall
 time
 unicode
 unicode/utf8
-unsafe]
-</code></pre></li>
+unsafe<span style="color:#f92672">]</span></code></pre></div></li>
 </ul></li>
 
 <li><p>list all <em>standard</em> packages that are installed</p>
-
-<pre><code>$ go list std
-&lt;VERY LONG LIST HERE&gt;
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ go list std
+&lt;VERY LONG LIST HERE&gt;</code></pre></div></li>
 
 <li><p>list all (flat) packages that are installed</p>
-
-<pre><code>$ go list all
-&lt;VERY, VERY LONG LIST HERE&gt;
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ go list all
+&lt;VERY, VERY LONG LIST HERE&gt;</code></pre></div></li>
 
 <li><p>list all (recursive) packages managed by this instance of go</p>
-
-<pre><code>$ go list ...
-&lt;VERY, VERY, VERY LONG LIST HERE&gt;
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ go list ...
+&lt;VERY, VERY, VERY LONG LIST HERE&gt;</code></pre></div></li>
 </ul>
 
 <h1 id="part-1-conclusion">Part 1 Conclusion:</h1>
@@ -444,7 +388,7 @@ unsafe]
 
 <p>Part 2 of this article will demonstrate an example workflow to bring everything together. Hopefully you will see how working through Part 1 was worth the effort.</p>
 
-<p>Reminder: a &lsquo;distilled&rsquo; version of this article can be found here: [TODO -Pending]()</p>
+<p>Reminder: a &lsquo;distilled&rsquo; version of this article can be found here: <a href="https://karlredman.github.io/Articles/dev.to/go_gvm_and_portable-ish_workspaces_part_1_setup_distilled/">Go: GVM and Portable-ish Workspaces (Part 1: Setup DISTILLED) | Articles</a></p>
 </div>
 			
 			<footer class="post__footer">

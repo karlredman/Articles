@@ -50,7 +50,7 @@
 </div>
 
 			</header>
-			<div class="post__content"><p>This is a distilled version of <a href="TODO">Go: GVM and Portable-ish Workspaces (Part 1: Setup)</a></p>
+			<div class="post__content"><p>This is a distilled version of <a href="https://karlredman.github.io/Articles/dev.to/go_gvm_and_portable-ish_workspaces_part_1_setup/">Go: GVM and Portable-ish Workspaces (Part 1: Setup)</a></p>
 
 <ul>
 <li>GVM repo: <a href="https://github.com/moovweb/gvm">moovweb/gvm: Go Version Manager</a></li>
@@ -58,17 +58,13 @@
 
 <ol>
 <li><p>Add this to toward the bottom of your <code>.bashrc</code> so <code>.gvm</code> can function</p>
-
-<pre><code>[[ -s &quot;/home/karl/.gvm/scripts/gvm&quot; ]] &amp;&amp; source &quot;/home/karl/.gvm/scripts/gvm&quot;
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[[</span> -s <span style="color:#e6db74">&#34;/home/karl/.gvm/scripts/gvm&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> source <span style="color:#e6db74">&#34;/home/karl/.gvm/scripts/gvm&#34;</span></code></pre></div></li>
 
 <li><p>Add this alias to your <code>.bashrc</code> (after the preceding entry)</p>
 
 <ul>
 <li><p>You will need this to reset permissions for <code>gvm</code> managed <code>pkgset</code> directories -because <code>gvm</code> is flaky like that</p>
-
-<pre><code>alias &quot;gvm_pkgset_perms&quot;=&quot;find $HOME/.gvm/pkgsets -type d -exec chmod 770 {} \; &amp;&amp; find $HOME/.gvm/pkgsets -type f -exec chmod 660 {} \;&quot;
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">alias <span style="color:#e6db74">&#34;gvm_pkgset_perms&#34;</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;find </span>$HOME<span style="color:#e6db74">/.gvm/pkgsets -type d -exec chmod 770 {} \; &amp;&amp; find </span>$HOME<span style="color:#e6db74">/.gvm/pkgsets -type f -exec chmod 660 {} \;&#34;</span></code></pre></div></li>
 </ul></li>
 
 <li><p>Add this to your <code>.bashrc</code> so you don&rsquo;t polute your <code>global</code> <code>gvm pkgset</code></p>
@@ -77,26 +73,20 @@
 <li>Add after the previous 2 lines above</li>
 
 <li><p>Polluting your <em>gvm global pkgset</em> is <strong>VERY BAD</strong></p>
-
-<pre><code>gvm pkgset create NONE &gt;/dev/null 2&gt;&amp;1
-gvm pkgset use NONE
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gvm pkgset create NONE &gt;/dev/null <span style="color:#ae81ff">2</span>&gt;&amp;<span style="color:#ae81ff">1</span>
+gvm pkgset use NONE</code></pre></div></li>
 </ul></li>
 
 <li><p>Sanity check <code>.bashrc</code>. Your file should look like this:</p>
-
-<pre><code># ...
-[[ -s &quot;$HOME/.gvm/scripts/gvm&quot; ]] &amp;&amp; source &quot;$HOME/.gvm/scripts/gvm&quot;
-alias &quot;gvm_pkgset_perms&quot;=&quot;find $HOME/.gvm/pkgsets -type d -exec chmod 770 {} \; &amp;&amp; find $HOME/.gvm/pkgsets -type f -exec chmod 660 {} \;&quot;
-gvm pkgset create NONE &gt;/dev/null 2&gt;&amp;1
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># ...</span>
+<span style="color:#f92672">[[</span> -s <span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.gvm/scripts/gvm&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> source <span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.gvm/scripts/gvm&#34;</span>
+alias <span style="color:#e6db74">&#34;gvm_pkgset_perms&#34;</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;find </span>$HOME<span style="color:#e6db74">/.gvm/pkgsets -type d -exec chmod 770 {} \; &amp;&amp; find </span>$HOME<span style="color:#e6db74">/.gvm/pkgsets -type f -exec chmod 660 {} \;&#34;</span>
+gvm pkgset create NONE &gt;/dev/null <span style="color:#ae81ff">2</span>&gt;&amp;<span style="color:#ae81ff">1</span>
 gvm pkgset use NONE
-# ...
-</code></pre></li>
+<span style="color:#75715e"># ...</span></code></pre></div></li>
 
 <li><p>Install GVM (uninstall first if already installed)</p>
-
-<pre><code>bash &lt; &lt;(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">bash &lt; &lt;<span style="color:#f92672">(</span>curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer<span style="color:#f92672">)</span></code></pre></div></li>
 
 <li><p>Open a <strong>NEW</strong> terminal - just do it and don&rsquo;t argue</p>
 
@@ -106,29 +96,19 @@ gvm pkgset use NONE
 </ul></li>
 
 <li><p>Set the <code>gvm pkgset</code> to <code>global</code></p>
-
-<pre><code>gvm pkgset use global
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gvm pkgset use global</code></pre></div></li>
 
 <li><p>Install go <em>binary</em> version <code>1.4</code> via gvm</p>
-
-<pre><code>gvm install go1.4 -B
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gvm install go1.4 -B</code></pre></div></li>
 
 <li><p>set the current version of to to <code>1.4</code></p>
-
-<pre><code>gvm use go1.4
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gvm use go1.4</code></pre></div></li>
 
 <li><p>Install/compile a newer version of <code>go</code></p>
-
-<pre><code>gvm install go1.13.7
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gvm install go1.13.7</code></pre></div></li>
 
 <li><p>Set the new current version of <code>go</code> as default</p>
-
-<pre><code>gvm use go1.13.7 --default
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gvm use go1.13.7 --default</code></pre></div></li>
 
 <li><p>Install global level packages (i.e. for vim)</p>
 
@@ -137,9 +117,7 @@ gvm pkgset use NONE
 </ul></li>
 
 <li><p><strong>IMPORTANT</strong> set <code>gvm pkgset</code> to <code>NONE</code></p>
-
-<pre><code>gvm pkgset use NONE
-</code></pre></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gvm pkgset use NONE</code></pre></div></li>
 </ol>
 
 <p>I advise you to restart your terminal sessions at this time only so you don&rsquo;t accidentally pollute your global package set workspace. Otherwise, that&rsquo;s it!</p>
@@ -186,8 +164,6 @@ gvm pkgset use NONE
 <section class="post__related related block">
 	<h3 class="related__title">Related</h3>
 	<ul class="related__list">
-		
-		<li class="related__item"><a class="related__link" href="/Articles/dev.to/go_gvm_and_portable-ish_workspaces_part_1_setup/">Go: GVM and Portable-ish Workspaces (Part 1: Setup)</a></li>
 		
 		<li class="related__item"><a class="related__link" href="/Articles/dev.to/go-independent-custom-workspaces/">Golang: Independent Custom Workspaces</a></li>
 		
