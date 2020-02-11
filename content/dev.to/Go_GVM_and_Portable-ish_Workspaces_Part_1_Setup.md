@@ -10,12 +10,12 @@ published_url:
 author: "Karl N. Redman"
 creatordisplayname: "Karl N. Redman"
 creatoremail: "karl.redman@gmail.com"
-date: 2020-02-11T05:56:37-06:00
+date: 2020-02-11T06:10:31-06:00
 
 
 lastmodifierdisplayname: "Karl N. Redman"
 lastmodifieremail: "karl.redman@gmail.com"
-lastmod: 2020-02-11T05:56:50-06:00
+lastmod: 2020-02-11T06:10:41-06:00
 
 type: "page"
 #theme: "league"
@@ -28,6 +28,8 @@ This is an article about getting (linux based) `gvm` up and running and how to m
 Admittedly, this is a long post with a lot of specific information that is important to running `gvm` efficiently. I promis you that, while the content here seems arduious, tasks outlined here will save you a lot of time and frustration in the future. Also, honestly, it's not really as bad as it looks :D
 
 * Side Note: I've found this page to be very helpful/interesting: [An Overview of Go's Tooling - Alex Edwards](https://www.alexedwards.net/blog/an-overview-of-go-tooling)
+
+* A "distilled" (short) version of this article can be found here: [Go: GVM and Portable-ish Workspaces (Part 1: Setup DISTILLED) | Articles](https://karlredman.github.io/Articles/dev.to/go_gvm_and_portable-ish_workspaces_part_1_setup_distilled/)
 
 ## Drawbacks of native Go installations
 
@@ -73,7 +75,7 @@ Lastly, IMHO `gvm` leaves a lot to be desired. But I don't have the time/energy 
     * This is an annoying bug/feature of `gvm` unfortunately
     * Reference: [ERROR: Couldn't remove pkgsets · Issue #319 · moovweb/gvm](https://github.com/moovweb/gvm/issues/319)
 
-    ```
+    ```sh
     # This will run for a few seconds....
     alias "gvm_pkgset_perms"="find $HOME/.gvm/pkgsets -type d -exec chmod 770 {} \; && find $HOME/.gvm/pkgsets -type f -exec chmod 660 {} \;"
     ```
@@ -93,7 +95,7 @@ In order to have a clean `gvm` environment I suggest first uninstalling `gvm` if
 
 * Uninstall
 
-```
+```sh
 cd
 gvm implode
 ```
@@ -101,7 +103,7 @@ gvm implode
   * Note: if gvm doesn't uninstall properly nuke the entire `$HOME/.gvm` directory
     * One reason `gvm implode` may fail is if file permisions were set to `read only` when using `gvm` improperly
 
-    ```
+    ```sh
     cd
     [sudo] rm -rf $HOME/.gvm
     ```
@@ -113,7 +115,7 @@ gvm implode
 * Install gvm via the `bash` script
   * This will install the latest version from `master` branch
 
-```
+```sh
 # install curl if needed (ubuntu/debian: `sudo apt install curl`)
 bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 ```
@@ -121,13 +123,13 @@ bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/bins
 * Follow the instructions from the output of the script.
   * Use `source` to include `gvm` to initialization script from command line to use the current terminal
 
-    ```
+    ```sh
     source /home/karl/.gvm/scripts/gvm
     ```
 
   * Ensure that the `bashrc` equivalent file will source the script. Mine appears as follows:
 
-    ```
+    ```sh
     # .bashrc
     [[ -s "/home/karl/.gvm/scripts/gvm" ]] && source "/home/karl/.gvm/scripts/gvm"
     ```
@@ -137,20 +139,20 @@ bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/bins
   * In order to compile go language from scratch you will either need to download the desired binary version or build from scratch after downlading `v1.4`
   * You can choose to use a newer version of go over `1.4` but *do not* binary install the version you intend to develop with -you will want the development files for development later
 
-```
+```sh
 # download a binary only bootstrap version of go
 gvm install go1.4 -B
 ```
 
 * Set the bootstrap version as current
 
-```
+```sh
 gvm use go1.4
 ```
 
 * Select and download the version of go that you want to compile and install
 
-```
+```sh
 # show available versions
 gvm listall
 # compile/install the version you want/need
@@ -159,7 +161,7 @@ gvm install go1.13.7
 
 * Select the go version to use as default
 
-```
+```sh
 gvm use go1.13.7 --default
 ```
 
@@ -194,13 +196,13 @@ This section is *optional*. Use the `gvm` `global` package set to install module
 I use [fatih/vim-go: Go development plugin for Vim](https://github.com/fatih/vim-go) and will be installing the required packages for that `vim plugin` in the *`gvm` global package set*. A tutorial for Plug can be found here: [tutorial · junegunn/vim-plug Wiki](https://github.com/junegunn/vim-plug/wiki/tutorial)
 
 * Make sure you are using the global package set
-```
+```sh
 gvm pkgset list
 ```
 
 * Expected output from `gvm pkgset list`
 
-```
+```sh
 gvm go package sets (go1.13.7)
 
 =>  global
@@ -209,26 +211,26 @@ gvm go package sets (go1.13.7)
 
 * Be sure that your `.vimrc` equivalent file installs `faith/vim-go` (I use Plug)
 
-```
+```sh
 Plug 'fatih/vim-go'                         "needs :GoInstallBinaries or :GoUpdateBinaries
 ```
 
 * Install the plugin from the command line
 
-```
+```sh
 vim +PlugInstall +qall
 ```
 
 * Install go dependencies for the `vim-go` plugin
 
-```
+```sh
 vim +GoInstallBinaries +qall
 ```
 
 * Install missing `gopls`
   * Go package `gopls` is needed for `vim-go` but the `:GoInstallBinaries` fails to download and install it properly -so we do it manually
 
-```
+```sh
 go get golang.org/x/tools/gopls
 ```
 
@@ -236,7 +238,7 @@ go get golang.org/x/tools/gopls
 
 * Do **not** use the `global` package set for anything other than packages and modules you will need for overall development work
 
-    ```
+    ```sh
     gvm pkgset create NONE      # used for a default -see ### Cleaning Up Your `global` Package Set
     gvm pkgset create Scratch
     gvm pkgset use Scratch
@@ -244,7 +246,7 @@ go get golang.org/x/tools/gopls
 
 * output
 
-  ```
+  ```sh
   Now using version go1.13.7@Scratch
   ```
 
@@ -254,7 +256,7 @@ Basically, if you polute your `global` package set you are **screwed**. Never, e
 
 **Add this to your `.bashrc` equivalent:**
 
-```
+```sh
 # add after sourcing gvm
 gvm pkgset create NONE >/dev/null 2>&1
 gvm pkgset use NONE
@@ -277,21 +279,21 @@ The dependencies shown are from the example code found here: [Using Go Modules -
 
 * list local high level packages in this directory structure
 
-```
+```sh
 $ go list ./...
 example.com/hello
 ```
 
 * list packages imported by project in this directory
 
-```
+```sh
 $ go list -f "{{.ImportPath}} {{.Imports}}" ./...
 example.com/hello [rsc.io/quote]
 ```
 
 * list all dependencies of the project directory that you are in
 
-```
+```sh
 $ go list -m all
 example.com/hello
 golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550
@@ -308,14 +310,14 @@ rsc.io/sampler v1.3.0
 
 * list all packages (recursively) used by project in this directory
 
-```
+```sh
 $ go list -f "{{.ImportPath}} {{.Deps}}" ./...
 example.com/hello [bytes errors fmt golang.org/x/text/internal/tag golang.org/x/text/language internal/bytealg internal/cpu internal/fmtsort internal/oserror internal/poll internal/race internal/reflectlite internal/syscall/unix internal/testlog io math math/bits os reflect rsc.io/quote rsc.io/sampler runtime runtime/internal/atomic runtime/internal/math runtime/internal/sys sort strconv strings sync sync/atomic syscall time unicode unicode/utf8 unsafe]
 ```
 
   * better looking output
 
-    ```
+    ```sh
     $ go list -f "{{.ImportPath}} {{.Deps}}" ./... | sed  's/ /\n/g'
     example.com/hello
     [bytes
@@ -357,21 +359,21 @@ example.com/hello [bytes errors fmt golang.org/x/text/internal/tag golang.org/x/
 
 * list all *standard* packages that are installed
 
-```
+```sh
 $ go list std
 <VERY LONG LIST HERE>
 ```
 
 * list all (flat) packages that are installed
 
-```
+```sh
 $ go list all
 <VERY, VERY LONG LIST HERE>
 ```
 
 * list all (recursive) packages managed by this instance of go
 
-```
+```sh
 $ go list ...
 <VERY, VERY, VERY LONG LIST HERE>
 ```
@@ -382,4 +384,4 @@ You now have a fully functioning `gvm` setup that provides a global space for re
 
 Part 2 of this article will demonstrate an example workflow to bring everything together. Hopefully you will see how working through Part 1 was worth the effort.
 
-Reminder: a 'distilled' version of this article can be found here: [TODO -Pending]()
+Reminder: a 'distilled' version of this article can be found here: [Go: GVM and Portable-ish Workspaces (Part 1: Setup DISTILLED) | Articles](https://karlredman.github.io/Articles/dev.to/go_gvm_and_portable-ish_workspaces_part_1_setup_distilled/)
