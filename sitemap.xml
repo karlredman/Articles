@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://karlredman.github.io/Articles/dev.to/go_gvm_and_portable-ish_workspaces_part_1_setup_distilled/</loc>
+    <lastmod>2020-02-11T05:56:50-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/dev.to/go_gvm_and_portable-ish_workspaces_part_1_setup/</loc>
+    <lastmod>2020-02-11T05:56:50-06:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://karlredman.github.io/Articles/dev.to/go-independent-custom-workspaces/</loc>
     <lastmod>2020-02-08T02:53:33-06:00</lastmod>
   </url>
@@ -59,57 +69,62 @@
   
   <url>
     <loc>https://karlredman.github.io/Articles/categories/administration/</loc>
-    <lastmod>2020-02-08T02:53:33-06:00</lastmod>
+    <lastmod>2020-02-11T05:56:50-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://karlredman.github.io/Articles/tags/administration/</loc>
+    <lastmod>2020-02-11T05:56:50-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://karlredman.github.io/Articles/</loc>
-    <lastmod>2020-02-08T02:53:33-06:00</lastmod>
+    <lastmod>2020-02-11T05:56:50-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://karlredman.github.io/Articles/categories/</loc>
-    <lastmod>2020-02-08T02:53:33-06:00</lastmod>
+    <lastmod>2020-02-11T05:56:50-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://karlredman.github.io/Articles/categories/dev.to/</loc>
-    <lastmod>2020-02-08T02:53:33-06:00</lastmod>
+    <lastmod>2020-02-11T05:56:50-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://karlredman.github.io/Articles/dev.to/</loc>
-    <lastmod>2020-02-08T02:53:33-06:00</lastmod>
+    <lastmod>2020-02-11T05:56:50-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://karlredman.github.io/Articles/tags/development/</loc>
-    <lastmod>2020-02-08T02:53:33-06:00</lastmod>
+    <lastmod>2020-02-11T05:56:50-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://karlredman.github.io/Articles/categories/devops/</loc>
-    <lastmod>2020-02-08T02:53:33-06:00</lastmod>
+    <lastmod>2020-02-11T05:56:50-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://karlredman.github.io/Articles/tags/go/</loc>
-    <lastmod>2020-02-08T02:53:33-06:00</lastmod>
+    <lastmod>2020-02-11T05:56:50-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://karlredman.github.io/Articles/tags/mentalhealth/</loc>
-    <lastmod>2020-02-08T02:53:33-06:00</lastmod>
+    <lastmod>2020-02-11T05:56:50-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://karlredman.github.io/Articles/categories/programming/</loc>
-    <lastmod>2020-02-08T02:53:33-06:00</lastmod>
+    <lastmod>2020-02-11T05:56:50-06:00</lastmod>
   </url>
   
   <url>
     <loc>https://karlredman.github.io/Articles/tags/</loc>
-    <lastmod>2020-02-08T02:53:33-06:00</lastmod>
+    <lastmod>2020-02-11T05:56:50-06:00</lastmod>
   </url>
   
   <url>
@@ -178,11 +193,6 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/tags/administration/</loc>
-    <lastmod>2019-06-24T23:06:41-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://karlredman.github.io/Articles/categories/auth/</loc>
     <lastmod>2019-06-24T23:06:41-05:00</lastmod>
   </url>
@@ -248,12 +258,12 @@
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/tags/vscode/</loc>
+    <loc>https://karlredman.github.io/Articles/categories/vscode/</loc>
     <lastmod>2019-06-25T02:58:38-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://karlredman.github.io/Articles/categories/vscode/</loc>
+    <loc>https://karlredman.github.io/Articles/tags/vscode/</loc>
     <lastmod>2019-06-25T02:58:38-05:00</lastmod>
   </url>
   

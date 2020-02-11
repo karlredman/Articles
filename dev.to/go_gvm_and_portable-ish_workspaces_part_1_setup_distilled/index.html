@@ -5,19 +5,19 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="theme-color" content="#5b5b67">
-	<title>Keycloak v5 &#43; Gatekeeper v5: Flowcharts - Easily Create and Restrict an Isolated (IODC) Client Service by Group-Role | Articles</title>
+	<title>Go: GVM and Portable-ish Workspaces (Part 1: Setup DISTILLED) | Articles</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="Flowcharts for easily creating Keycloak clients and restricting authorization to user groups.">
-		<meta property="og:title" content="Keycloak v5 &#43; Gatekeeper v5: Flowcharts - Easily Create and Restrict an Isolated (IODC) Client Service by Group-Role" />
-<meta property="og:description" content="Flowcharts for easily creating Keycloak clients and restricting authorization to user groups." />
+	<meta name="description" content="Customizing Go workspaces with gvm (setup).">
+		<meta property="og:title" content="Go: GVM and Portable-ish Workspaces (Part 1: Setup DISTILLED)" />
+<meta property="og:description" content="Customizing Go workspaces with gvm (setup)." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://karlredman.github.io/Articles/dev.to/keycloakv5_oidc_client_flowcharts/" />
-<meta property="article:published_time" content="2019-04-28T13:12:51-05:00" />
-<meta property="article:modified_time" content="2019-06-23T13:12:51-05:00" />
+<meta property="og:url" content="https://karlredman.github.io/Articles/dev.to/go_gvm_and_portable-ish_workspaces_part_1_setup_distilled/" />
+<meta property="article:published_time" content="2020-02-11T05:56:37-06:00" />
+<meta property="article:modified_time" content="2020-02-11T05:56:50-06:00" />
 
 		<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Keycloak v5 &#43; Gatekeeper v5: Flowcharts - Easily Create and Restrict an Isolated (IODC) Client Service by Group-Role"/>
-<meta name="twitter:description" content="Flowcharts for easily creating Keycloak clients and restricting authorization to user groups."/>
+<meta name="twitter:title" content="Go: GVM and Portable-ish Workspaces (Part 1: Setup DISTILLED)"/>
+<meta name="twitter:description" content="Customizing Go workspaces with gvm (setup)."/>
 
 	<link rel="stylesheet" href="/Articles/css/main.css">
 	<link rel="stylesheet" href="/Articles/css/custom.css">
@@ -42,55 +42,107 @@
 	<section class="single">
 		<article class="post block">
 			<header class="post__header">
-				<h1 class="post__title">Keycloak v5 &#43; Gatekeeper v5: Flowcharts - Easily Create and Restrict an Isolated (IODC) Client Service by Group-Role</h1>
+				<h1 class="post__title">Go: GVM and Portable-ish Workspaces (Part 1: Setup DISTILLED)</h1>
 				
 <div class="post__meta meta">
-<time class="meta__datetime" datetime="2019-04-28T13:12:51" >April 28, 2019</time>
-<time class="meta__lastmod" datetime="2019-06-23T13:12:51"> • Updated: June 23, 2019</time>
+<time class="meta__datetime" datetime="2020-02-11T05:56:37" >February 11, 2020</time>
+<time class="meta__lastmod" datetime="2020-02-11T05:56:50"> • Updated: February 11, 2020</time>
 </div>
 
 			</header>
-			<div class="post__content">
-
-<p>This is another artifact from an upcoming series of articles that I&rsquo;m writing for creating a home/laptop development laboratory ecosystem. I&rsquo;m sharing these artifacts now because the series that I&rsquo;m writing won&rsquo;t be released for at least a month (It&rsquo;s a huge undertaking -for me).</p>
-
-<p>These flow charts demonstrate the simplest form (IMHO) of creating Keycloak client services behind an authentication/authorization proxy (Keycloak Gatekeeper). I imagine that if you are reading this article you are already frustrated with just creating a simple client in Keycloak and/or trying to figure out how to restrict authorization so that only specific users of a group are allowed to log in via Keycloak. Hopefully this is enough of a clue to help people until I am able to publish the article series as a whole.</p>
-
-<h3 id="artifact-specifics">Artifact Specifics:</h3>
+			<div class="post__content"><p>This is a distilled version of <a href="TODO">Go: GVM and Portable-ish Workspaces (Part 1: Setup)</a></p>
 
 <ul>
-<li>Keycloak v5</li>
-<li>Keycloak Gatekeeper v5</li>
-<li>Original PlantUML source + Image Files: <a href="https://github.com/karlredman/Articles/tree/master/content/dev.to/keycloakV5_oidc_client_flowcharts">here</a></li>
-<li>Original source edited with:
+<li>GVM repo: <a href="https://github.com/moovweb/gvm">moovweb/gvm: Go Version Manager</a></li>
+</ul>
+
+<ol>
+<li><p>Add this to toward the bottom of your <code>.bashrc</code> so <code>.gvm</code> can function</p>
+
+<pre><code>[[ -s &quot;/home/karl/.gvm/scripts/gvm&quot; ]] &amp;&amp; source &quot;/home/karl/.gvm/scripts/gvm&quot;
+</code></pre></li>
+
+<li><p>Add this alias to your <code>.bashrc</code> (after the preceding entry)</p>
 
 <ul>
-<li>vim <a href="https://github.com/iamcco/markdown-preview.nvim">iamcco/markdown-preview.nvim: markdown preview plugin for (neo)vim</a></li>
-<li>VSCode <a href="https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml">PlantUML - Visual Studio extension</a></li>
+<li><p>You will need this to reset permissions for <code>gvm</code> managed <code>pkgset</code> directories -because <code>gvm</code> is flaky like that</p>
+
+<pre><code>alias &quot;gvm_pkgset_perms&quot;=&quot;find $HOME/.gvm/pkgsets -type d -exec chmod 770 {} \; &amp;&amp; find $HOME/.gvm/pkgsets -type f -exec chmod 660 {} \;&quot;
+</code></pre></li>
 </ul></li>
-<li><em>NOTE:</em> While current (v6.0.0) Keycloak documentation specifies that groups can be used directly in <code>Keycloak Gatekeeper</code> only role based authorization is available in V5.0.0.</li>
-</ul>
 
-<h3 id="flowchart-caveates">Flowchart Caveates:</h3>
+<li><p>Add this to your <code>.bashrc</code> so you don&rsquo;t polute your <code>global</code> <code>gvm pkgset</code></p>
 
 <ul>
-<li>whoami: The example client service being created</li>
-<li>auth_user: A User created to log in the whoami service</li>
-<li>whoami_group: A User Group mapped to a client role for authorization by Keycloak Gatekeeper</li>
-<li><a href="https://whoami.example.com:">https://whoami.example.com:</a> The URL of our client service</li>
-</ul>
+<li>Add after the previous 2 lines above</li>
 
-<h3 id="relevant-documentation-references">Relevant Documentation References:</h3>
+<li><p>Polluting your <em>gvm global pkgset</em> is <strong>VERY BAD</strong></p>
+
+<pre><code>gvm pkgset create NONE &gt;/dev/null 2&gt;&amp;1
+gvm pkgset use NONE
+</code></pre></li>
+</ul></li>
+
+<li><p>Sanity check <code>.bashrc</code>. Your file should look like this:</p>
+
+<pre><code># ...
+[[ -s &quot;$HOME/.gvm/scripts/gvm&quot; ]] &amp;&amp; source &quot;$HOME/.gvm/scripts/gvm&quot;
+alias &quot;gvm_pkgset_perms&quot;=&quot;find $HOME/.gvm/pkgsets -type d -exec chmod 770 {} \; &amp;&amp; find $HOME/.gvm/pkgsets -type f -exec chmod 660 {} \;&quot;
+gvm pkgset create NONE &gt;/dev/null 2&gt;&amp;1
+gvm pkgset use NONE
+# ...
+</code></pre></li>
+
+<li><p>Install GVM (uninstall first if already installed)</p>
+
+<pre><code>bash &lt; &lt;(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+</code></pre></li>
+
+<li><p>Open a <strong>NEW</strong> terminal - just do it and don&rsquo;t argue</p>
 
 <ul>
-<li><a href="https://www.keycloak.org/docs/latest/securing_apps/index.html#_keycloak_generic_adapter">Securing Applications and Services Guide</a></li>
-</ul>
+<li>You should be able to access <code>gvm</code> functions -try <code>gvm pkgset list</code></li>
+<li>You should see <code>=&gt; NONE</code></li>
+</ul></li>
 
-<p><a href="https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/keycloakV5_oidc_client_flowcharts/Flowchart-Legend.png"><img src="https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/keycloakV5_oidc_client_flowcharts/Flowchart-Legend.png" alt="Flowchart-Legend.png" /></a></p>
+<li><p>Set the <code>gvm pkgset</code> to <code>global</code></p>
 
-<p><a href="https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/keycloakV5_oidc_client_flowcharts/keycloak-create-client-proxy.png"><img src="https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/keycloakV5_oidc_client_flowcharts/keycloak-create-client-proxy.png" alt="keycloak-create-client-proxy.png" /></a></p>
+<pre><code>gvm pkgset use global
+</code></pre></li>
 
-<p><a href="https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/keycloakV5_oidc_client_flowcharts/keycloak-gatekeeper-group-auth.png"><img src="https://raw.githubusercontent.com/karlredman/Articles/master/content/dev.to/keycloakV5_oidc_client_flowcharts/keycloak-gatekeeper-group-auth.png" alt="keycloak-gatekeeper-group-auth.png" /></a></p>
+<li><p>Install go <em>binary</em> version <code>1.4</code> via gvm</p>
+
+<pre><code>gvm install go1.4 -B
+</code></pre></li>
+
+<li><p>set the current version of to to <code>1.4</code></p>
+
+<pre><code>gvm use go1.4
+</code></pre></li>
+
+<li><p>Install/compile a newer version of <code>go</code></p>
+
+<pre><code>gvm install go1.13.7
+</code></pre></li>
+
+<li><p>Set the new current version of <code>go</code> as default</p>
+
+<pre><code>gvm use go1.13.7 --default
+</code></pre></li>
+
+<li><p>Install global level packages (i.e. for vim)</p>
+
+<ul>
+<li>see original document for this information</li>
+</ul></li>
+
+<li><p><strong>IMPORTANT</strong> set <code>gvm pkgset</code> to <code>NONE</code></p>
+
+<pre><code>gvm pkgset use NONE
+</code></pre></li>
+</ol>
+
+<p>I advise you to restart your terminal sessions at this time only so you don&rsquo;t accidentally pollute your global package set workspace. Otherwise, that&rsquo;s it!</p>
 </div>
 			
 			<footer class="post__footer">
@@ -98,32 +150,32 @@
 
 
 <div class="post__tags tags">
-	<a class="post__tag transition" href="/Articles/tags/keycloak">keycloak</a><a class="post__tag transition" href="/Articles/tags/administration">administration</a><a class="post__tag transition" href="/Articles/tags/flowchart">flowchart</a><a class="post__tag transition" href="/Articles/tags/gatekeeper">gatekeeper</a>
+	<a class="post__tag transition" href="/Articles/tags/go">go</a><a class="post__tag transition" href="/Articles/tags/administration">administration</a><a class="post__tag transition" href="/Articles/tags/mentalhealth">mentalhealth</a><a class="post__tag transition" href="/Articles/tags/development">development</a>
 </div>
 
 
 				
 <div class="post__share share">
-	<a class="share__link" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fkeycloakv5_oidc_client_flowcharts%2f" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Facebook', 'width=800,height=600,toolbar=0,status=0'); return false">
+	<a class="share__link" title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fgo_gvm_and_portable-ish_workspaces_part_1_setup_distilled%2f" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Facebook', 'width=800,height=600,toolbar=0,status=0'); return false">
 		<svg class="share__icon share__icon--facebook transition" aria-label="Facebook" role="img" width="28" height="28" viewBox="0 0 512 512"><path d="M330 512V322h64l9-74h-73v-47c0-22 6-36 37-36h39V99c-7-1-30-3-57-3-57 0-95 34-95 98v54h-64v74h64v190z"/></svg>
 	</a>
-	<a class="share__link" title="Share on Twitter" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fkeycloakv5_oidc_client_flowcharts%2f&amp;text=Keycloak%20v5%20%2b%20Gatekeeper%20v5%3a%20Flowcharts%20-%20Easily%20Create%20and%20Restrict%20an%20Isolated%20%28IODC%29%20Client%20Service%20by%20Group-Role" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Twitter', 'width=800,height=450,resizable=yes,toolbar=0,status=0'); return false">
+	<a class="share__link" title="Share on Twitter" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fgo_gvm_and_portable-ish_workspaces_part_1_setup_distilled%2f&amp;text=Go%3a%20GVM%20and%20Portable-ish%20Workspaces%20%28Part%201%3a%20Setup%20DISTILLED%29" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Twitter', 'width=800,height=450,resizable=yes,toolbar=0,status=0'); return false">
 		<svg class="share__icon share__icon--twitter transition" aria-label="Twitter" role="img" width="28" height="28" viewBox="0 0 512 512"><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37"/></svg>
 	</a>
-	<a class="share__link" title="Share on Reddit" href="https://www.reddit.com/submit?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fkeycloakv5_oidc_client_flowcharts%2f&amp;title=Keycloak%20v5%20%2b%20Gatekeeper%20v5%3a%20Flowcharts%20-%20Easily%20Create%20and%20Restrict%20an%20Isolated%20%28IODC%29%20Client%20Service%20by%20Group-Role" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Reddit', 'width=832,height=624,toolbar=0,status=0'); return false">
+	<a class="share__link" title="Share on Reddit" href="https://www.reddit.com/submit?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fgo_gvm_and_portable-ish_workspaces_part_1_setup_distilled%2f&amp;title=Go%3a%20GVM%20and%20Portable-ish%20Workspaces%20%28Part%201%3a%20Setup%20DISTILLED%29" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Reddit', 'width=832,height=624,toolbar=0,status=0'); return false">
 		<svg class="share__icon share__icon--reddit transition" aria-label="Reddit" role="img" width="28" height="28" viewBox="0 0 512 512"><path fill-rule="evenodd" d="M375 146a32 32 0 1 0-29-46l-65-13c-5-1-9 2-10 6l-22 97c-45 1-85 15-113 36a42 42 0 1 0-45 69l-1 12c0 65 74 117 166 117s166-52 166-117l-1-11a42 42 0 1 0-44-69c-28-21-67-35-111-37l19-86 58 13a32 32 0 0 0 32 29zM190 353c2-1 4 0 5 1 15 11 38 18 61 18s46-6 61-18a7 7 0 0 1 8 10c-18 14-44 21-69 21-25-1-51-7-69-21a6 6 0 0 1 3-11zm23-44a31 31 0 1 1-44-44 31 31 0 0 1 44 44zm130 0a31 31 0 1 0-44-44 31 31 0 0 0 44 44z"/></svg>
 
 	</a>
-	<a class="share__link" title="Share on Telegram" href="https://t.me/share/url?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fkeycloakv5_oidc_client_flowcharts%2f&amp;title=Keycloak%20v5%20%2b%20Gatekeeper%20v5%3a%20Flowcharts%20-%20Easily%20Create%20and%20Restrict%20an%20Isolated%20%28IODC%29%20Client%20Service%20by%20Group-Role" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Telegram', 'width=800,height=600,toolbar=0,status=0'); return false">
+	<a class="share__link" title="Share on Telegram" href="https://t.me/share/url?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fgo_gvm_and_portable-ish_workspaces_part_1_setup_distilled%2f&amp;title=Go%3a%20GVM%20and%20Portable-ish%20Workspaces%20%28Part%201%3a%20Setup%20DISTILLED%29" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on Telegram', 'width=800,height=600,toolbar=0,status=0'); return false">
 		<svg class="share__icon share__icon--telegram transition" aria-label="Telegram" role="img" width="28" height="28" viewBox="0 0 512 512"><path d="M199 404c-11 0-10-4-13-14l-32-105 245-144"/><path d="M199 404c7 0 11-4 16-8l45-43-56-34"/><path d="M204 319l135 99c14 9 26 4 30-14l55-258c5-22-9-32-24-25L79 245c-21 8-21 21-4 26l83 26 190-121c9-5 17-3 11 4"/></svg>
 	</a>
-	<a class="share__link transition" title="Share on LinkedIn" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fkeycloakv5_oidc_client_flowcharts%2f&title=Keycloak%20v5%20%2b%20Gatekeeper%20v5%3a%20Flowcharts%20-%20Easily%20Create%20and%20Restrict%20an%20Isolated%20%28IODC%29%20Client%20Service%20by%20Group-Role" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on LinkedIn', 'width=640,height=480,toolbar=0,status=0'); return false">
+	<a class="share__link transition" title="Share on LinkedIn" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fgo_gvm_and_portable-ish_workspaces_part_1_setup_distilled%2f&title=Go%3a%20GVM%20and%20Portable-ish%20Workspaces%20%28Part%201%3a%20Setup%20DISTILLED%29" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on LinkedIn', 'width=640,height=480,toolbar=0,status=0'); return false">
 		<svg class="share__icon share__icon--linkedin transition" aria-label="LinkedIn" role="img" width="28" height="28" viewBox="0 0 512 512"><circle cx="142" cy="138" r="37"/><path stroke-width="66" d="M244 194v198M142 194v198"/><path d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"/></svg>
 	</a>
-	<a class="share__link transition" title="Share on VK" href="https://vk.com/share.php?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fkeycloakv5_oidc_client_flowcharts%2f" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on VK', 'width=640,height=480,toolbar=0,status=0'); return false">
+	<a class="share__link transition" title="Share on VK" href="https://vk.com/share.php?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fgo_gvm_and_portable-ish_workspaces_part_1_setup_distilled%2f" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Share on VK', 'width=640,height=480,toolbar=0,status=0'); return false">
 		<svg class="share__icon share__icon--vk transition" aria-label="VK" role="img" width="28" height="28" viewBox="0 0 512 512"><path d="M274 363c5-1 14-3 14-15 0 0-1-30 13-34s32 29 51 42c14 9 25 8 25 8l51-1s26-2 14-23c-1-2-9-15-39-42-31-30-26-25 11-76 23-31 33-50 30-57-4-7-20-6-20-6h-57c-6 0-9 1-12 6 0 0-9 25-21 45-25 43-35 45-40 42-9-5-7-24-7-37 0-45 7-61-13-65-13-2-59-4-73 3-7 4-11 11-8 12 3 0 12 1 17 7 8 13 9 75-2 81-15 11-53-62-62-86-2-6-5-7-12-9H79c-6 0-15 1-11 13 27 56 83 193 184 192z"/></svg>
 	</a>
-	<a class="share__link transition" title="Save on Pocket" href="https://getpocket.com/edit?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fkeycloakv5_oidc_client_flowcharts%2f&amp;title=Keycloak%20v5%20%2b%20Gatekeeper%20v5%3a%20Flowcharts%20-%20Easily%20Create%20and%20Restrict%20an%20Isolated%20%28IODC%29%20Client%20Service%20by%20Group-Role" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Save on Pocket', 'width=480,height=320,toolbar=0,status=0'); return false">
+	<a class="share__link transition" title="Save on Pocket" href="https://getpocket.com/edit?url=https%3a%2f%2fkarlredman.github.io%2fArticles%2fdev.to%2fgo_gvm_and_portable-ish_workspaces_part_1_setup_distilled%2f&amp;title=Go%3a%20GVM%20and%20Portable-ish%20Workspaces%20%28Part%201%3a%20Setup%20DISTILLED%29" target="_blank" rel="noopener noreferrer" onclick="window.open(this.href, 'Save on Pocket', 'width=480,height=320,toolbar=0,status=0'); return false">
 		<svg class="share__icon share__icon--pocket transition" aria-label="Pocket" role="img" width="28" height="28" viewBox="0 0 512 512"><path d="M388.8 88.9H123.2A47.4 47.4 0 0 0 76 136.5v131.9c0 2.4.2 4.8.5 7.2a101.8 101.8 0 0 0-.5 10.6c0 75.6 80.6 137 180 137s180-61.4 180-137c0-3.6-.2-7.1-.5-10.6.3-2.4.5-4.8.5-7.2v-132A47.4 47.4 0 0 0 388.8 89zm-22.4 132.6l-93 93c-4.7 4.6-11 7-17.1 7a23.8 23.8 0 0 1-17.7-7l-93-93a24 24 0 0 1 33.8-33.8l76.6 76.5 76.6-76.5a24 24 0 0 1 33.8 33.8z"/></svg>
 	</a>
 </div>
@@ -135,9 +187,15 @@
 	<h3 class="related__title">Related</h3>
 	<ul class="related__list">
 		
-		<li class="related__item"><a class="related__link" href="/Articles/dev.to/traefik&#43;keycloak&#43;gatekeeper_diagram_overview/">Private Network &#43; Traefik &#43; Keycloak &#43; Gatekeeper Overview (diagram)</a></li>
+		<li class="related__item"><a class="related__link" href="/Articles/dev.to/go_gvm_and_portable-ish_workspaces_part_1_setup/">Go: GVM and Portable-ish Workspaces (Part 1: Setup)</a></li>
+		
+		<li class="related__item"><a class="related__link" href="/Articles/dev.to/go-independent-custom-workspaces/">Golang: Independent Custom Workspaces</a></li>
+		
+		<li class="related__item"><a class="related__link" href="/Articles/dev.to/keycloakv5_oidc_client_flowcharts/">Keycloak v5 &#43; Gatekeeper v5: Flowcharts - Easily Create and Restrict an Isolated (IODC) Client Service by Group-Role</a></li>
 		
 		<li class="related__item"><a class="related__link" href="/Articles/dev.to/keycloakv5_ui_mindmap/">The Keycloak (v.5.0.0) UI mind map you didn&#39;t ask for</a></li>
+		
+		<li class="related__item"><a class="related__link" href="/Articles/dev.to/docker_hostnames_from_host/">Resolve docker hostnames from host with DNS Proxy Server</a></li>
 		
 	</ul>
 </section>
