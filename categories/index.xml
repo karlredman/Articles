@@ -6,46 +6,10 @@
     <description>Recent content in Categories on Articles</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Feb 2020 06:10:31 -0600</lastBuildDate>
+    <lastBuildDate>Mon, 24 Jun 2019 23:57:02 -0500</lastBuildDate>
     
 	<atom:link href="https://karlredman.github.io/Articles/categories/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>administration</title>
-      <link>https://karlredman.github.io/Articles/categories/administration/</link>
-      <pubDate>Tue, 11 Feb 2020 06:10:31 -0600</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/categories/administration/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>dev.to</title>
-      <link>https://karlredman.github.io/Articles/categories/dev.to/</link>
-      <pubDate>Tue, 11 Feb 2020 06:10:31 -0600</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/categories/dev.to/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>devops</title>
-      <link>https://karlredman.github.io/Articles/categories/devops/</link>
-      <pubDate>Tue, 11 Feb 2020 06:10:31 -0600</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/categories/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programming</title>
-      <link>https://karlredman.github.io/Articles/categories/programming/</link>
-      <pubDate>Tue, 11 Feb 2020 06:10:31 -0600</pubDate>
-      
-      <guid>https://karlredman.github.io/Articles/categories/programming/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>admin</title>
@@ -53,6 +17,15 @@
       <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
       
       <guid>https://karlredman.github.io/Articles/categories/admin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dev.to</title>
+      <link>https://karlredman.github.io/Articles/categories/dev.to/</link>
+      <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/dev.to/</guid>
       <description></description>
     </item>
     
@@ -71,6 +44,15 @@
       <pubDate>Mon, 24 Jun 2019 23:57:02 -0500</pubDate>
       
       <guid>https://karlredman.github.io/Articles/categories/ricing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>https://karlredman.github.io/Articles/categories/programming/</link>
+      <pubDate>Tue, 11 Jun 2019 23:13:35 -0500</pubDate>
+      
+      <guid>https://karlredman.github.io/Articles/categories/programming/</guid>
       <description></description>
     </item>
     
