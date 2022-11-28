@@ -105,7 +105,7 @@ set -e
 # Convenience variables
 FULL_VERSION="3.7.2"
 MM_VERSION="3.7"
-VIM_CONENSED_VER="81"
+VIM_CONDENSED_VER="81"
 VIM_TAG="v8.1"
 BUILT_BY="Karl N. Redman <karl.redman@gmail.com>"
 
