@@ -143,7 +143,7 @@ make distclean
             --includedir=$HOME/.pyenv/versions/${FULL_VERSION}/include/
 
 # Make and set the runtime directory (non default to avoid conflicts)
-make VIMRUNTIMEDIR=/usr/local/share/vim/vim${VIM_CONENSED_VER}
+make VIMRUNTIMEDIR=/usr/local/share/vim/vim${VIM_CONDENSED_VER}
 
 ## (optional) uncomment to remove current vim if desired
 # sudo apt remove -y vim vim-runtime gvim vim-tiny vim-common vim-gui-common vim-nox
